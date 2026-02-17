@@ -1,80 +1,120 @@
-# Plan: Outlook Copy-Paste-Safe Email Redesign
+# Plan: Standardize Font Sizes for Uniform Typography
 
 ## The Problem
 
-When copying HTML from Chrome/Edge and pasting into Outlook:
-- The entire `<style>` block is **stripped** (all `@media` queries gone)
-- All `class=""` attributes become **meaningless** (no rules to reference)
-- MSO conditional comments are **stripped**
-- Google Fonts `<link>` tags are **stripped**
-- `border-radius`, `font-variant-numeric`, vendor prefixes are **ignored**
+The email template uses 11 different font sizes (1px, 7px, 8px, 9px, 10px, 11px, 12px, 13px, 15px, 16px, 20px) across 139 inline declarations. Several of these sit just 1px apart with no clear visual distinction, creating a disjointed hierarchy that looks misaligned rather than intentionally designed.
 
-This means every mobile responsive change we just made (stacking deals, hiding column headers, reducing padding, stacking charts) has **zero effect** on the actual emailed version.
+### Specific Misalignments
 
-## Phase 1: Remove Dead Code
+| Issue | Elements | Current Sizes | Problem |
+|-------|----------|---------------|---------|
+| **Badge inconsistency** | Country badges across deals vs. spotlight badge | 7px vs 8px | Identical elements at different sizes |
+| **Section headers = body text** | "Key Themes", "Deal of the Week", "Sector Activity", "M&A Deal Count" vs. body paragraphs | Both 10px | No hierarchy between headers and body |
+| **Near-duplicate title sizes** | Main email title vs. spotlight deal name | 15px vs 16px | 1px gap looks like a mistake, not intentional |
+| **Deal names too close to body** | Deal company names vs. body text | 11px vs 10px | 1px difference provides no meaningful contrast |
+| **Deal values too close to sector bars** | Dollar amounts in cards vs. sector header text | 13px vs 12px | 1px difference looks accidental |
 
-1. **Remove the `<style>` block** entirely (lines 16-42) - stripped by Outlook
-2. **Remove MSO conditional comments** (lines 7-15) - non-functional in copy-paste
-3. **Remove all `class=""` attributes** (~13 different classes across the file) - inert without `<style>`
-4. **Remove vendor prefixes** from `<body>` tag (`-webkit-font-smoothing`, etc.)
-5. **Remove `border-radius`** from country badge spans (9 occurrences) - Outlook ignores
-6. **Remove `font-variant-numeric`** from spotlight deal value - Outlook ignores
+## Proposed Standardized Type Scale
 
-## Phase 2: Restructure Deal Tables to Single-Column Cards
+Consolidate from 11 sizes down to 9, with clear purpose for each tier and minimum 2px jumps between readable text sizes:
 
-The two-column layout (Target | Description side-by-side) is the root cause of the mobile problem. Without media queries, we can't stack them. The fix: **make every deal a single full-width card** that looks great at any width.
-
-Each deal becomes:
 ```
-+----------------------------------------------------------+
-| [Target Name] [COUNTRY]                                  |
-| Seller -> Acquirer (italic, muted)                       |
-|                                                          |
-| Description paragraph text...                            |
-| Source >                                                 |
-+-- border-bottom ----------------------------------------+
+Tier          Size    Role                                          Jump
+----------    ----    ----                                          ----
+Structural    1px     Spacers, bar chart fills                      ---
+Decorative    7px     Diamond divider symbols only                  ---
+Badge         8px     ALL country/region badges                     ---
+Caption       9px     Metadata, source links, ownership text        +1px
+Body         10px     Paragraphs, deal descriptions                 +1px
+Emphasis     12px     Deal names, section headers, sector bars,     +2px
+                      chart labels, chart counts
+Value        14px     Deal dollar amounts in sector cards           +2px
+Display      16px     Main email title, spotlight deal name         +2px
+Hero         20px     Spotlight deal value ($6.6B)                  +4px
 ```
 
-This mirrors the "Deal of the Week" spotlight pattern which is already single-column and already looks great. Changes per sector card:
-- Remove column header rows (Target | Description) - unnecessary in card layout
-- Remove `colspan="2"` from sector headers (now single-column)
-- Merge each deal's two `<td>` cells into one stacked `<td>`
-- Maintain alternating row backgrounds
+Readable text progression: **8 - 9 - 10 - 12 - 14 - 16 - 20** (accelerating scale, each jump >= previous)
 
-## Phase 3: Stack YTD Charts Vertically
+### Sizes eliminated
+- **7px for badges** (merged into 8px badge tier)
+- **11px** (deal names move up to 12px emphasis tier)
+- **13px** (deal values move up to 14px value tier)
+- **15px** (main title aligns up to 16px display tier)
 
-The side-by-side "By Sector | By Region" charts are crushed on mobile without media queries. Fix: **stack them vertically by default**.
+## Changes by Component
 
-Replace the two-cell `<tr>` with two sequential `<tr>` elements, each full-width. This gives each chart ~530px of breathing room instead of ~250px.
+### Change 1: Country badges 7px -> 8px (8 instances)
 
-## Phase 4: Adjust Spacing
+Standardize all country badges to match the spotlight deal badge (already 8px). Affects lines containing `font-size: 7px` on badge `<span>` elements (Peru, Italy/Netherlands, UK, India, US x2, UK, Spain).
 
-- **Reduce content padding** from 56px to 32px (compromise: still elegant on desktop, more room on mobile)
-- **Adjust header padding** from 56px to 32px sides
-- **Adjust spotlight inner padding** slightly for consistency
+**Lines:** ~211, 233, 252, 271, 353, 400, 447, 494
 
-## Phase 5: Add Outlook Resilience
+### Change 2: Gold section headers 10px -> 12px (4 instances)
 
-- Add `bgcolor` HTML attributes alongside CSS `background-color` on critical cells (header, sector bars, gold accents, outer table, main container)
-- Add `max-width: 640px` to main container style alongside `width="640"` attribute for webmail clients
-- Test/remove preheader div if it becomes visible after paste
+Bump the serif gold uppercase section labels from body-text size to the emphasis tier. These already have visual differentiation (Merriweather, #B8A272, uppercase, 3px letter-spacing, bold) but need size separation from 10px body text.
 
-## Summary of Changes
+**Elements:**
+- "Key Themes" (line ~83)
+- "Deal of the Week" (line ~120)
+- "Sector Activity" (line ~172)
+- "M&A Deal Count | Infrastructure Sponsors" (line ~534)
 
-| What | Before | After |
-|------|--------|-------|
-| Deal layout | Two columns (Target / Description) | Single-column stacked cards |
-| YTD charts | Side-by-side | Vertically stacked |
-| Content padding | 56px | 32px |
-| `<style>` block | 26 lines of media queries | Removed entirely |
-| Classes | 13 different classes used | All removed |
-| Conditionals | MSO comments present | Removed |
-| `border-radius` | On 9 badge elements | Removed |
+### Change 3: Deal names 11px -> 12px (8 instances)
 
-## Desktop appearance
+Align deal company names with the emphasis tier. The 1px body-to-deal-name jump was imperceptible; 2px provides clear hierarchy while keeping deal names aligned with sector bar text (both 12px, differentiated by color/context).
 
-Will look clean and elegant - the single-column card layout actually reads better than cramped two-column tables. The reduced 32px padding keeps generous whitespace. Bar charts get full width, making them more impactful.
+**Elements:** Inkia Energy, Centrica Energy Solutions, Fig Power, CleanMax, Delaware Basin Residue, American Roads, Truespeed & Freedom Fibre, Urbaser (in W&E card)
 
-## Mobile appearance
+**Lines:** ~211, 233, 252, 271, 353, 400, 447, 494
 
-Without media queries, the 640px layout scales down naturally. Because everything is single-column, text reflows cleanly - no squished columns, no horizontal scrolling. The 32px padding (vs 56px) leaves more room for content at narrow widths.
+### Change 4: Deal values 13px -> 14px (2 instances)
+
+Move dollar amounts from the awkward 13px (1px above sector bars) to 14px, creating clear separation from the 12px emphasis tier.
+
+**Elements:** "$3.4B" (Inkia Energy), "$6.6B" (Urbaser in W&E card)
+
+**Lines:** ~214, 497
+
+### Change 5: Main email title 15px -> 16px (1 instance)
+
+Align the main heading with the spotlight deal name (already 16px). Both serve a "display" role and should share the same size, differentiated only by context (white-on-blue header vs. dark-on-cream card).
+
+**Line:** ~45
+
+## Summary of All Changes
+
+| What | Before | After | Instances |
+|------|--------|-------|-----------|
+| Country badges (non-spotlight) | 7px | 8px | 8 |
+| Gold section headers | 10px | 12px | 4 |
+| Deal company names | 11px | 12px | 8 |
+| Deal dollar values (in cards) | 13px | 14px | 2 |
+| Main email title | 15px | 16px | 1 |
+| **Total** | | | **23** |
+
+## What Stays the Same
+
+| Size | Role | Instances | Why |
+|------|------|-----------|-----|
+| 1px | Structural spacers/bars | 40 | Functional, not visible text |
+| 7px | Diamond divider symbols | 2 | Pure decoration, distinct from badges |
+| 8px | Spotlight country badge | 1 | Already correct (others align to it) |
+| 9px | Captions/metadata/sources | 23 | Consistent and well-separated from body |
+| 10px | Body paragraphs | ~12 | Clean base reading size |
+| 12px | Sector bars + chart labels | 36 | Already consistent within their roles |
+| 16px | Spotlight deal name | 1 | Already correct (title aligns to it) |
+| 20px | Spotlight hero value | 1 | Already correct |
+
+## Result
+
+After changes, elements that should look the same WILL look the same:
+- All badges: 8px
+- All section headers: 12px (serif gold uppercase)
+- All deal names: 12px (sans-serif dark bold)
+- All deal values: 14px
+- All display-level titles: 16px
+
+The visual hierarchy becomes unambiguous:
+```
+Badge (8px) < Caption (9px) < Body (10px) < Heading/Label (12px) < Value (14px) < Title (16px) < Hero (20px)
+```
