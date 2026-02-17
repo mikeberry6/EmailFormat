@@ -118,3 +118,42 @@ The visual hierarchy becomes unambiguous:
 ```
 Badge (8px) < Caption (9px) < Body (10px) < Heading/Label (12px) < Value (14px) < Title (16px) < Hero (20px)
 ```
+
+---
+
+## Naming Conventions
+
+### Sector names must be consistent everywhere they appear
+
+The **blue sector card headers** and the **bar chart labels** in the YTD section must use matching names. The canonical sector list is:
+
+| Sector Card Header | Bar Chart Label |
+|---|---|
+| Power & ET | Power & ET |
+| Digital | Digital |
+| Midstream | Midstream |
+| Transportation | Transportation |
+| Waste & Environmental Services | Waste & Env. Services |
+| Social | Social |
+| Utilities | Utilities |
+
+- The bar chart abbreviates "Waste & Environmental Services" to "Waste & Env. Services" for space.
+- Every sector in the bar chart must have a corresponding sector card, and vice versa — even if it has 0 deals that week.
+- Sectors with 0 deals get a card with the "No transactions reported this week" empty state.
+
+## Ordering Rules
+
+### Sector cards and bar chart bars: deal count desc, then alphabetical
+
+Both the sector deal cards and the YTD bar chart rows follow the same sort:
+
+1. **Primary sort:** Deal count, descending (most deals first)
+2. **Secondary sort:** Sector name, alphabetical A-Z (tiebreaker within same count)
+
+This applies to both:
+- The **sector card** blocks in the weekly deals section
+- The **"By Sector" bar chart** rows in the YTD activity section
+
+### Spacing note for last sector card
+
+The last sector card in the list uses `padding: 0 32px 48px 32px` (extra bottom padding before the YTD section). All other cards use `padding: 0 32px 28px 32px`.
