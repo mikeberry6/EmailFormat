@@ -35,7 +35,21 @@
         padding-top: 6px !important;
       }
 
-      /* Bump up key font sizes for mobile readability */
+      /* Header mobile: stack Line 1 elements */
+      td[class="header-firm-cell"],
+      td[class="header-pipe-cell"] {
+        display: none !important;
+      }
+      td[class="header-logo-cell"] {
+        display: block !important;
+        text-align: center !important;
+        padding: 0 0 8px 0 !important;
+      }
+      td[class="header-group-cell"] {
+        display: block !important;
+        text-align: center !important;
+        padding: 0 !important;
+      }
       span[class="title-text"] {
         font-size: 22px !important;
         line-height: 32px !important;
@@ -49,13 +63,6 @@
       }
       span[class="contact-name"] {
         font-size: 11px !important;
-      }
-      /* Stack business cards vertically on mobile */
-      td[class="card-col"] {
-        display: block !important;
-        width: 100% !important;
-        border-right: none !important;
-        padding: 0 0 28px 0 !important;
       }
       td[class="key-themes-body"] {
         font-size: 12px !important;
@@ -114,45 +121,56 @@
           <!-- ============================================ -->
           <!-- HEADER                                       -->
           <!-- ============================================ -->
-          <!-- Gold crown accent -->
+          <!-- Gold accent bar -->
           <tr>
             <td bgcolor="#B4A87D" style="background-color: #B4A87D; height: 2px; font-size: 1px; line-height: 1px; mso-line-height-rule: exactly;">&nbsp;</td>
           </tr>
           <tr>
-            <td align="center" bgcolor="#442142" style="background-color: #442142; padding: 48px 40px 44px 40px; text-align: center;">
+            <td align="center" bgcolor="#442142" style="background-color: #442142; padding: 44px 40px 48px 40px; text-align: center;">
               <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                <!-- Logo -->
+                <!-- Line 1: Guggenheim [logo] | Infrastructure Coverage & Advisory -->
+                <tr>
+                  <td align="center" style="padding-bottom: 32px;">
+                    <table border="0" cellpadding="0" cellspacing="0" align="center" style="margin: 0 auto;">
+                      <tr>
+                        <td class="header-firm-cell" valign="middle" style="padding-right: 10px;">
+                          <span style="font-family: Georgia, 'Times New Roman', serif; font-size: 11px; color: #D7CED7; text-transform: uppercase; letter-spacing: 2px; font-weight: 400;">Guggenheim</span>
+                        </td>
+                        <td class="header-logo-cell" valign="middle" style="padding-right: 14px;">
+                          <img src="https://i.imgur.com/WCRXMc5.png" alt="" width="24" style="display: block; width: 24px; height: auto; filter: brightness(2.5) saturate(0.3); -webkit-filter: brightness(2.5) saturate(0.3);" />
+                        </td>
+                        <td class="header-pipe-cell" valign="middle" style="padding-right: 14px;">
+                          <span style="font-family: Georgia, 'Times New Roman', serif; font-size: 14px; color: #6B5470; font-weight: 300;">&#124;</span>
+                        </td>
+                        <td class="header-group-cell" valign="middle">
+                          <span class="group-name" style="font-family: Georgia, 'Times New Roman', serif; font-size: 9px; color: #B4A87D; text-transform: uppercase; letter-spacing: 3px; font-weight: 400;">Infrastructure Coverage &amp; Advisory</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <!-- Centered gold rule -->
+                <tr>
+                  <td align="center" style="padding-bottom: 32px;">
+                    <table border="0" cellpadding="0" cellspacing="0" width="40" align="center" style="margin: 0 auto;">
+                      <tr>
+                        <td bgcolor="#B4A87D" style="background-color: #B4A87D; height: 1px; font-size: 1px; line-height: 1px; mso-line-height-rule: exactly;">&nbsp;</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <!-- Line 2: Infrastructure Sponsor M&A Activity -->
                 <tr>
                   <td align="center" style="padding-bottom: 28px;">
-                    <!--[if mso]><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" style="padding:0;"><![endif]-->
-                    <img src="https://i.imgur.com/WCRXMc5.png" alt="Guggenheim Securities" width="80" style="display: block; margin: 0 auto; width: 80px; max-width: 100%; height: auto; filter: brightness(2.5) saturate(0.3); -webkit-filter: brightness(2.5) saturate(0.3);" />
-                    <!--[if mso]></td></tr></table><![endif]-->
+                    <span class="title-text" style="font-family: Georgia, 'Times New Roman', serif; font-size: 28px; font-weight: 400; color: #ffffff; line-height: 38px; letter-spacing: 5px; text-transform: uppercase;">Infrastructure Sponsor<br/>M&amp;A Activity</span>
                   </td>
                 </tr>
-                <!-- Full-width gold hairline -->
-                <tr>
-                  <td style="padding-bottom: 16px;">
-                    <div style="height: 1px; background-color: #B4A87D; font-size: 1px; line-height: 1px;">&nbsp;</div>
-                  </td>
-                </tr>
-                <!-- Group identity -->
-                <tr>
-                  <td align="center" style="padding-bottom: 40px;">
-                    <span class="group-name" style="font-family: Georgia, 'Times New Roman', serif; font-size: 9px; color: #B4A87D; text-transform: uppercase; letter-spacing: 3px; font-weight: 400; -webkit-text-size-adjust: none; -ms-text-size-adjust: 100%;">Infrastructure Coverage &amp; Advisory</span>
-                  </td>
-                </tr>
-                <!-- Report title -->
-                <tr>
-                  <td align="center" style="padding-bottom: 40px;">
-                    <span class="title-text" style="font-family: Georgia, 'Times New Roman', serif; font-size: 28px; font-weight: 400; color: #ffffff; line-height: 40px; letter-spacing: 6px; text-transform: uppercase; -webkit-text-size-adjust: none; -ms-text-size-adjust: 100%;">Infrastructure<br/>Sponsor M&amp;A</span>
-                  </td>
-                </tr>
-                <!-- Frequency + Date inline -->
+                <!-- Line 3: Weekly Briefing | February 7-13, 2026 -->
                 <tr>
                   <td align="center">
-                    <span class="weekly-label" style="font-family: Georgia, 'Times New Roman', serif; font-size: 9px; color: #D7CED7; text-transform: uppercase; letter-spacing: 3px; font-weight: 400; -webkit-text-size-adjust: none; -ms-text-size-adjust: 100%;">Weekly Briefing</span>
-                    <span style="font-family: Georgia, 'Times New Roman', serif; font-size: 9px; color: #6B5470; padding: 0 8px;">&#8212;</span>
-                    <span style="font-family: Georgia, 'Times New Roman', serif; font-size: 9px; color: #B4A87D; letter-spacing: 2px; font-weight: 400;">FEB 7 &#8211; 13, 2026</span>
+                    <span class="weekly-label" style="font-family: Georgia, 'Times New Roman', serif; font-size: 9px; color: #D7CED7; text-transform: uppercase; letter-spacing: 3px; font-weight: 400;">Weekly Briefing</span>
+                    <span style="font-family: Georgia, 'Times New Roman', serif; font-size: 9px; color: #6B5470; padding: 0 10px;">&#124;</span>
+                    <span style="font-family: Georgia, 'Times New Roman', serif; font-size: 9px; color: #B4A87D; letter-spacing: 2px; font-weight: 400;">February 7 &#8211; 13, 2026</span>
                   </td>
                 </tr>
               </table>
@@ -629,7 +647,7 @@
                 </tr>
                 <tr>
                   <td style="padding-bottom: 24px;">
-                    <span style="font-family: 'Roboto', 'Segoe UI', 'Gill Sans', Arial, sans-serif; font-size: 12px; color: #7A7A7A; font-weight: 300;">58 Deals &middot; 2026 YTD as of February 13th</span>
+                    <span style="font-family: 'Roboto', 'Segoe UI', 'Gill Sans', Arial, sans-serif; font-size: 12px; color: #7A7A7A; font-weight: 300;">58 Deals &middot; YTD 2026</span>
                   </td>
                 </tr>
                 <!-- BY SECTOR (full width, stacked) -->
@@ -877,78 +895,36 @@
           </tr>
 
           <!-- ============================================ -->
-          <!-- FOOTER / VIRTUAL BUSINESS CARDS              -->
+          <!-- FOOTER / CONTACT                             -->
           <!-- ============================================ -->
           <!-- Gold separator -->
           <tr>
             <td bgcolor="#B4A87D" style="background-color: #B4A87D; height: 2px; font-size: 1px; line-height: 1px; mso-line-height-rule: exactly;">&nbsp;</td>
           </tr>
           <tr>
-            <td bgcolor="#442142" style="background-color: #442142; padding: 36px 40px 30px 40px;">
+            <td bgcolor="#442142" style="background-color: #442142; padding: 40px 40px 8px 40px;">
               <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                <!-- Reach-out blurb -->
                 <tr>
-                  <!-- ====== CARD 1 ====== -->
-                  <td class="card-col" width="50%" align="center" valign="top" style="border-right: 1px solid #6B5470; padding: 0 24px 0 0;">
-                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                      <!-- Avatar silhouette -->
-                      <tr>
-                        <td align="center" style="padding-bottom: 16px;">
-                          <!-- Replace src with actual headshot URL -->
-                          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'%3E%3Crect width='80' height='80' rx='40' fill='%232D1530'/%3E%3Ccircle cx='40' cy='28' r='12' fill='%23584060'/%3E%3Cellipse cx='40' cy='58' rx='18' ry='16' fill='%23584060'/%3E%3C/svg%3E" alt="Photo" width="60" height="60" style="display: block; width: 60px; height: 60px; border-radius: 50%; border: 2px solid #B4A87D; margin: 0 auto;" />
-                        </td>
-                      </tr>
-                      <!-- Name -->
-                      <tr>
-                        <td align="center" style="padding-bottom: 4px;">
-                          <span class="contact-name" style="font-family: Georgia, 'Times New Roman', serif; font-size: 11px; color: #ffffff; letter-spacing: 2px; text-transform: uppercase; font-weight: 400;">[Name]</span>
-                        </td>
-                      </tr>
-                      <!-- Title -->
-                      <tr>
-                        <td align="center" style="padding-bottom: 3px;">
-                          <span style="font-family: 'Roboto', 'Segoe UI', 'Gill Sans', Arial, sans-serif; font-size: 8px; color: #D7CED7; letter-spacing: 0.5px; font-weight: 300;">[Title]</span>
-                        </td>
-                      </tr>
-                      <!-- Group -->
-                      <tr>
-                        <td align="center" style="padding-bottom: 16px;">
-                          <span style="font-family: Georgia, 'Times New Roman', serif; font-size: 7px; color: #B4A87D; letter-spacing: 2.5px; text-transform: uppercase; font-weight: 400;">Infrastructure Coverage &amp; Advisory</span>
-                        </td>
-                      </tr>
-                      <!-- Gold rule -->
-                      <tr>
-                        <td align="center" style="padding-bottom: 16px;">
-                          <div style="width: 30px; height: 1px; background-color: #B4A87D; margin: 0 auto;"></div>
-                        </td>
-                      </tr>
-                      <!-- Email -->
-                      <tr>
-                        <td align="center" style="padding-bottom: 3px;">
-                          <a href="mailto:first.last@guggenheimpartners.com" style="font-family: 'Roboto', 'Segoe UI', 'Gill Sans', Arial, sans-serif; font-size: 8px; color: #D7CED7; letter-spacing: 0.3px; font-weight: 300; text-decoration: none; border-bottom: 1px solid #6B5470; padding-bottom: 1px;">first.last@guggenheimpartners.com</a>
-                        </td>
-                      </tr>
-                      <!-- Phone -->
-                      <tr>
-                        <td align="center">
-                          <span style="font-family: 'Roboto', 'Segoe UI', 'Gill Sans', Arial, sans-serif; font-size: 8px; color: #D7CED7; letter-spacing: 0.5px; font-weight: 300;">(212) 000&#8211;0000</span>
-                        </td>
-                      </tr>
-                    </table>
+                  <td align="center" style="padding-bottom: 32px;">
+                    <span style="font-family: Georgia, 'Times New Roman', serif; font-size: 11px; color: #D7CED7; line-height: 20px; font-weight: 400;">For additional questions regarding these deals or infrastructure<br/>sponsor M&amp;A activity, please reach out directly to:</span>
                   </td>
-                  <!-- ====== CARD 2 ====== -->
-                  <td class="card-col" width="50%" align="center" valign="top" style="padding: 0 0 0 24px;">
-                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                </tr>
+                <!-- Mike Berry business card -->
+                <tr>
+                  <td align="center" style="padding-bottom: 32px;">
+                    <table border="0" cellpadding="0" cellspacing="0" width="280" align="center" style="margin: 0 auto;">
                       <!-- Avatar silhouette -->
                       <tr>
                         <td align="center" style="padding-bottom: 16px;">
                           <!-- Replace src with actual headshot URL -->
-                          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'%3E%3Crect width='80' height='80' rx='40' fill='%232D1530'/%3E%3Ccircle cx='40' cy='28' r='12' fill='%23584060'/%3E%3Cellipse cx='40' cy='58' rx='18' ry='16' fill='%23584060'/%3E%3C/svg%3E" alt="Photo" width="60" height="60" style="display: block; width: 60px; height: 60px; border-radius: 50%; border: 2px solid #B4A87D; margin: 0 auto;" />
+                          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'%3E%3Crect width='80' height='80' rx='40' fill='%232D1530'/%3E%3Ccircle cx='40' cy='28' r='12' fill='%23584060'/%3E%3Cellipse cx='40' cy='58' rx='18' ry='16' fill='%23584060'/%3E%3C/svg%3E" alt="Mike Berry" width="60" height="60" style="display: block; width: 60px; height: 60px; border-radius: 50%; border: 2px solid #B4A87D; margin: 0 auto;" />
                         </td>
                       </tr>
                       <!-- Name -->
                       <tr>
                         <td align="center" style="padding-bottom: 4px;">
-                          <span class="contact-name" style="font-family: Georgia, 'Times New Roman', serif; font-size: 11px; color: #ffffff; letter-spacing: 2px; text-transform: uppercase; font-weight: 400;">[Name]</span>
+                          <span class="contact-name" style="font-family: Georgia, 'Times New Roman', serif; font-size: 11px; color: #ffffff; letter-spacing: 2px; text-transform: uppercase; font-weight: 400;">Mike Berry</span>
                         </td>
                       </tr>
                       <!-- Title -->
@@ -966,13 +942,17 @@
                       <!-- Gold rule -->
                       <tr>
                         <td align="center" style="padding-bottom: 16px;">
-                          <div style="width: 30px; height: 1px; background-color: #B4A87D; margin: 0 auto;"></div>
+                          <table border="0" cellpadding="0" cellspacing="0" width="30" align="center" style="margin: 0 auto;">
+                            <tr>
+                              <td bgcolor="#B4A87D" style="background-color: #B4A87D; height: 1px; font-size: 1px; line-height: 1px; mso-line-height-rule: exactly;">&nbsp;</td>
+                            </tr>
+                          </table>
                         </td>
                       </tr>
                       <!-- Email -->
                       <tr>
                         <td align="center" style="padding-bottom: 3px;">
-                          <a href="mailto:first.last@guggenheimpartners.com" style="font-family: 'Roboto', 'Segoe UI', 'Gill Sans', Arial, sans-serif; font-size: 8px; color: #D7CED7; letter-spacing: 0.3px; font-weight: 300; text-decoration: none; border-bottom: 1px solid #6B5470; padding-bottom: 1px;">first.last@guggenheimpartners.com</a>
+                          <a href="mailto:mike.berry@guggenheimpartners.com" style="font-family: 'Roboto', 'Segoe UI', 'Gill Sans', Arial, sans-serif; font-size: 8px; color: #D7CED7; letter-spacing: 0.3px; font-weight: 300; text-decoration: none; border-bottom: 1px solid #6B5470; padding-bottom: 1px;">mike.berry@guggenheimpartners.com</a>
                         </td>
                       </tr>
                       <!-- Phone -->
@@ -991,7 +971,7 @@
           <tr>
             <td bgcolor="#442142" style="background-color: #442142; padding: 0 40px 24px 40px;">
               <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                <!-- Full-width muted line -->
+                <!-- Muted line -->
                 <tr>
                   <td style="padding-bottom: 18px;">
                     <div style="height: 1px; background-color: #6B5470; font-size: 1px; line-height: 1px;">&nbsp;</div>
@@ -1012,9 +992,9 @@
               </table>
             </td>
           </tr>
-          <!-- Gold bottom accent (mirrors top crown) -->
+          <!-- Gold bottom accent -->
           <tr>
-            <td bgcolor="#B4A87D" style="background-color: #B4A87D; height: 3px; font-size: 1px; line-height: 1px; mso-line-height-rule: exactly;">&nbsp;</td>
+            <td bgcolor="#B4A87D" style="background-color: #B4A87D; height: 2px; font-size: 1px; line-height: 1px; mso-line-height-rule: exactly;">&nbsp;</td>
           </tr>
 
         </table>
