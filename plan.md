@@ -1,285 +1,181 @@
-# Plan: Professional Design Uplevel — Guggenheim Infrastructure M&A Email
+# Guggenheim Infrastructure M&A — Weekly Newsletter Template
 
-## Design Audit Summary
+## Overview
 
-This email has a solid foundation — the brand palette (deep plum #442142, antique gold #B4A87D), the serif/sans-serif pairing, and the overall structure are all good starting points. However, a trained eye spots several issues that prevent it from reading as "investment bank polished." Below is a systematic audit followed by a precise change list.
+Single-file HTML email newsletter (`guggenheim-infrastructure-ma-update.html`) for Guggenheim's Infrastructure Coverage & Advisory team. Designed for copy-paste into Outlook/Gmail on iPhone. Updated weekly with new deal data.
 
 ---
 
-## I. Typography Issues
+## I. Architecture
 
-### A. Broken size hierarchy — sizes too close together
-The current template uses **8 distinct readable-text sizes** between 11px and 17px. Several are only 1px apart, which at screen resolution produces no perceptible difference — it just looks inconsistent.
+- **Pure HTML email** — nested `<table>` structures, inline styles only, no `<style>` blocks (except MSO conditionals)
+- **No images** — all visual elements are CSS/text-based (photo placeholders, bar charts, accent lines)
+- **Single column** — 600px max-width inner card on #F4F5F7 canvas
+- **Outlook-safe accents** — all colored lines/rules use `<table><tr><td>` with `background-color`, NOT CSS borders on `<div>` elements or standalone `<div>` height hacks
+- **Git branch**: `claude/redesign-ma-newsletter-QBhg6`
 
-| Current Size | Elements | Problem |
+---
+
+## II. Brand & Color System
+
+| Token | Hex | Usage |
 |---|---|---|
-| 17px | Main title | Only 1px above deal names (16px) — looks accidental |
-| 16px | Deal names, deal values, spotlight name, spotlight value | Deal values are *identical* to deal names — no visual hierarchy |
-| 15px | Body text, chart labels/values | — |
-| 14px | Section headers, "By Sector/Region", deal flow (spotlight) | Section headers same size as subheads — no distinction |
-| 13px | Deal flow text (cards), footer date | Only 1px below section headers |
-| 12px | Source links, "Weekly Briefing", date, disclaimer | — |
-| 11.5px | Sector card header name/count | Non-round value; 0.5px from badges |
-| 11px | Country badges, diamond dividers, coverage advisory | Badges = decorative elements |
-
-**Core problem:** The spotlight hero value ($6.6B) is the same 16px as every other deal name and value. It should dominate the card visually.
-
-### B. Line-height inconsistency
-- Body text: `15px / 22px` = 1.47 ratio (tight for light-weight body copy)
-- Deal descriptions: same 15/22 — should have more generous leading for readability
-- Spotlight name: `16px / 20px` = 1.25 (very tight)
-- Title: `17px / 24px` = 1.41 (acceptable but could be more open)
-- Footer disclaimer: `12px / 18px` = 1.50 (good)
-
-**Professional standard for body copy:** 1.5–1.6 line-height ratio with font-weight: 300.
-
-### C. Letter-spacing inconsistency
-Uppercase text uses 4 different letter-spacing values with no clear system:
-- 1px (country badges)
-- 1.5px (sector deal counts)
-- 2px (title, date)
-- 2.5px (sector names)
-- 3px (section headers, coverage advisory)
-- 5px (Weekly Briefing label)
-
-**Should consolidate to 2-3 values max** tied to a role (compact, standard, wide).
+| Brand (deep eggplant) | `#442142` | Top/bottom stripes, sector left accents, deal title color, pill tags, bar chart fills, deal value highlights |
+| Olive-gold | `#B4A87D` | Key Themes left border, gold accent rule, arrow/pipe accents, source links, email links |
+| Body text | `#585858` | All sans-serif body copy, metadata, mechanics lines |
+| Light canvas | `#F4F5F7` | Outer background, geography tag backgrounds |
+| Card white | `#FFFFFF` | Inner content card background |
+| Border grey | `#E5E7EB` | All structural borders (containers, cards, separators, bar tracks) |
+| Header bg | `#F8F9FA` | Sector header backgrounds |
+| Subtle grey | `#F4F5F7` | Bar chart row separators |
+| Muted pill | `#6B7280` | 0-deal sector pill backgrounds |
+| Footer text | `#A1A1A6` | Legal disclaimer text |
 
 ---
 
-## II. Spacing Issues
+## III. Typography
 
-### A. No consistent spacing grid
-Padding values used: 3px, 4px, 5px, 6px, 8px, 10px, 12px, 14px, 20px, 24px, 28px, 32px, 36px, 40px, 48px. This is 15 distinct spacing values — a professional template uses an **8px base grid** (8, 16, 24, 32, 40, 48) with a 4px half-step for fine adjustments.
+### Fonts
+- **Serif (display/editorial):** `Georgia, 'Times New Roman', serif` — used for GUGGENHEIM brand, main title, deal target names, contact names, bar chart counts, stats title
+- **Sans-serif (data/meta):** `-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif` — used for subtitle, Key Themes label, body text, mechanics lines, descriptions, sector headers, pills, source links, contact titles/emails
 
-### B. Section spacing imbalance
-- Key Themes top padding: 40px (generous)
-- Divider → Spotlight: 36px bottom + 0px top = 36px (fine)
-- Sector Activity header → first card: 24px (tight)
-- Between sector cards: 28px (fine)
-- Last card → YTD section: 48px bottom + 0 top divider (abrupt)
-- YTD header → chart: 24px (cramped for a major section start)
-
-### C. Deal card internal spacing is too tight
-- Deal rows use 20px padding — adequate but not premium
-- Deal flow line has only 3px top padding — feels cramped against company name
-- Deal description has 10px top padding — adequate but could breathe more
-- Source link has no top margin from description text — jammed against the `<br/>`
-
----
-
-## III. Color Palette Issues
-
-### A. Too many grays without clear roles
-Currently using **5 distinct gray values**: #585858, #7A7A7A, #8A7B8A, #A9A0A9, #D7CED7. These should be consolidated to 3 with clear purposes:
-- **Body text gray** (dark): #585858
-- **Secondary/metadata gray** (medium): #7A7A7A
-- **Muted/border gray** (light): #D7CED7
-
-The warm-tinted grays (#8A7B8A, #A9A0A9) add visual noise — they're close enough to the neutral grays that they look like mistakes rather than intentional warmth.
-
-### B. Deal company name color confusion
-Deal company names use #2D1230 while the brand purple is #442142. These are close but not identical — creating an "is that the same color?" ambiguity. Should use one or the other consistently.
-
-### C. Badge styling inconsistency
-Badges use #8A7B8A text on #EDEAED background. This warm-gray pairing feels disconnected from the rest of the palette. A more integrated approach would tie badges to the brand purple family.
+### Size Hierarchy
+| Size | Element |
+|---|---|
+| 30px | Main title ("Infrastructure Sponsor M&A") — Georgia serif |
+| 24px | Deal target names — Georgia serif |
+| 22px | GUGGENHEIM brand wordmark — Georgia bold, 4px letter-spacing |
+| 20px | M&A Stats dashboard title — Georgia serif |
+| 18px | Contact card names, bar chart counts — Georgia serif |
+| 16px | Key Themes body text — Georgia serif |
+| 14px | Sector header names, deal descriptions, no-transaction messages — sans-serif |
+| 13px | Mechanics lines, stats subtitle, email addresses — sans-serif |
+| 12px | Subtitle date line, source links — sans-serif |
+| 11px | Key Themes label, chart section labels, pill tag text — sans-serif bold |
+| 10px | Geography tags, contact titles, PHOTO placeholder, footer header — sans-serif |
+| 9px | "INFRASTRUCTURE COVERAGE & ADVISORY" — sans-serif bold |
 
 ---
 
-## IV. Visual Polish Issues
+## IV. Section Structure
 
-### A. Spotlight card doesn't feel special enough
-The spotlight card has a gold left border and subtle shadow — good start. But the deal value ($6.6B) is the same size as regular deal values, and the overall card doesn't feel meaningfully elevated above the sector deal cards.
+### 1. Masthead
+- 4px `#442142` top stripe (table-based)
+- Brand block: GUGGENHEIM (22px Georgia bold, 4px letter-spacing, uppercase) + subtitle (9px sans-serif)
+- 50px × 3px gold accent rule (table-based, `#B4A87D`)
+- Title: 30px Georgia serif, `#442142`
+- Subtitle: 12px sans-serif, "Weekly Briefing | February 7–13, 2026" (gold pipe separator)
+- 2px `#442142` bottom accent stripe (table-based)
 
-### B. Sector card headers feel thin
-At 8px vertical padding, the purple gradient headers are narrow. They hold small 11.5px text which makes the headers feel squeezed. More vertical padding and slightly larger text would give them more authority.
+### 2. Key Themes
+- Table-based left border: 3px `#B4A87D` cell + 24px left-padded content cell
+- "KEY THEMES" label: 11px sans-serif bold, uppercase, 1px letter-spacing
+- Body: 16px Georgia serif, `#442142`, 1.6 line-height
 
-### C. Bar chart is functional but not refined
-- Chart labels (15px) are the same size as body text — they should be smaller to create visual distinction
-- The bar heights (10px) are fine but could be slightly taller for visual weight
-- No spacing differentiation between "By Sector" and "By Region" sections
-
-### D. Source links feel like an afterthought
-The `Source ›` links are placed immediately after a `<br/>` with no breathing room. They use border-bottom for underline styling which is fine, but the transition from description to source is abrupt.
-
-### E. Empty state cards are too plain
-The "No transactions reported this week" text is functional but lacks personality. A slightly different background treatment or icon would make these feel intentional rather than missing.
-
-### F. Footer lacks polish
-The footer has good information but feels flat. No separation between the date/company and the disclaimer. No gold accent to tie back to the brand system used throughout the email.
-
----
-
-## V. Proposed Changes
-
-### Change 1: Fix type hierarchy — font sizes (17 instances)
-
-| Element | Current | Proposed | Instances | Rationale |
-|---|---|---|---|---|
-| Main email title | 17px | 20px | 1 | Clear display tier, 4px above deal names |
-| Spotlight hero value ($6.6B) | 16px | 24px | 1 | Hero element — must dominate the card |
-| Spotlight deal name (Urbaser) | 16px | 18px | 1 | Larger than regular deal names |
-| Deal values in sector cards ($3.4B, $6.6B) | 16px | 18px | 2 | 2px gap above deal names (16px) |
-| Country badges (all) | 11px | 12px | 9 | Round value, separated from decorative 11px |
-
-Total font-size edits: **14 inline style changes**
-
-### Change 2: Improve line-heights for body copy
-
-| Element | Current | Proposed | Instances |
-|---|---|---|---|
-| Key themes body | 15px/22px (1.47) | 15px/24px (1.60) | 1 |
-| Spotlight description | 15px/22px (1.47) | 15px/24px (1.60) | 1 |
-| Deal descriptions (all) | 15px/22px (1.47) | 15px/24px (1.60) | 8 |
-| Spotlight deal flow | 14px/22px (1.57) | 14px/22px (keep) | 0 |
-| Main title | 17px/24px → 20px/28px | 20px/28px | 1 |
-
-Total line-height edits: **11 inline style changes**
-
-### Change 3: Increase deal card breathing room
-
-| Element | Current | Proposed | Rationale |
-|---|---|---|---|
-| Deal flow top padding | 3px | 6px | More air between company name and flow line |
-| Deal description top padding | 10px | 14px | More air between flow line and description |
-| Source link spacing | No margin (inline after `<br/>`) | Add 6px padding-top via wrapping `<div>` | Separate source from description text |
-
-Total spacing edits: **~24 inline style changes** (across 8 deal cards + spotlight)
-
-### Change 4: Sector card header vertical padding
-
-| Element | Current | Proposed | Rationale |
-|---|---|---|---|
-| Sector card header `<td>` padding | 8px 20px | 10px 20px | Gives sector name/count more breathing room |
-
-Total: **7 sector card headers**
-
-### Change 5: Fix sector naming conventions
-
-| Location | Current | Proposed |
-|---|---|---|
-| Sector card header (line ~483) | `Waste & ES` | `Waste & Environmental Services` |
-| Bar chart label (line ~715) | `Waste & ES` | `Waste & Env. Services` |
-
-Total: **2 text changes**
-
-### Change 6: Consolidate badge styling — tie to brand
-
-| Property | Current | Proposed |
-|---|---|---|
-| Badge text color | #8A7B8A | #6B5470 (muted brand purple) |
-| Badge background | #EDEAED | #F0ECF0 (very light purple tint) |
-
-This creates a subtle connection to the #442142 brand purple instead of an orphaned warm gray.
-
-Total: **9 badge instances** (8 sector cards + 1 spotlight)
-
-### Change 7: Unify deal company name color
-
-| Element | Current | Proposed | Rationale |
-|---|---|---|---|
-| `.deal-company` color | #2D1230 | #442142 | Use the actual brand purple — eliminates the "is this the same color?" ambiguity |
-
-Total: **8 deal company name spans**
-
-### Change 8: Spotlight card elevation
-
-Make the spotlight card feel more premium:
-
-| Property | Current | Proposed |
-|---|---|---|
-| Inner padding | 24px 24px | 28px 28px |
-| Box shadow | 0 1px 4px rgba(0,0,0,0.06) | 0 2px 8px rgba(68,33,66,0.10) |
-| Gold left border | 3px solid #B4A87D | 3px solid #B4A87D (keep) |
-| Add gold top border | none | border-top: 1px solid #B4A87D |
-
-Total: **1 card wrapper edit**
-
-### Change 9: Footer polish
-
-| Property | Current | Proposed |
-|---|---|---|
-| Top border | 1px solid #B4A87D | Keep |
-| Add gold divider between company name and disclaimer | none | Add thin 40px gold rule matching section header style |
-| Footer inner padding | 24px 32px 20px 32px | 28px 32px 24px 32px |
-
-Total: **2-3 HTML/style edits**
-
-### Change 10: Mobile override updates
-
-Update the `<style>` block to reflect the new sizes:
-
-| Class | Current mobile override | Proposed |
-|---|---|---|
-| `.title-text` | 16px / 22px | 20px / 28px |
-| `.spotlight-value` | 16px | 24px |
-| `.deal-value` | 16px | 18px |
-| `.spotlight-name` | 16px | 18px |
-
-Total: **4 `<style>` block edits**
-
----
-
-## VI. Summary of All Changes
-
-| Category | What | Instances |
-|---|---|---|
-| **Typography** | Font size hierarchy fixes | 14 |
-| **Typography** | Line-height improvements | 11 |
-| **Typography** | Mobile override updates | 4 |
-| **Spacing** | Deal card breathing room (flow + desc + source) | ~24 |
-| **Spacing** | Sector header padding increase | 7 |
-| **Spacing** | Spotlight card padding + shadow | 1 |
-| **Spacing** | Footer padding | 1 |
-| **Color** | Badge color update (#6B5470 / #F0ECF0) | 9 |
-| **Color** | Deal company name → #442142 | 8 |
-| **Content** | Sector naming fixes | 2 |
-| **Footer** | Gold divider + spacing | 2 |
-| **Total** | | **~83** |
-
----
-
-## VII. What Stays the Same
-
-These elements are already well-executed and should not change:
-- Overall 640px container width with border and shadow
-- Deep plum (#442142) + antique gold (#B4A87D) brand palette
-- Serif/sans-serif font pairing (Merriweather/Georgia + Roboto)
-- Diamond (◆) geometric divider pattern
-- Sector card purple gradient headers with gold accents
-- Alternating row backgrounds (#F5F4F2 / #ffffff) in deal cards
-- Gold left-border spotlight card concept
-- Bar chart visual design (colors, rounded corners, background track)
-- Preheader text approach
-- Source link styling (italic, gold, bottom-border underline)
-- Section header pattern (gold uppercase serif + 40px underline rule)
-
----
-
-## VIII. Resulting Type Scale
-
+### 3. Deal Activity (Sector Groups)
+Each sector is a **self-contained container**:
 ```
-Size     Role                                              Line-height
-1px      Structural spacers, bar fills                     1px
-11px     Diamond dividers, coverage advisory               1 / inherits
-11.5px   Sector card header name/count                     inherits
-12px     Country badges, source links, date, labels        inherits
-13px     Deal flow text (sector cards), footer date        inherits
-14px     Section headers, chart subheads, empty state      inherits
-15px     Body paragraphs, deal descriptions, chart values  24px (1.60)
-16px     Deal company names                                inherits
-18px     Deal values, spotlight deal name                  inherits
-20px     Main email title                                  28px (1.40)
-24px     Spotlight hero value                              inherits
+<tr>
+  <td style="padding: [10px|24px] 40px 0 40px;">
+    <table style="border: 1px solid #E5E7EB; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+      <!-- Sector Header row -->
+      <!-- Deal rows -->
+    </table>
+  </td>
+</tr>
 ```
 
-**Readable text progression: 12 → 13 → 14 → 15 → 16 → 18 → 20 → 24**
-Each jump is >= 1px, with the critical hierarchy breaks (names → values → title → hero) at 2-4px gaps.
+**First sector** uses `padding: 10px 40px 0 40px` (closer to Key Themes). **Subsequent sectors** use `padding: 24px 40px 0 40px`.
+
+#### Sector Header (inside container)
+- `<td>` with `background-color: #F8F9FA; border-bottom: 1px solid #E5E7EB`
+- Inner table with `border-left: 4px solid #442142`
+- Left cell: sector name (14px sans-serif, font-weight 800, uppercase, `#442142`)
+- Right cell: pill tag (11px sans-serif bold, white on `#442142`, border-radius 100px)
+- 0-deal sectors use `#6B7280` pill bg instead of `#442142`
+
+#### Sector Names (must match between headers and bar charts)
+| Header | Bar Chart Label |
+|---|---|
+| Power & ET | Power & ET |
+| Digital | Digital |
+| Midstream | Midstream |
+| Transportation | Transportation |
+| Waste & ES | Waste & ES |
+| Social | Social |
+| Utilities | Utilities |
+
+#### Deal Cards (inside container)
+- Padding: `24px 24px 0 24px` (last deal in sector: `24px 24px 28px 24px`)
+- **Target name:** 24px Georgia serif, `#442142`, line-height 1.2 — on its own line
+- **Geography tag:** Own `<div>` below title (margin-top 6px), `<span>` with 10px sans-serif, `#585858` text, `#F4F5F7` bg, 4px 8px padding, 4px border-radius, white-space nowrap
+- **Mechanics line:** 13px sans-serif, font-weight 600, `#585858`, margin-top 10px. Gold arrow (`&#8594;` or `&#8212;`) colored `#B4A87D`
+- **Description:** 14px sans-serif, `#585858`, line-height 1.6, margin-top 12px. Deal values bolded in `#442142`
+- **Source link:** 12px sans-serif, `#B4A87D`, bold, no text-decoration, margin-top 14px
+
+#### 0-Deal Sectors
+- Same container structure
+- No `border-bottom` on header `<td>` (since there are no deals below, just use default)
+- "No transactions reported this week" — 14px sans-serif italic, `#585858`, padding `20px 24px 24px 24px`
+
+### 4. M&A Stats (Bar Charts)
+- Dashboard title: 20px Georgia serif + 13px subtitle ("58 Deals · YTD 2026")
+- Two sections: "By Sector" and "By Region" — 11px sans-serif bold uppercase labels
+- 3-column table: label (30%), bar (55%), count (15%)
+- Bar: nested table with `#E5E7EB` bg track, `#442142` filled `<td>` with percentage width, 8px height, 4px border-radius
+- Count: 18px Georgia serif, `#442142`
+- Rows separated by `border-bottom: 1px solid #F4F5F7`
+- Last row in each section has extra bottom padding (28px) before next section
+- **Bars sorted descending by count**
+
+### 5. Footer
+- "REACH OUT DIRECTLY:" label: 10px sans-serif bold, uppercase, 1.5px letter-spacing
+- Contact cards: `#FAFAFA` bg, `1px solid #E5E7EB` border, 8px border-radius
+  - Photo: table-based `<td width="50" height="50">` with bg-color circle placeholder
+  - Text: inner `<table>` with `<td>` rows for name (18px Georgia), title (10px sans-serif uppercase), email (13px `#B4A87D` bold)
+  - Use `padding-top` on `<td>` rows instead of `margin-top` on divs
+  - Use `valign="top"` attributes alongside CSS `vertical-align`
+- Legal footer: table-based separator, 10px sans-serif, `#A1A1A6`, centered
 
 ---
 
-## IX. Ordering & Structural Rules (unchanged)
+## V. Weekly Update Checklist
 
-- Sector cards and bar chart bars: sorted by deal count descending, then alphabetical A-Z
-- Last sector card uses `padding: 0 32px 48px 32px` (extra bottom padding before YTD)
-- All other sector cards use `padding: 0 32px 28px 32px`
-- Sector naming must match between card headers and bar chart labels
+When updating for a new week:
+
+1. **Preheader text** (line ~18): Update deal count, total value, sector list, date range
+2. **Subtitle date** (line ~54): Update "February 7–13, 2026" to new week
+3. **Key Themes** (line ~76): Rewrite editorial summary for new week's deals
+4. **Sector groups**: Add/remove/update deal cards within each sector container
+   - Update pill tag counts (e.g., "4 DEALS" → "3 DEALS")
+   - Ensure last deal in each sector has bottom padding `28px` instead of `0`
+   - Geography tags go on their own line (not inline with title)
+5. **0-deal sectors**: Add/remove "No transactions" message as needed
+6. **Bar charts**: Update widths (percentage of max), counts, and sort order (descending)
+7. **Contact cards**: Update if team changes
+
+---
+
+## VI. Key Email Compatibility Rules
+
+- All accent lines/rules must be `<table><tr><td style="background-color:...; height:Npx">` — never CSS borders on `<div>` or `<div>` height hacks
+- Use `mso-line-height-rule: exactly` on structural spacer cells
+- Include `font-size: 1px; line-height: 1px;` on spacer cells
+- Use `&nbsp;` content in spacer cells (not empty)
+- No `display: inline-block` — use table cells instead
+- No `margin-top` for layout — use `padding-top` on `<td>` rows
+- Include both `valign="top"` attribute and `vertical-align: top` style
+- `border-radius` and `overflow: hidden` are progressive enhancement (ignored by Outlook)
+- `box-shadow` is progressive enhancement (ignored by Outlook)
+
+---
+
+## VII. Design Principles
+
+- **No per-deal dividers** — only the sector container border separates groups
+- **Sector containers** provide visual grouping (border + shadow + rounded corners)
+- **Typographic contrast:** Georgia serif for editorial/display, system sans-serif for data/meta
+- **No images** — everything is pure text/CSS for maximum email client compatibility
+- **font-weight: 800** only on sector headers; avoid heavy weights elsewhere for elegance
+- **Gold (`#B4A87D`)** reserved for accents: rules, arrows, pipes, links, Key Themes border
+- **Brand (`#442142`)** for structural identity: stripes, sector accents, pills, titles, highlights
