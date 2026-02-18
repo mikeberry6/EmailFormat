@@ -12,30 +12,27 @@
   <![endif]-->
   <style type="text/css">
     @media only screen and (max-width: 600px) {
+      .mobile-stack {
+        display: block !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }
+      .mobile-stack-pad {
+        padding-bottom: 25px !important;
+      }
       table[class="email-container"] {
         width: 100% !important;
         max-width: 100% !important;
       }
+      td[class="masthead-pad"] {
+        padding: 35px 20px !important;
+      }
       td[class="content-pad"] {
-        padding-left: 20px !important;
-        padding-right: 20px !important;
+        padding-left: 16px !important;
+        padding-right: 16px !important;
       }
-      td[class="header-pad"] {
-        padding-left: 20px !important;
-        padding-right: 20px !important;
-      }
-      td[class="footer-pad"] {
-        padding-left: 20px !important;
-        padding-right: 20px !important;
-      }
-      td[class="footer-card-left"] {
-        display: block !important;
-        width: 100% !important;
-        padding-bottom: 25px !important;
-      }
-      td[class="footer-card-right"] {
-        display: block !important;
-        width: 100% !important;
+      td[class="card-pad"] {
+        padding: 20px !important;
       }
       td[class="deal-name-cell"] {
         display: block !important;
@@ -46,7 +43,7 @@
         width: 100% !important;
         text-align: left !important;
         padding-left: 0 !important;
-        padding-top: 4px !important;
+        padding-top: 8px !important;
       }
       td[class="meta-left"] {
         display: block !important;
@@ -56,59 +53,85 @@
         display: block !important;
         width: 100% !important;
         text-align: left !important;
-        padding-top: 4px !important;
+        padding-top: 6px !important;
       }
       span[class="hero-title"] {
-        font-size: 22px !important;
-        line-height: 30px !important;
-      }
-      td[class="exec-summary"] {
-        font-size: 13px !important;
-        line-height: 21px !important;
+        font-size: 28px !important;
+        line-height: 1.1 !important;
       }
       span[class="deal-val"] {
-        font-size: 18px !important;
+        font-size: 24px !important;
+      }
+      td[class="footer-pad"] {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
       }
     }
   </style>
 </head>
-<body style="margin: 0; padding: 0; background-color: #F9FAFB; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;">
+<body style="margin: 0; padding: 0; background-color: #F4F5F7; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;">
 
   <!-- Preheader text (hidden) -->
   <div style="display: none; font-size: 0; line-height: 0; max-height: 0; overflow: hidden; mso-hide: all;">
     Weekly Briefing &#8211; Infrastructure Sponsor M&amp;A &#8211; 8 deals totaling $10.1B+ across Power, Midstream, Transportation, Digital, and Environmental Services &#8211; Feb 7&#8211;13, 2026
   </div>
 
-  <!-- Outer wrapper -->
-  <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #F9FAFB;">
+  <!-- Outer wrapper: Platinum Gray canvas -->
+  <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #F4F5F7;">
     <tr>
-      <td align="center" style="padding: 24px 16px;">
+      <td align="center" style="padding: 0;">
 
-        <!-- Main 600px container -->
-        <table class="email-container" role="presentation" border="0" cellpadding="0" cellspacing="0" width="600" style="max-width: 600px; background-color: #FFFFFF;">
-
-          <!-- ============================================ -->
-          <!-- TIER 1: THE BRAND MASTHEAD                   -->
-          <!-- ============================================ -->
+        <!-- ============================================ -->
+        <!-- SECTION 1: THE MASTHEAD (Dark Mode)          -->
+        <!-- ============================================ -->
+        <table class="email-container" role="presentation" border="0" cellpadding="0" cellspacing="0" width="600" style="max-width: 600px;">
           <tr>
-            <td class="header-pad" style="padding: 40px 40px 0 40px;">
+            <td class="masthead-pad" style="background-color: #27112C; padding: 45px 35px;">
               <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                <!-- Brand Name -->
                 <tr>
-                  <td style="padding-bottom: 6px;">
-                    <span style="font-family: Georgia, 'Times New Roman', serif; font-size: 18px; color: #3B1A40; letter-spacing: 2px; text-transform: uppercase;">GUGGENHEIM</span>
+                  <td style="padding-bottom: 8px;">
+                    <span style="font-family: Georgia, 'Times New Roman', serif; font-size: 16px; color: #C8B07B; letter-spacing: 4px; text-transform: uppercase;">GUGGENHEIM</span>
                   </td>
                 </tr>
+                <!-- Sub-brand -->
                 <tr>
                   <td style="padding-bottom: 16px;">
-                    <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 10px; color: #999999; text-transform: uppercase; letter-spacing: 1.5px;">Infrastructure Coverage &amp; Advisory</span>
+                    <span style="font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 10px; color: #FFFFFF; letter-spacing: 2px; text-transform: uppercase; font-weight: bold;">INFRASTRUCTURE COVERAGE &amp; ADVISORY</span>
                   </td>
                 </tr>
-                <!-- Champagne gold divider -->
+                <!-- Gold underline -->
                 <tr>
-                  <td style="padding: 0;">
+                  <td style="padding-bottom: 28px;">
                     <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
                       <tr>
-                        <td style="border-bottom: 1px solid #C5B382; font-size: 1px; line-height: 1px;">&nbsp;</td>
+                        <td style="border-bottom: 1px solid #C8B07B; font-size: 1px; line-height: 1px;">&nbsp;</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <!-- Title block -->
+                <tr>
+                  <td style="padding-bottom: 6px;">
+                    <span style="font-family: Georgia, 'Times New Roman', serif; font-size: 20px; color: #FFFFFF; line-height: 1.3;">INFRASTRUCTURE SPONSOR</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding-bottom: 28px;">
+                    <span class="hero-title" style="font-family: Georgia, 'Times New Roman', serif; font-size: 38px; color: #FFFFFF; line-height: 1.1; display: block;">M&amp;A ACTIVITY</span>
+                  </td>
+                </tr>
+                <!-- Meta Row with gold top border -->
+                <tr>
+                  <td style="border-top: 1px solid #C8B07B; padding-top: 16px;">
+                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                      <tr>
+                        <td class="meta-left" style="font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 11px; font-weight: bold; color: #C8B07B; text-transform: uppercase; letter-spacing: 1px;">
+                          WEEKLY BRIEFING
+                        </td>
+                        <td class="meta-right" align="right" style="font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 12px; color: #86868B; letter-spacing: 0.5px;">
+                          February 7&#8211;13, 2026
+                        </td>
                       </tr>
                     </table>
                   </td>
@@ -116,90 +139,494 @@
               </table>
             </td>
           </tr>
+        </table>
 
-          <!-- ============================================ -->
-          <!-- TIER 2: THE HERO TITLE                       -->
-          <!-- ============================================ -->
+
+        <!-- ============================================ -->
+        <!-- SECTION 2: KEY THEMES (Executive Callout)    -->
+        <!-- ============================================ -->
+        <table class="email-container" role="presentation" border="0" cellpadding="0" cellspacing="0" width="600" style="max-width: 600px;">
           <tr>
-            <td class="header-pad" style="padding: 32px 40px 0 40px;">
-              <span class="hero-title" style="font-family: Georgia, 'Times New Roman', serif; font-size: 28px; font-weight: 700; color: #1D1D1F; line-height: 36px; display: block;">Infrastructure Sponsor<br/>M&amp;A Activity</span>
-            </td>
-          </tr>
-
-          <!-- ============================================ -->
-          <!-- TIER 3: THE META ROW                         -->
-          <!-- ============================================ -->
-          <tr>
-            <td class="header-pad" style="padding: 20px 40px 0 40px;">
-              <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+            <td class="content-pad" style="padding: 30px 20px 0 20px;">
+              <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #FFFFFF; border-left: 4px solid #C8B07B;">
                 <tr>
-                  <td class="meta-left" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 11px; font-weight: 700; color: #1D1D1F; text-transform: uppercase; letter-spacing: 1px;">
-                    WEEKLY BRIEFING
-                  </td>
-                  <td class="meta-right" align="right" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 11px; color: #999999; letter-spacing: 0.5px;">
-                    February 7&#8211;13, 2026
-                  </td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-
-          <!-- ============================================ -->
-          <!-- TIER 4: EXECUTIVE SUMMARY                    -->
-          <!-- ============================================ -->
-          <tr>
-            <td class="content-pad" style="padding: 32px 40px 0 40px;">
-              <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
-                <tr>
-                  <td class="exec-summary" style="background-color: #F4F5F7; padding: 20px; border-left: 3px solid #3B1A40; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 14px; color: #1D1D1F; line-height: 1.6;">
-                    Deal flow this week was headlined by <strong style="color: #3B1A40;">Blackstone &amp; EQT&#8217;s $6.6B joint acquisition of Urbaser</strong>, one of the largest environmental services transactions of 2026. Power &amp; energy transition accounted for half the week&#8217;s activity, with CPP Investments&#8217; $3.4B entry into Inkia Energy marking continued sovereign capital deployment into Latin American generation platforms. Digital infrastructure consolidation continued with InfraBridge&#8217;s fiber merger in the UK.
-                  </td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-
-
-          <!-- ============================================ -->
-          <!-- DEAL SPOTLIGHT                               -->
-          <!-- ============================================ -->
-          <tr>
-            <td class="content-pad" style="padding: 48px 40px 0 40px;">
-              <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
-                <!-- Section label -->
-                <tr>
-                  <td style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 11px; color: #999999; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 600; padding-bottom: 20px;">
-                    Deal Spotlight
-                  </td>
-                </tr>
-                <!-- Spotlight card -->
-                <tr>
-                  <td style="background-color: #F4F5F7; border-left: 3px solid #C5B382; padding: 24px;">
+                  <td style="padding: 25px;">
                     <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
-                      <!-- Target, flow, value row -->
+                      <tr>
+                        <td style="padding-bottom: 12px;">
+                          <span style="font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 10px; color: #86868B; text-transform: uppercase; letter-spacing: 2px; font-weight: bold;">Key Themes</span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="font-family: Georgia, 'Times New Roman', serif; font-size: 16px; color: #1D1D1F; line-height: 1.6;">
+                          Deal flow this week was headlined by <strong style="color: #27112C;">Blackstone &amp; EQT&#8217;s $6.6B joint acquisition of Urbaser</strong>, one of the largest environmental services transactions of 2026. Power &amp; energy transition accounted for half the week&#8217;s activity, with CPP Investments&#8217; $3.4B entry into Inkia Energy marking continued sovereign capital deployment into Latin American generation platforms. Digital infrastructure consolidation continued with InfraBridge&#8217;s fiber merger in the UK.
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+
+
+        <!-- ============================================ -->
+        <!-- SECTION 3: SECTOR DEALS                      -->
+        <!-- ============================================ -->
+
+        <!-- ========== POWER & ET (4 Deals) ========== -->
+        <table class="email-container" role="presentation" border="0" cellpadding="0" cellspacing="0" width="600" style="max-width: 600px;">
+          <tr>
+            <td class="content-pad" style="padding: 35px 20px 0 20px;">
+              <!-- Sector Header -->
+              <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-bottom: 2px solid #27112C;">
+                <tr>
+                  <td style="padding-bottom: 10px; font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 14px; font-weight: bold; color: #27112C; text-transform: uppercase; letter-spacing: 2px;">
+                    Power &amp; Energy Transition
+                  </td>
+                  <td align="right" style="padding-bottom: 10px; vertical-align: middle;">
+                    <span style="font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 10px; font-weight: bold; color: #27112C; background-color: #E5E5EA; padding: 4px 10px; letter-spacing: 1px; text-transform: uppercase; border-radius: 10px;">4 DEALS</span>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+
+        <!-- Deal Card: Inkia Energy -->
+        <table class="email-container" role="presentation" border="0" cellpadding="0" cellspacing="0" width="600" style="max-width: 600px;">
+          <tr>
+            <td class="content-pad" style="padding: 20px 20px 0 20px;">
+              <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #FFFFFF; border: 1px solid #E5E5EA;">
+                <tr>
+                  <td class="card-pad" style="padding: 25px;">
+                    <!-- Top row: Name + Value -->
+                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
                       <tr>
                         <td class="deal-name-cell" style="vertical-align: top;">
-                          <span style="font-family: Georgia, 'Times New Roman', serif; font-size: 16px; color: #1D1D1F; font-weight: 700;">Urbaser</span>
-                          <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 10px; color: #777777; background-color: #EAEBEC; padding: 2px 6px; letter-spacing: 0.5px; text-transform: uppercase; display: inline-block; margin-left: 6px;">Spain</span>
-                          <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 12px; color: #777777; font-weight: 600; padding-top: 6px;">
-                            Platinum Equity &#8594; Blackstone &amp; EQT
-                          </div>
+                          <span style="font-family: Georgia, 'Times New Roman', serif; font-size: 20px; font-weight: bold; color: #27112C;">Inkia Energy (50% Stake)</span>
+                          <span style="font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 10px; color: #86868B; background-color: #F4F5F7; padding: 3px 8px; letter-spacing: 0.5px; text-transform: uppercase; display: inline-block; margin-left: 6px; border-radius: 3px;">Peru</span>
                         </td>
                         <td class="deal-value-cell" align="right" style="vertical-align: top; padding-left: 16px; white-space: nowrap;">
-                          <span class="deal-val" style="font-family: Georgia, 'Times New Roman', serif; font-size: 22px; color: #3B1A40; font-weight: 700;">$6.6B</span>
+                          <span class="deal-val" style="font-family: Georgia, 'Times New Roman', serif; font-size: 32px; font-weight: bold; color: #27112C;">$3.4B</span>
+                        </td>
+                      </tr>
+                    </table>
+                    <!-- Buyer/Seller -->
+                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                      <tr>
+                        <td style="padding-top: 10px; font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 13px; color: #86868B;">
+                          I Squared Capital <span style="color: #C8B07B; font-weight: bold;">&rarr;</span> CPP Investments
                         </td>
                       </tr>
                     </table>
                     <!-- Description -->
                     <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
                       <tr>
-                        <td style="padding-top: 16px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 14px; color: #444444; line-height: 1.5;">
+                        <td style="padding-top: 16px; font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 14px; color: #1D1D1F; line-height: 1.5;">
+                          CPP Investments to acquire 50% of Inkia Energy, a Peruvian power generation platform operating a diversified 2.6 GW portfolio with a 4+ GW development pipeline of wind, solar, gas, and battery storage, at an enterprise value of ~$3.4B. I Squared Capital, invested since 2017, rolled its remaining stake into a continuation vehicle.
+                        </td>
+                      </tr>
+                    </table>
+                    <!-- Source link -->
+                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                      <tr>
+                        <td align="right" style="padding-top: 16px;">
+                          <a href="https://www.newswire.ca/news-releases/cpp-investments-to-invest-in-inkia-alongside-i-squared-capital-811136352.html" style="font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 12px; color: #C8B07B; text-decoration: none; font-weight: bold;">Read Source &rarr;</a>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+
+        <!-- Deal Card: Centrica Energy Solutions -->
+        <table class="email-container" role="presentation" border="0" cellpadding="0" cellspacing="0" width="600" style="max-width: 600px;">
+          <tr>
+            <td class="content-pad" style="padding: 20px 20px 0 20px;">
+              <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #FFFFFF; border: 1px solid #E5E5EA;">
+                <tr>
+                  <td class="card-pad" style="padding: 25px;">
+                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                      <tr>
+                        <td class="deal-name-cell" style="vertical-align: top;">
+                          <span style="font-family: Georgia, 'Times New Roman', serif; font-size: 20px; font-weight: bold; color: #27112C;">Centrica Energy Solutions</span>
+                          <span style="font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 10px; color: #86868B; background-color: #F4F5F7; padding: 3px 8px; letter-spacing: 0.5px; text-transform: uppercase; display: inline-block; margin-left: 6px; border-radius: 3px;">Italy / Netherlands</span>
+                        </td>
+                        <td class="deal-value-cell" align="right" style="vertical-align: top; padding-left: 16px; white-space: nowrap;">
+                        </td>
+                      </tr>
+                    </table>
+                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                      <tr>
+                        <td style="padding-top: 10px; font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 13px; color: #86868B;">
+                          Centrica <span style="color: #C8B07B; font-weight: bold;">&rarr;</span> 3i Infrastructure (Joulz)
+                        </td>
+                      </tr>
+                    </table>
+                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                      <tr>
+                        <td style="padding-top: 16px; font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 14px; color: #1D1D1F; line-height: 1.5;">
+                          3i portfolio company Joulz completed acquisition of Centrica&#8217;s non-core energy solutions businesses in Italy and the Netherlands, offering C&amp;I customers onsite CHP, solar, battery storage, and energy management. Part of a broader Centrica disposal exceeding &#163;80M as it recycles capital to focus on core growth priorities.
+                        </td>
+                      </tr>
+                    </table>
+                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                      <tr>
+                        <td align="right" style="padding-top: 16px;">
+                          <a href="https://www.centrica.com/media-centre/news/2026/sale-of-european-energy-solutions-businesses-and-panoramic-power/" style="font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 12px; color: #C8B07B; text-decoration: none; font-weight: bold;">Read Source &rarr;</a>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+
+        <!-- Deal Card: Fig Power -->
+        <table class="email-container" role="presentation" border="0" cellpadding="0" cellspacing="0" width="600" style="max-width: 600px;">
+          <tr>
+            <td class="content-pad" style="padding: 20px 20px 0 20px;">
+              <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #FFFFFF; border: 1px solid #E5E5EA;">
+                <tr>
+                  <td class="card-pad" style="padding: 25px;">
+                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                      <tr>
+                        <td class="deal-name-cell" style="vertical-align: top;">
+                          <span style="font-family: Georgia, 'Times New Roman', serif; font-size: 20px; font-weight: bold; color: #27112C;">Fig Power (1.7 GW Pipeline)</span>
+                          <span style="font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 10px; color: #86868B; background-color: #F4F5F7; padding: 3px 8px; letter-spacing: 0.5px; text-transform: uppercase; display: inline-block; margin-left: 6px; border-radius: 3px;">UK</span>
+                        </td>
+                        <td class="deal-value-cell" align="right" style="vertical-align: top; padding-left: 16px; white-space: nowrap;">
+                        </td>
+                      </tr>
+                    </table>
+                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                      <tr>
+                        <td style="padding-top: 10px; font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 13px; color: #86868B;">
+                          Acquired by InfraRed (TRIG)
+                        </td>
+                      </tr>
+                    </table>
+                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                      <tr>
+                        <td style="padding-top: 16px; font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 14px; color: #1D1D1F; line-height: 1.5;">
+                          TRIG acquired 100% of Fig Power, a Bristol-based battery energy storage developer with a 1.7 GW UK pipeline comprising nine advanced projects and exclusive sites. TRIG committed ~&#163;20M over two years, gaining proprietary development capabilities in storage to complement its existing renewable generation portfolio.
+                        </td>
+                      </tr>
+                    </table>
+                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                      <tr>
+                        <td align="right" style="padding-top: 16px;">
+                          <a href="https://www.trig-ltd.com/news-media/news/trig-acquires-fig-power-a-uk-energy-projects-developer/" style="font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 12px; color: #C8B07B; text-decoration: none; font-weight: bold;">Read Source &rarr;</a>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+
+        <!-- Deal Card: CleanMax -->
+        <table class="email-container" role="presentation" border="0" cellpadding="0" cellspacing="0" width="600" style="max-width: 600px;">
+          <tr>
+            <td class="content-pad" style="padding: 20px 20px 0 20px;">
+              <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #FFFFFF; border: 1px solid #E5E5EA;">
+                <tr>
+                  <td class="card-pad" style="padding: 25px;">
+                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                      <tr>
+                        <td class="deal-name-cell" style="vertical-align: top;">
+                          <span style="font-family: Georgia, 'Times New Roman', serif; font-size: 20px; font-weight: bold; color: #27112C;">CleanMax (6.79% Stake)</span>
+                          <span style="font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 10px; color: #86868B; background-color: #F4F5F7; padding: 3px 8px; letter-spacing: 0.5px; text-transform: uppercase; display: inline-block; margin-left: 6px; border-radius: 3px;">India</span>
+                        </td>
+                        <td class="deal-value-cell" align="right" style="vertical-align: top; padding-left: 16px; white-space: nowrap;">
+                          <span class="deal-val" style="font-family: Georgia, 'Times New Roman', serif; font-size: 32px; font-weight: bold; color: #27112C;">~$88M</span>
+                        </td>
+                      </tr>
+                    </table>
+                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                      <tr>
+                        <td style="padding-top: 10px; font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 13px; color: #86868B;">
+                          Pre-IPO investment by Temasek
+                        </td>
+                      </tr>
+                    </table>
+                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                      <tr>
+                        <td style="padding-top: 16px; font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 14px; color: #1D1D1F; line-height: 1.5;">
+                          Temasek acquired a 6.79% stake in CleanMax, India&#8217;s largest C&amp;I renewable energy provider operating 2.54 GW of solar capacity serving 500+ customers including Apple, Google, and Amazon, as part of an &#8377;1,185 crore (~$88M) pre-IPO round. Investment came days before CleanMax&#8217;s &#8377;5,200 crore IPO opening February 20.
+                        </td>
+                      </tr>
+                    </table>
+                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                      <tr>
+                        <td align="right" style="padding-top: 16px;">
+                          <a href="https://ipocentral.in/cleanmax-pre-ipo-placement/" style="font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 12px; color: #C8B07B; text-decoration: none; font-weight: bold;">Read Source &rarr;</a>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+
+
+        <!-- ========== DIGITAL (1 Deal) ========== -->
+        <table class="email-container" role="presentation" border="0" cellpadding="0" cellspacing="0" width="600" style="max-width: 600px;">
+          <tr>
+            <td class="content-pad" style="padding: 35px 20px 0 20px;">
+              <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-bottom: 2px solid #27112C;">
+                <tr>
+                  <td style="padding-bottom: 10px; font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 14px; font-weight: bold; color: #27112C; text-transform: uppercase; letter-spacing: 2px;">
+                    Digital
+                  </td>
+                  <td align="right" style="padding-bottom: 10px; vertical-align: middle;">
+                    <span style="font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 10px; font-weight: bold; color: #27112C; background-color: #E5E5EA; padding: 4px 10px; letter-spacing: 1px; text-transform: uppercase; border-radius: 10px;">1 DEAL</span>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+
+        <!-- Deal Card: Truespeed & Freedom Fibre -->
+        <table class="email-container" role="presentation" border="0" cellpadding="0" cellspacing="0" width="600" style="max-width: 600px;">
+          <tr>
+            <td class="content-pad" style="padding: 20px 20px 0 20px;">
+              <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #FFFFFF; border: 1px solid #E5E5EA;">
+                <tr>
+                  <td class="card-pad" style="padding: 25px;">
+                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                      <tr>
+                        <td class="deal-name-cell" style="vertical-align: top;">
+                          <span style="font-family: Georgia, 'Times New Roman', serif; font-size: 20px; font-weight: bold; color: #27112C;">Truespeed &amp; Freedom Fibre</span>
+                          <span style="font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 10px; color: #86868B; background-color: #F4F5F7; padding: 3px 8px; letter-spacing: 0.5px; text-transform: uppercase; display: inline-block; margin-left: 6px; border-radius: 3px;">UK</span>
+                        </td>
+                        <td class="deal-value-cell" align="right" style="vertical-align: top; padding-left: 16px; white-space: nowrap;">
+                        </td>
+                      </tr>
+                    </table>
+                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                      <tr>
+                        <td style="padding-top: 10px; font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 13px; color: #86868B;">
+                          Merger &#8212; InfraBridge &amp; Equitix
+                        </td>
+                      </tr>
+                    </table>
+                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                      <tr>
+                        <td style="padding-top: 16px; font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 14px; color: #1D1D1F; line-height: 1.5;">
+                          Freedom Fibre and Truespeed agreed to merge, creating a scaled full-fibre broadband platform with 412K premises across North West, West Midlands, South West, and East of England with ~70K customers. Combines Truespeed&#8217;s retail brand with Freedom Fibre&#8217;s open-access wholesale model, positioning the entity as a consolidation leader in the UK altnet sector.
+                        </td>
+                      </tr>
+                    </table>
+                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                      <tr>
+                        <td align="right" style="padding-top: 16px;">
+                          <a href="https://www.truespeed.com/news/truespeed-and-freedom-fibre-announce-strategic-combination/" style="font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 12px; color: #C8B07B; text-decoration: none; font-weight: bold;">Read Source &rarr;</a>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+
+
+        <!-- ========== MIDSTREAM (1 Deal) ========== -->
+        <table class="email-container" role="presentation" border="0" cellpadding="0" cellspacing="0" width="600" style="max-width: 600px;">
+          <tr>
+            <td class="content-pad" style="padding: 35px 20px 0 20px;">
+              <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-bottom: 2px solid #27112C;">
+                <tr>
+                  <td style="padding-bottom: 10px; font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 14px; font-weight: bold; color: #27112C; text-transform: uppercase; letter-spacing: 2px;">
+                    Midstream
+                  </td>
+                  <td align="right" style="padding-bottom: 10px; vertical-align: middle;">
+                    <span style="font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 10px; font-weight: bold; color: #27112C; background-color: #E5E5EA; padding: 4px 10px; letter-spacing: 1px; text-transform: uppercase; border-radius: 10px;">1 DEAL</span>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+
+        <!-- Deal Card: Delaware Basin Residue -->
+        <table class="email-container" role="presentation" border="0" cellpadding="0" cellspacing="0" width="600" style="max-width: 600px;">
+          <tr>
+            <td class="content-pad" style="padding: 20px 20px 0 20px;">
+              <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #FFFFFF; border: 1px solid #E5E5EA;">
+                <tr>
+                  <td class="card-pad" style="padding: 25px;">
+                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                      <tr>
+                        <td class="deal-name-cell" style="vertical-align: top;">
+                          <span style="font-family: Georgia, 'Times New Roman', serif; font-size: 20px; font-weight: bold; color: #27112C;">Delaware Basin Residue (90%)</span>
+                          <span style="font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 10px; color: #86868B; background-color: #F4F5F7; padding: 3px 8px; letter-spacing: 0.5px; text-transform: uppercase; display: inline-block; margin-left: 6px; border-radius: 3px;">US</span>
+                        </td>
+                        <td class="deal-value-cell" align="right" style="vertical-align: top; padding-left: 16px; white-space: nowrap;">
+                        </td>
+                      </tr>
+                    </table>
+                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                      <tr>
+                        <td style="padding-top: 10px; font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 13px; color: #86868B;">
+                          WhiteWater Midstream <span style="color: #C8B07B; font-weight: bold;">&rarr;</span> I Squared Capital
+                        </td>
+                      </tr>
+                    </table>
+                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                      <tr>
+                        <td style="padding-top: 16px; font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 14px; color: #1D1D1F; line-height: 1.5;">
+                          I Squared acquired a 90% stake in Delaware Basin Residue from WhiteWater Midstream, an intrastate natural gas pipeline spanning 200+ miles with 3+ Bcf/d capacity connecting Delaware Basin processing plants to the Waha Hub. Feeds into major downstream connections including the Whistler Pipeline to Gulf Coast LNG export corridors.
+                        </td>
+                      </tr>
+                    </table>
+                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                      <tr>
+                        <td align="right" style="padding-top: 16px;">
+                          <a href="https://isquaredcapital.com/cpt_news/i-squared-capital-to-acquire-stake-in-strategic-permian-natural-gas-pipeline-asset/" style="font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 12px; color: #C8B07B; text-decoration: none; font-weight: bold;">Read Source &rarr;</a>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+
+
+        <!-- ========== TRANSPORTATION (1 Deal) ========== -->
+        <table class="email-container" role="presentation" border="0" cellpadding="0" cellspacing="0" width="600" style="max-width: 600px;">
+          <tr>
+            <td class="content-pad" style="padding: 35px 20px 0 20px;">
+              <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-bottom: 2px solid #27112C;">
+                <tr>
+                  <td style="padding-bottom: 10px; font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 14px; font-weight: bold; color: #27112C; text-transform: uppercase; letter-spacing: 2px;">
+                    Transportation
+                  </td>
+                  <td align="right" style="padding-bottom: 10px; vertical-align: middle;">
+                    <span style="font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 10px; font-weight: bold; color: #27112C; background-color: #E5E5EA; padding: 4px 10px; letter-spacing: 1px; text-transform: uppercase; border-radius: 10px;">1 DEAL</span>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+
+        <!-- Deal Card: American Roads -->
+        <table class="email-container" role="presentation" border="0" cellpadding="0" cellspacing="0" width="600" style="max-width: 600px;">
+          <tr>
+            <td class="content-pad" style="padding: 20px 20px 0 20px;">
+              <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #FFFFFF; border: 1px solid #E5E5EA;">
+                <tr>
+                  <td class="card-pad" style="padding: 25px;">
+                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                      <tr>
+                        <td class="deal-name-cell" style="vertical-align: top;">
+                          <span style="font-family: Georgia, 'Times New Roman', serif; font-size: 20px; font-weight: bold; color: #27112C;">American Roads</span>
+                          <span style="font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 10px; color: #86868B; background-color: #F4F5F7; padding: 3px 8px; letter-spacing: 0.5px; text-transform: uppercase; display: inline-block; margin-left: 6px; border-radius: 3px;">US</span>
+                        </td>
+                        <td class="deal-value-cell" align="right" style="vertical-align: top; padding-left: 16px; white-space: nowrap;">
+                        </td>
+                      </tr>
+                    </table>
+                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                      <tr>
+                        <td style="padding-top: 10px; font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 13px; color: #86868B;">
+                          CVC DIF <span style="color: #C8B07B; font-weight: bold;">&rarr;</span> John Laing (KKR)
+                        </td>
+                      </tr>
+                    </table>
+                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                      <tr>
+                        <td style="padding-top: 16px; font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 14px; color: #1D1D1F; line-height: 1.5;">
+                          John Laing (KKR) agreed to acquire American Roads from CVC DIF, a portfolio of four tolled facilities including three perpetual-right toll bridges in Alabama and the US-side concession of the Detroit-Windsor Tunnel, a strategic international border crossing serving ~7M trips annually.
+                        </td>
+                      </tr>
+                    </table>
+                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                      <tr>
+                        <td align="right" style="padding-top: 16px;">
+                          <a href="https://www.cvc.com/media/news/2026/cvc-dif-agrees-sale-of-american-roads-to-john-laing/" style="font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 12px; color: #C8B07B; text-decoration: none; font-weight: bold;">Read Source &rarr;</a>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+
+
+        <!-- ========== WASTE & ENVIRONMENTAL SERVICES (1 Deal) ========== -->
+        <table class="email-container" role="presentation" border="0" cellpadding="0" cellspacing="0" width="600" style="max-width: 600px;">
+          <tr>
+            <td class="content-pad" style="padding: 35px 20px 0 20px;">
+              <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-bottom: 2px solid #27112C;">
+                <tr>
+                  <td style="padding-bottom: 10px; font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 14px; font-weight: bold; color: #27112C; text-transform: uppercase; letter-spacing: 2px;">
+                    Waste &amp; Environmental Services
+                  </td>
+                  <td align="right" style="padding-bottom: 10px; vertical-align: middle;">
+                    <span style="font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 10px; font-weight: bold; color: #27112C; background-color: #E5E5EA; padding: 4px 10px; letter-spacing: 1px; text-transform: uppercase; border-radius: 10px;">1 DEAL</span>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+
+        <!-- Deal Card: Urbaser -->
+        <table class="email-container" role="presentation" border="0" cellpadding="0" cellspacing="0" width="600" style="max-width: 600px;">
+          <tr>
+            <td class="content-pad" style="padding: 20px 20px 0 20px;">
+              <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #FFFFFF; border: 1px solid #E5E5EA;">
+                <tr>
+                  <td class="card-pad" style="padding: 25px;">
+                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                      <tr>
+                        <td class="deal-name-cell" style="vertical-align: top;">
+                          <span style="font-family: Georgia, 'Times New Roman', serif; font-size: 20px; font-weight: bold; color: #27112C;">Urbaser</span>
+                          <span style="font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 10px; color: #86868B; background-color: #F4F5F7; padding: 3px 8px; letter-spacing: 0.5px; text-transform: uppercase; display: inline-block; margin-left: 6px; border-radius: 3px;">Spain</span>
+                        </td>
+                        <td class="deal-value-cell" align="right" style="vertical-align: top; padding-left: 16px; white-space: nowrap;">
+                          <span class="deal-val" style="font-family: Georgia, 'Times New Roman', serif; font-size: 32px; font-weight: bold; color: #27112C;">$6.6B</span>
+                        </td>
+                      </tr>
+                    </table>
+                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                      <tr>
+                        <td style="padding-top: 10px; font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 13px; color: #86868B;">
+                          Platinum Equity <span style="color: #C8B07B; font-weight: bold;">&rarr;</span> Blackstone &amp; EQT
+                        </td>
+                      </tr>
+                    </table>
+                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                      <tr>
+                        <td style="padding-top: 16px; font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 14px; color: #1D1D1F; line-height: 1.5;">
                           Joint acquisition of Urbaser, a Madrid-headquartered global waste management platform serving 60M+ people across 15 countries with 50,000+ employees, from Platinum Equity at ~$6.6B (&#8364;5.6B). Each buyer will hold a 50% stake. Under Platinum&#8217;s ownership since 2021, Urbaser grew revenue by 60% and EBITDA by 70%; Platinum retains the Argentina business (~$90M EBITDA) as a carve-out.
                         </td>
                       </tr>
+                    </table>
+                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
                       <tr>
-                        <td style="padding-top: 12px;">
-                          <a href="https://www.blackstone.com/news/press/blackstone-infrastructure-and-eqt-to-acquire-urbaser/" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 13px; color: #C5B382; text-decoration: none; font-weight: 600;">Read Source &#8594;</a>
+                        <td align="right" style="padding-top: 16px;">
+                          <a href="https://www.blackstone.com/news/press/blackstone-infrastructure-and-eqt-to-acquire-urbaser/" style="font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 12px; color: #C8B07B; text-decoration: none; font-weight: bold;">Read Source &rarr;</a>
                         </td>
                       </tr>
                     </table>
@@ -208,793 +635,460 @@
               </table>
             </td>
           </tr>
+        </table>
 
 
-          <!-- ============================================ -->
-          <!-- SECTOR: POWER & ENERGY TRANSITION            -->
-          <!-- ============================================ -->
+        <!-- ========== SOCIAL (0 Deals) ========== -->
+        <table class="email-container" role="presentation" border="0" cellpadding="0" cellspacing="0" width="600" style="max-width: 600px;">
           <tr>
-            <td class="content-pad" style="padding: 48px 40px 0 40px;">
-              <!-- Sector header -->
-              <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+            <td class="content-pad" style="padding: 35px 20px 0 20px;">
+              <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-bottom: 2px solid #27112C;">
                 <tr>
-                  <td style="border-bottom: 1px solid #DDDDDD; padding-bottom: 10px;">
-                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
-                      <tr>
-                        <td style="font-family: Georgia, 'Times New Roman', serif; font-size: 16px; font-weight: 700; color: #1D1D1F; text-transform: uppercase; letter-spacing: 1px;">
-                          Power &amp; ET
-                        </td>
-                        <td align="right" style="vertical-align: middle;">
-                          <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 10px; font-weight: 700; color: #777777; background-color: #F0F0F0; padding: 3px 8px; letter-spacing: 0.5px; text-transform: uppercase;">4 DEALS</span>
-                        </td>
-                      </tr>
-                    </table>
+                  <td style="padding-bottom: 10px; font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 14px; font-weight: bold; color: #27112C; text-transform: uppercase; letter-spacing: 2px;">
+                    Social
                   </td>
-                </tr>
-              </table>
-
-              <!-- Deal 1: Inkia Energy -->
-              <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
-                <tr>
-                  <td style="padding: 24px 0 30px 0; border-bottom: 1px solid #EEEEEE;">
-                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
-                      <tr>
-                        <td class="deal-name-cell" style="vertical-align: top;">
-                          <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 15px; color: #1D1D1F; font-weight: 700;">Inkia Energy (50% Stake)</span>
-                          <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 10px; color: #777777; background-color: #EAEBEC; padding: 2px 6px; letter-spacing: 0.5px; text-transform: uppercase; display: inline-block; margin-left: 4px;">Peru</span>
-                          <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 12px; color: #777777; font-weight: 600; padding-top: 4px;">
-                            I Squared Capital &#8594; CPP Investments
-                          </div>
-                        </td>
-                        <td class="deal-value-cell" align="right" style="vertical-align: top; padding-left: 16px; white-space: nowrap;">
-                          <span class="deal-val" style="font-family: Georgia, 'Times New Roman', serif; font-size: 22px; color: #3B1A40; font-weight: 700;">$3.4B</span>
-                        </td>
-                      </tr>
-                    </table>
-                    <div style="padding-top: 14px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 14px; color: #444444; line-height: 1.5;">
-                      CPP Investments to acquire 50% of Inkia Energy, a Peruvian power generation platform operating a diversified 2.6 GW portfolio with a 4+ GW development pipeline of wind, solar, gas, and battery storage, at an enterprise value of ~$3.4B. I Squared Capital, invested since 2017, rolled its remaining stake into a continuation vehicle.
-                    </div>
-                    <div style="padding-top: 12px;">
-                      <a href="https://www.newswire.ca/news-releases/cpp-investments-to-invest-in-inkia-alongside-i-squared-capital-811136352.html" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 13px; color: #C5B382; text-decoration: none; font-weight: 600;">Read Source &#8594;</a>
-                    </div>
-                  </td>
-                </tr>
-              </table>
-
-              <!-- Deal 2: Centrica Energy Solutions -->
-              <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
-                <tr>
-                  <td style="padding: 24px 0 30px 0; border-bottom: 1px solid #EEEEEE;">
-                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
-                      <tr>
-                        <td class="deal-name-cell" style="vertical-align: top;">
-                          <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 15px; color: #1D1D1F; font-weight: 700;">Centrica Energy Solutions</span>
-                          <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 10px; color: #777777; background-color: #EAEBEC; padding: 2px 6px; letter-spacing: 0.5px; text-transform: uppercase; display: inline-block; margin-left: 4px;">Italy / Netherlands</span>
-                          <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 12px; color: #777777; font-weight: 600; padding-top: 4px;">
-                            Centrica &#8594; 3i Infrastructure (Joulz)
-                          </div>
-                        </td>
-                        <td class="deal-value-cell" align="right" style="vertical-align: top; padding-left: 16px; white-space: nowrap;">
-                        </td>
-                      </tr>
-                    </table>
-                    <div style="padding-top: 14px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 14px; color: #444444; line-height: 1.5;">
-                      3i portfolio company Joulz completed acquisition of Centrica&#8217;s non-core energy solutions businesses in Italy and the Netherlands, offering C&amp;I customers onsite CHP, solar, battery storage, and energy management. Part of a broader Centrica disposal exceeding &#163;80M as it recycles capital to focus on core growth priorities.
-                    </div>
-                    <div style="padding-top: 12px;">
-                      <a href="https://www.centrica.com/media-centre/news/2026/sale-of-european-energy-solutions-businesses-and-panoramic-power/" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 13px; color: #C5B382; text-decoration: none; font-weight: 600;">Read Source &#8594;</a>
-                    </div>
-                  </td>
-                </tr>
-              </table>
-
-              <!-- Deal 3: Fig Power -->
-              <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
-                <tr>
-                  <td style="padding: 24px 0 30px 0; border-bottom: 1px solid #EEEEEE;">
-                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
-                      <tr>
-                        <td class="deal-name-cell" style="vertical-align: top;">
-                          <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 15px; color: #1D1D1F; font-weight: 700;">Fig Power (1.7 GW Pipeline)</span>
-                          <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 10px; color: #777777; background-color: #EAEBEC; padding: 2px 6px; letter-spacing: 0.5px; text-transform: uppercase; display: inline-block; margin-left: 4px;">UK</span>
-                          <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 12px; color: #777777; font-weight: 600; padding-top: 4px;">
-                            Acquired by InfraRed (TRIG)
-                          </div>
-                        </td>
-                        <td class="deal-value-cell" align="right" style="vertical-align: top; padding-left: 16px; white-space: nowrap;">
-                        </td>
-                      </tr>
-                    </table>
-                    <div style="padding-top: 14px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 14px; color: #444444; line-height: 1.5;">
-                      TRIG acquired 100% of Fig Power, a Bristol-based battery energy storage developer with a 1.7 GW UK pipeline comprising nine advanced projects and exclusive sites. TRIG committed ~&#163;20M over two years, gaining proprietary development capabilities in storage to complement its existing renewable generation portfolio.
-                    </div>
-                    <div style="padding-top: 12px;">
-                      <a href="https://www.trig-ltd.com/news-media/news/trig-acquires-fig-power-a-uk-energy-projects-developer/" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 13px; color: #C5B382; text-decoration: none; font-weight: 600;">Read Source &#8594;</a>
-                    </div>
-                  </td>
-                </tr>
-              </table>
-
-              <!-- Deal 4: CleanMax -->
-              <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
-                <tr>
-                  <td style="padding: 24px 0 30px 0;">
-                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
-                      <tr>
-                        <td class="deal-name-cell" style="vertical-align: top;">
-                          <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 15px; color: #1D1D1F; font-weight: 700;">CleanMax (6.79% Stake)</span>
-                          <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 10px; color: #777777; background-color: #EAEBEC; padding: 2px 6px; letter-spacing: 0.5px; text-transform: uppercase; display: inline-block; margin-left: 4px;">India</span>
-                          <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 12px; color: #777777; font-weight: 600; padding-top: 4px;">
-                            Pre-IPO investment by Temasek
-                          </div>
-                        </td>
-                        <td class="deal-value-cell" align="right" style="vertical-align: top; padding-left: 16px; white-space: nowrap;">
-                          <span class="deal-val" style="font-family: Georgia, 'Times New Roman', serif; font-size: 22px; color: #3B1A40; font-weight: 700;">~$88M</span>
-                        </td>
-                      </tr>
-                    </table>
-                    <div style="padding-top: 14px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 14px; color: #444444; line-height: 1.5;">
-                      Temasek acquired a 6.79% stake in CleanMax, India&#8217;s largest C&amp;I renewable energy provider operating 2.54 GW of solar capacity serving 500+ customers including Apple, Google, and Amazon, as part of an &#8377;1,185 crore (~$88M) pre-IPO round. Investment came days before CleanMax&#8217;s &#8377;5,200 crore IPO opening February 20.
-                    </div>
-                    <div style="padding-top: 12px;">
-                      <a href="https://ipocentral.in/cleanmax-pre-ipo-placement/" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 13px; color: #C5B382; text-decoration: none; font-weight: 600;">Read Source &#8594;</a>
-                    </div>
-                  </td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-
-
-          <!-- ============================================ -->
-          <!-- SECTOR: DIGITAL                              -->
-          <!-- ============================================ -->
-          <tr>
-            <td class="content-pad" style="padding: 48px 40px 0 40px;">
-              <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
-                <tr>
-                  <td style="border-bottom: 1px solid #DDDDDD; padding-bottom: 10px;">
-                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
-                      <tr>
-                        <td style="font-family: Georgia, 'Times New Roman', serif; font-size: 16px; font-weight: 700; color: #1D1D1F; text-transform: uppercase; letter-spacing: 1px;">
-                          Digital
-                        </td>
-                        <td align="right" style="vertical-align: middle;">
-                          <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 10px; font-weight: 700; color: #777777; background-color: #F0F0F0; padding: 3px 8px; letter-spacing: 0.5px; text-transform: uppercase;">1 DEAL</span>
-                        </td>
-                      </tr>
-                    </table>
-                  </td>
-                </tr>
-              </table>
-
-              <!-- Deal: Truespeed & Freedom Fibre -->
-              <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
-                <tr>
-                  <td style="padding: 24px 0 30px 0;">
-                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
-                      <tr>
-                        <td class="deal-name-cell" style="vertical-align: top;">
-                          <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 15px; color: #1D1D1F; font-weight: 700;">Truespeed &amp; Freedom Fibre</span>
-                          <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 10px; color: #777777; background-color: #EAEBEC; padding: 2px 6px; letter-spacing: 0.5px; text-transform: uppercase; display: inline-block; margin-left: 4px;">UK</span>
-                          <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 12px; color: #777777; font-weight: 600; padding-top: 4px;">
-                            Merger &#8212; InfraBridge &amp; Equitix
-                          </div>
-                        </td>
-                        <td class="deal-value-cell" align="right" style="vertical-align: top; padding-left: 16px; white-space: nowrap;">
-                        </td>
-                      </tr>
-                    </table>
-                    <div style="padding-top: 14px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 14px; color: #444444; line-height: 1.5;">
-                      Freedom Fibre and Truespeed agreed to merge, creating a scaled full-fibre broadband platform with 412K premises across North West, West Midlands, South West, and East of England with ~70K customers. Combines Truespeed&#8217;s retail brand with Freedom Fibre&#8217;s open-access wholesale model, positioning the entity as a consolidation leader in the UK altnet sector.
-                    </div>
-                    <div style="padding-top: 12px;">
-                      <a href="https://www.truespeed.com/news/truespeed-and-freedom-fibre-announce-strategic-combination/" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 13px; color: #C5B382; text-decoration: none; font-weight: 600;">Read Source &#8594;</a>
-                    </div>
-                  </td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-
-
-          <!-- ============================================ -->
-          <!-- SECTOR: MIDSTREAM                            -->
-          <!-- ============================================ -->
-          <tr>
-            <td class="content-pad" style="padding: 48px 40px 0 40px;">
-              <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
-                <tr>
-                  <td style="border-bottom: 1px solid #DDDDDD; padding-bottom: 10px;">
-                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
-                      <tr>
-                        <td style="font-family: Georgia, 'Times New Roman', serif; font-size: 16px; font-weight: 700; color: #1D1D1F; text-transform: uppercase; letter-spacing: 1px;">
-                          Midstream
-                        </td>
-                        <td align="right" style="vertical-align: middle;">
-                          <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 10px; font-weight: 700; color: #777777; background-color: #F0F0F0; padding: 3px 8px; letter-spacing: 0.5px; text-transform: uppercase;">1 DEAL</span>
-                        </td>
-                      </tr>
-                    </table>
-                  </td>
-                </tr>
-              </table>
-
-              <!-- Deal: Delaware Basin Residue -->
-              <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
-                <tr>
-                  <td style="padding: 24px 0 30px 0;">
-                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
-                      <tr>
-                        <td class="deal-name-cell" style="vertical-align: top;">
-                          <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 15px; color: #1D1D1F; font-weight: 700;">Delaware Basin Residue (90%)</span>
-                          <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 10px; color: #777777; background-color: #EAEBEC; padding: 2px 6px; letter-spacing: 0.5px; text-transform: uppercase; display: inline-block; margin-left: 4px;">US</span>
-                          <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 12px; color: #777777; font-weight: 600; padding-top: 4px;">
-                            WhiteWater Midstream &#8594; I Squared Capital
-                          </div>
-                        </td>
-                        <td class="deal-value-cell" align="right" style="vertical-align: top; padding-left: 16px; white-space: nowrap;">
-                        </td>
-                      </tr>
-                    </table>
-                    <div style="padding-top: 14px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 14px; color: #444444; line-height: 1.5;">
-                      I Squared acquired a 90% stake in Delaware Basin Residue from WhiteWater Midstream, an intrastate natural gas pipeline spanning 200+ miles with 3+ Bcf/d capacity connecting Delaware Basin processing plants to the Waha Hub. Feeds into major downstream connections including the Whistler Pipeline to Gulf Coast LNG export corridors.
-                    </div>
-                    <div style="padding-top: 12px;">
-                      <a href="https://isquaredcapital.com/cpt_news/i-squared-capital-to-acquire-stake-in-strategic-permian-natural-gas-pipeline-asset/" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 13px; color: #C5B382; text-decoration: none; font-weight: 600;">Read Source &#8594;</a>
-                    </div>
-                  </td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-
-
-          <!-- ============================================ -->
-          <!-- SECTOR: TRANSPORTATION                       -->
-          <!-- ============================================ -->
-          <tr>
-            <td class="content-pad" style="padding: 48px 40px 0 40px;">
-              <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
-                <tr>
-                  <td style="border-bottom: 1px solid #DDDDDD; padding-bottom: 10px;">
-                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
-                      <tr>
-                        <td style="font-family: Georgia, 'Times New Roman', serif; font-size: 16px; font-weight: 700; color: #1D1D1F; text-transform: uppercase; letter-spacing: 1px;">
-                          Transportation
-                        </td>
-                        <td align="right" style="vertical-align: middle;">
-                          <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 10px; font-weight: 700; color: #777777; background-color: #F0F0F0; padding: 3px 8px; letter-spacing: 0.5px; text-transform: uppercase;">1 DEAL</span>
-                        </td>
-                      </tr>
-                    </table>
-                  </td>
-                </tr>
-              </table>
-
-              <!-- Deal: American Roads -->
-              <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
-                <tr>
-                  <td style="padding: 24px 0 30px 0;">
-                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
-                      <tr>
-                        <td class="deal-name-cell" style="vertical-align: top;">
-                          <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 15px; color: #1D1D1F; font-weight: 700;">American Roads</span>
-                          <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 10px; color: #777777; background-color: #EAEBEC; padding: 2px 6px; letter-spacing: 0.5px; text-transform: uppercase; display: inline-block; margin-left: 4px;">US</span>
-                          <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 12px; color: #777777; font-weight: 600; padding-top: 4px;">
-                            CVC DIF &#8594; John Laing (KKR)
-                          </div>
-                        </td>
-                        <td class="deal-value-cell" align="right" style="vertical-align: top; padding-left: 16px; white-space: nowrap;">
-                        </td>
-                      </tr>
-                    </table>
-                    <div style="padding-top: 14px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 14px; color: #444444; line-height: 1.5;">
-                      John Laing (KKR) agreed to acquire American Roads from CVC DIF, a portfolio of four tolled facilities including three perpetual-right toll bridges in Alabama and the US-side concession of the Detroit-Windsor Tunnel, a strategic international border crossing serving ~7M trips annually.
-                    </div>
-                    <div style="padding-top: 12px;">
-                      <a href="https://www.cvc.com/media/news/2026/cvc-dif-agrees-sale-of-american-roads-to-john-laing/" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 13px; color: #C5B382; text-decoration: none; font-weight: 600;">Read Source &#8594;</a>
-                    </div>
-                  </td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-
-
-          <!-- ============================================ -->
-          <!-- SECTOR: WASTE & ENVIRONMENTAL SERVICES       -->
-          <!-- ============================================ -->
-          <tr>
-            <td class="content-pad" style="padding: 48px 40px 0 40px;">
-              <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
-                <tr>
-                  <td style="border-bottom: 1px solid #DDDDDD; padding-bottom: 10px;">
-                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
-                      <tr>
-                        <td style="font-family: Georgia, 'Times New Roman', serif; font-size: 16px; font-weight: 700; color: #1D1D1F; text-transform: uppercase; letter-spacing: 1px;">
-                          Waste &amp; Environmental Services
-                        </td>
-                        <td align="right" style="vertical-align: middle;">
-                          <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 10px; font-weight: 700; color: #777777; background-color: #F0F0F0; padding: 3px 8px; letter-spacing: 0.5px; text-transform: uppercase;">1 DEAL</span>
-                        </td>
-                      </tr>
-                    </table>
-                  </td>
-                </tr>
-              </table>
-
-              <!-- Deal: Urbaser -->
-              <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
-                <tr>
-                  <td style="padding: 24px 0 30px 0;">
-                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
-                      <tr>
-                        <td class="deal-name-cell" style="vertical-align: top;">
-                          <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 15px; color: #1D1D1F; font-weight: 700;">Urbaser</span>
-                          <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 10px; color: #777777; background-color: #EAEBEC; padding: 2px 6px; letter-spacing: 0.5px; text-transform: uppercase; display: inline-block; margin-left: 4px;">Spain</span>
-                          <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 12px; color: #777777; font-weight: 600; padding-top: 4px;">
-                            Platinum Equity &#8594; Blackstone &amp; EQT
-                          </div>
-                        </td>
-                        <td class="deal-value-cell" align="right" style="vertical-align: top; padding-left: 16px; white-space: nowrap;">
-                          <span class="deal-val" style="font-family: Georgia, 'Times New Roman', serif; font-size: 22px; color: #3B1A40; font-weight: 700;">$6.6B</span>
-                        </td>
-                      </tr>
-                    </table>
-                    <div style="padding-top: 14px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 14px; color: #444444; line-height: 1.5;">
-                      Joint $6.6B acquisition of Urbaser, a global waste management platform serving 60M+ people across 15 countries. 50/50 ownership split; Platinum Equity retains Argentina operations as a carve-out from the transaction.
-                    </div>
-                    <div style="padding-top: 12px;">
-                      <a href="https://www.blackstone.com/news/press/blackstone-infrastructure-and-eqt-to-acquire-urbaser/" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 13px; color: #C5B382; text-decoration: none; font-weight: 600;">Read Source &#8594;</a>
-                    </div>
-                  </td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-
-
-          <!-- ============================================ -->
-          <!-- SECTOR: SOCIAL (0 Deals)                     -->
-          <!-- ============================================ -->
-          <tr>
-            <td class="content-pad" style="padding: 48px 40px 0 40px;">
-              <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
-                <tr>
-                  <td style="border-bottom: 1px solid #DDDDDD; padding-bottom: 10px;">
-                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
-                      <tr>
-                        <td style="font-family: Georgia, 'Times New Roman', serif; font-size: 16px; font-weight: 700; color: #1D1D1F; text-transform: uppercase; letter-spacing: 1px;">
-                          Social
-                        </td>
-                        <td align="right" style="vertical-align: middle;">
-                          <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 10px; font-weight: 700; color: #AAAAAA; background-color: #F0F0F0; padding: 3px 8px; letter-spacing: 0.5px; text-transform: uppercase;">0 DEALS</span>
-                        </td>
-                      </tr>
-                    </table>
+                  <td align="right" style="padding-bottom: 10px; vertical-align: middle;">
+                    <span style="font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 10px; font-weight: bold; color: #86868B; background-color: #E5E5EA; padding: 4px 10px; letter-spacing: 1px; text-transform: uppercase; border-radius: 10px;">0 DEALS</span>
                   </td>
                 </tr>
               </table>
               <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
                 <tr>
-                  <td style="padding: 20px 0 10px 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 13px; color: #AAAAAA; font-style: italic;">
+                  <td style="padding: 20px 0 0 0; font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 13px; color: #86868B; font-style: italic;">
                     No transactions reported this week
                   </td>
                 </tr>
               </table>
             </td>
           </tr>
+        </table>
 
 
-          <!-- ============================================ -->
-          <!-- SECTOR: UTILITIES (0 Deals)                  -->
-          <!-- ============================================ -->
+        <!-- ========== UTILITIES (0 Deals) ========== -->
+        <table class="email-container" role="presentation" border="0" cellpadding="0" cellspacing="0" width="600" style="max-width: 600px;">
           <tr>
-            <td class="content-pad" style="padding: 48px 40px 0 40px;">
-              <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+            <td class="content-pad" style="padding: 35px 20px 0 20px;">
+              <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-bottom: 2px solid #27112C;">
                 <tr>
-                  <td style="border-bottom: 1px solid #DDDDDD; padding-bottom: 10px;">
-                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
-                      <tr>
-                        <td style="font-family: Georgia, 'Times New Roman', serif; font-size: 16px; font-weight: 700; color: #1D1D1F; text-transform: uppercase; letter-spacing: 1px;">
-                          Utilities
-                        </td>
-                        <td align="right" style="vertical-align: middle;">
-                          <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 10px; font-weight: 700; color: #AAAAAA; background-color: #F0F0F0; padding: 3px 8px; letter-spacing: 0.5px; text-transform: uppercase;">0 DEALS</span>
-                        </td>
-                      </tr>
-                    </table>
+                  <td style="padding-bottom: 10px; font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 14px; font-weight: bold; color: #27112C; text-transform: uppercase; letter-spacing: 2px;">
+                    Utilities
+                  </td>
+                  <td align="right" style="padding-bottom: 10px; vertical-align: middle;">
+                    <span style="font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 10px; font-weight: bold; color: #86868B; background-color: #E5E5EA; padding: 4px 10px; letter-spacing: 1px; text-transform: uppercase; border-radius: 10px;">0 DEALS</span>
                   </td>
                 </tr>
               </table>
               <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
                 <tr>
-                  <td style="padding: 20px 0 10px 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 13px; color: #AAAAAA; font-style: italic;">
+                  <td style="padding: 20px 0 0 0; font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 13px; color: #86868B; font-style: italic;">
                     No transactions reported this week
                   </td>
                 </tr>
               </table>
             </td>
           </tr>
+        </table>
 
 
-          <!-- ============================================ -->
-          <!-- YTD 2026 M&A STATS                           -->
-          <!-- ============================================ -->
+        <!-- ============================================ -->
+        <!-- SECTION 4: M&A STATS DASHBOARD               -->
+        <!-- ============================================ -->
+        <table class="email-container" role="presentation" border="0" cellpadding="0" cellspacing="0" width="600" style="max-width: 600px;">
           <tr>
-            <td class="content-pad" style="padding: 56px 40px 0 40px;">
-              <!-- Section divider -->
-              <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+            <td class="content-pad" style="padding: 35px 20px 0 20px;">
+              <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #FFFFFF; border: 1px solid #E5E5EA;">
                 <tr>
-                  <td style="border-bottom: 1px solid #C5B382; font-size: 1px; line-height: 1px;">&nbsp;</td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-
-          <tr>
-            <td class="content-pad" style="padding: 40px 40px 0 40px;">
-              <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
-                <tr>
-                  <td style="padding-bottom: 6px;">
-                    <span style="font-family: Georgia, 'Times New Roman', serif; font-size: 20px; font-weight: 700; color: #1D1D1F;">Infrastructure Sponsors M&amp;A</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td style="padding-bottom: 32px;">
-                    <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 13px; color: #999999;">58 Deals &middot; YTD 2026</span>
-                  </td>
-                </tr>
-
-                <!-- BY SECTOR -->
-                <tr>
-                  <td style="padding-bottom: 32px;">
+                  <td style="padding: 30px;">
+                    <!-- Dashboard Title -->
                     <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
                       <tr>
-                        <td style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 11px; color: #999999; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 600; padding-bottom: 16px; border-bottom: 1px solid #EEEEEE;">
+                        <td style="padding-bottom: 4px;">
+                          <span style="font-family: Georgia, 'Times New Roman', serif; font-size: 20px; font-weight: bold; color: #27112C;">Infrastructure Sponsors M&amp;A</span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="padding-bottom: 28px;">
+                          <span style="font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 13px; color: #86868B;">58 Deals &middot; YTD 2026</span>
+                        </td>
+                      </tr>
+                    </table>
+
+                    <!-- BY SECTOR -->
+                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                      <tr>
+                        <td style="font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 11px; color: #86868B; text-transform: uppercase; letter-spacing: 2px; font-weight: bold; padding-bottom: 16px; border-bottom: 1px solid #E5E5EA;">
                           By Sector
                         </td>
                       </tr>
 
-                      <!-- Power & ET: 22 = 100% -->
+                      <!-- Power & ET: 22 -->
                       <tr>
                         <td style="padding-top: 16px;">
                           <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
                             <tr>
-                              <td style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 13px; color: #444444;">Power &amp; ET</td>
-                              <td align="right" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 13px; color: #3B1A40; font-weight: 700;">22</td>
+                              <td style="font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 13px; color: #1D1D1F;">Power &amp; ET</td>
+                              <td align="right" style="font-family: Georgia, 'Times New Roman', serif; font-size: 18px; font-weight: bold; color: #27112C;">22</td>
                             </tr>
                           </table>
                         </td>
                       </tr>
                       <tr>
                         <td style="padding-top: 6px;">
-                          <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #F0F0F0;">
+                          <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #F4F5F7;">
                             <tr>
-                              <td style="background-color: #3B1A40; width: 100%; height: 6px; font-size: 1px; line-height: 1px; mso-line-height-rule: exactly;">&nbsp;</td>
+                              <td style="background-color: #27112C; width: 100%; height: 6px; font-size: 1px; line-height: 1px; mso-line-height-rule: exactly;">&nbsp;</td>
                             </tr>
                           </table>
                         </td>
                       </tr>
 
-                      <!-- Digital: 14 = 64% -->
+                      <!-- Digital: 14 -->
                       <tr>
                         <td style="padding-top: 14px;">
                           <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
                             <tr>
-                              <td style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 13px; color: #444444;">Digital</td>
-                              <td align="right" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 13px; color: #3B1A40; font-weight: 700;">14</td>
+                              <td style="font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 13px; color: #1D1D1F;">Digital</td>
+                              <td align="right" style="font-family: Georgia, 'Times New Roman', serif; font-size: 18px; font-weight: bold; color: #27112C;">14</td>
                             </tr>
                           </table>
                         </td>
                       </tr>
                       <tr>
                         <td style="padding-top: 6px;">
-                          <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #F0F0F0;">
+                          <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #F4F5F7;">
                             <tr>
-                              <td style="background-color: #3B1A40; width: 64%; height: 6px; font-size: 1px; line-height: 1px; mso-line-height-rule: exactly;">&nbsp;</td>
+                              <td style="background-color: #27112C; width: 64%; height: 6px; font-size: 1px; line-height: 1px; mso-line-height-rule: exactly;">&nbsp;</td>
                               <td style="font-size: 1px; line-height: 1px;">&nbsp;</td>
                             </tr>
                           </table>
                         </td>
                       </tr>
 
-                      <!-- Transportation: 10 = 45% -->
+                      <!-- Transportation: 10 -->
                       <tr>
                         <td style="padding-top: 14px;">
                           <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
                             <tr>
-                              <td style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 13px; color: #444444;">Transportation</td>
-                              <td align="right" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 13px; color: #3B1A40; font-weight: 700;">10</td>
+                              <td style="font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 13px; color: #1D1D1F;">Transportation</td>
+                              <td align="right" style="font-family: Georgia, 'Times New Roman', serif; font-size: 18px; font-weight: bold; color: #27112C;">10</td>
                             </tr>
                           </table>
                         </td>
                       </tr>
                       <tr>
                         <td style="padding-top: 6px;">
-                          <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #F0F0F0;">
+                          <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #F4F5F7;">
                             <tr>
-                              <td style="background-color: #3B1A40; width: 45%; height: 6px; font-size: 1px; line-height: 1px; mso-line-height-rule: exactly;">&nbsp;</td>
+                              <td style="background-color: #27112C; width: 45%; height: 6px; font-size: 1px; line-height: 1px; mso-line-height-rule: exactly;">&nbsp;</td>
                               <td style="font-size: 1px; line-height: 1px;">&nbsp;</td>
                             </tr>
                           </table>
                         </td>
                       </tr>
 
-                      <!-- Utilities: 4 = 18% -->
+                      <!-- Utilities: 4 -->
                       <tr>
                         <td style="padding-top: 14px;">
                           <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
                             <tr>
-                              <td style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 13px; color: #444444;">Utilities</td>
-                              <td align="right" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 13px; color: #3B1A40; font-weight: 700;">4</td>
+                              <td style="font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 13px; color: #1D1D1F;">Utilities</td>
+                              <td align="right" style="font-family: Georgia, 'Times New Roman', serif; font-size: 18px; font-weight: bold; color: #27112C;">4</td>
                             </tr>
                           </table>
                         </td>
                       </tr>
                       <tr>
                         <td style="padding-top: 6px;">
-                          <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #F0F0F0;">
+                          <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #F4F5F7;">
                             <tr>
-                              <td style="background-color: #3B1A40; width: 18%; height: 6px; font-size: 1px; line-height: 1px; mso-line-height-rule: exactly;">&nbsp;</td>
+                              <td style="background-color: #27112C; width: 18%; height: 6px; font-size: 1px; line-height: 1px; mso-line-height-rule: exactly;">&nbsp;</td>
                               <td style="font-size: 1px; line-height: 1px;">&nbsp;</td>
                             </tr>
                           </table>
                         </td>
                       </tr>
 
-                      <!-- Midstream: 3 = 14% -->
+                      <!-- Midstream: 3 -->
                       <tr>
                         <td style="padding-top: 14px;">
                           <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
                             <tr>
-                              <td style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 13px; color: #444444;">Midstream</td>
-                              <td align="right" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 13px; color: #3B1A40; font-weight: 700;">3</td>
+                              <td style="font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 13px; color: #1D1D1F;">Midstream</td>
+                              <td align="right" style="font-family: Georgia, 'Times New Roman', serif; font-size: 18px; font-weight: bold; color: #27112C;">3</td>
                             </tr>
                           </table>
                         </td>
                       </tr>
                       <tr>
                         <td style="padding-top: 6px;">
-                          <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #F0F0F0;">
+                          <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #F4F5F7;">
                             <tr>
-                              <td style="background-color: #3B1A40; width: 14%; height: 6px; font-size: 1px; line-height: 1px; mso-line-height-rule: exactly;">&nbsp;</td>
+                              <td style="background-color: #27112C; width: 14%; height: 6px; font-size: 1px; line-height: 1px; mso-line-height-rule: exactly;">&nbsp;</td>
                               <td style="font-size: 1px; line-height: 1px;">&nbsp;</td>
                             </tr>
                           </table>
                         </td>
                       </tr>
 
-                      <!-- Waste & Env. Services: 3 = 14% -->
+                      <!-- Waste & Env. Services: 3 -->
                       <tr>
                         <td style="padding-top: 14px;">
                           <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
                             <tr>
-                              <td style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 13px; color: #444444;">Waste &amp; Env. Services</td>
-                              <td align="right" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 13px; color: #3B1A40; font-weight: 700;">3</td>
+                              <td style="font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 13px; color: #1D1D1F;">Waste &amp; Env. Services</td>
+                              <td align="right" style="font-family: Georgia, 'Times New Roman', serif; font-size: 18px; font-weight: bold; color: #27112C;">3</td>
                             </tr>
                           </table>
                         </td>
                       </tr>
                       <tr>
                         <td style="padding-top: 6px;">
-                          <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #F0F0F0;">
+                          <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #F4F5F7;">
                             <tr>
-                              <td style="background-color: #3B1A40; width: 14%; height: 6px; font-size: 1px; line-height: 1px; mso-line-height-rule: exactly;">&nbsp;</td>
+                              <td style="background-color: #27112C; width: 14%; height: 6px; font-size: 1px; line-height: 1px; mso-line-height-rule: exactly;">&nbsp;</td>
                               <td style="font-size: 1px; line-height: 1px;">&nbsp;</td>
                             </tr>
                           </table>
                         </td>
                       </tr>
 
-                      <!-- Social: 2 = 9% -->
+                      <!-- Social: 2 -->
                       <tr>
                         <td style="padding-top: 14px;">
                           <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
                             <tr>
-                              <td style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 13px; color: #444444;">Social</td>
-                              <td align="right" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 13px; color: #3B1A40; font-weight: 700;">2</td>
+                              <td style="font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 13px; color: #1D1D1F;">Social</td>
+                              <td align="right" style="font-family: Georgia, 'Times New Roman', serif; font-size: 18px; font-weight: bold; color: #27112C;">2</td>
                             </tr>
                           </table>
                         </td>
                       </tr>
                       <tr>
-                        <td style="padding-top: 6px;">
-                          <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #F0F0F0;">
+                        <td style="padding-top: 6px; padding-bottom: 28px;">
+                          <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #F4F5F7;">
                             <tr>
-                              <td style="background-color: #3B1A40; width: 9%; height: 6px; font-size: 1px; line-height: 1px; mso-line-height-rule: exactly;">&nbsp;</td>
+                              <td style="background-color: #27112C; width: 9%; height: 6px; font-size: 1px; line-height: 1px; mso-line-height-rule: exactly;">&nbsp;</td>
                               <td style="font-size: 1px; line-height: 1px;">&nbsp;</td>
                             </tr>
                           </table>
                         </td>
                       </tr>
                     </table>
-                  </td>
-                </tr>
 
-                <!-- BY REGION -->
-                <tr>
-                  <td>
+                    <!-- BY REGION -->
                     <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
                       <tr>
-                        <td style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 11px; color: #999999; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 600; padding-bottom: 16px; border-bottom: 1px solid #EEEEEE;">
+                        <td style="font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 11px; color: #86868B; text-transform: uppercase; letter-spacing: 2px; font-weight: bold; padding-bottom: 16px; border-bottom: 1px solid #E5E5EA;">
                           By Region
                         </td>
                       </tr>
 
-                      <!-- Europe: 28 = 100% -->
+                      <!-- Europe: 28 -->
                       <tr>
                         <td style="padding-top: 16px;">
                           <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
                             <tr>
-                              <td style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 13px; color: #444444;">Europe</td>
-                              <td align="right" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 13px; color: #3B1A40; font-weight: 700;">28</td>
+                              <td style="font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 13px; color: #1D1D1F;">Europe</td>
+                              <td align="right" style="font-family: Georgia, 'Times New Roman', serif; font-size: 18px; font-weight: bold; color: #27112C;">28</td>
                             </tr>
                           </table>
                         </td>
                       </tr>
                       <tr>
                         <td style="padding-top: 6px;">
-                          <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #F0F0F0;">
+                          <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #F4F5F7;">
                             <tr>
-                              <td style="background-color: #3B1A40; width: 100%; height: 6px; font-size: 1px; line-height: 1px; mso-line-height-rule: exactly;">&nbsp;</td>
+                              <td style="background-color: #27112C; width: 100%; height: 6px; font-size: 1px; line-height: 1px; mso-line-height-rule: exactly;">&nbsp;</td>
                             </tr>
                           </table>
                         </td>
                       </tr>
 
-                      <!-- N. America: 19 = 68% -->
+                      <!-- N. America: 19 -->
                       <tr>
                         <td style="padding-top: 14px;">
                           <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
                             <tr>
-                              <td style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 13px; color: #444444;">N. America</td>
-                              <td align="right" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 13px; color: #3B1A40; font-weight: 700;">19</td>
+                              <td style="font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 13px; color: #1D1D1F;">N. America</td>
+                              <td align="right" style="font-family: Georgia, 'Times New Roman', serif; font-size: 18px; font-weight: bold; color: #27112C;">19</td>
                             </tr>
                           </table>
                         </td>
                       </tr>
                       <tr>
                         <td style="padding-top: 6px;">
-                          <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #F0F0F0;">
+                          <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #F4F5F7;">
                             <tr>
-                              <td style="background-color: #3B1A40; width: 68%; height: 6px; font-size: 1px; line-height: 1px; mso-line-height-rule: exactly;">&nbsp;</td>
+                              <td style="background-color: #27112C; width: 68%; height: 6px; font-size: 1px; line-height: 1px; mso-line-height-rule: exactly;">&nbsp;</td>
                               <td style="font-size: 1px; line-height: 1px;">&nbsp;</td>
                             </tr>
                           </table>
                         </td>
                       </tr>
 
-                      <!-- Asia-Pacific: 7 = 25% -->
+                      <!-- Asia-Pacific: 7 -->
                       <tr>
                         <td style="padding-top: 14px;">
                           <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
                             <tr>
-                              <td style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 13px; color: #444444;">Asia-Pacific</td>
-                              <td align="right" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 13px; color: #3B1A40; font-weight: 700;">7</td>
+                              <td style="font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 13px; color: #1D1D1F;">Asia-Pacific</td>
+                              <td align="right" style="font-family: Georgia, 'Times New Roman', serif; font-size: 18px; font-weight: bold; color: #27112C;">7</td>
                             </tr>
                           </table>
                         </td>
                       </tr>
                       <tr>
                         <td style="padding-top: 6px;">
-                          <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #F0F0F0;">
+                          <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #F4F5F7;">
                             <tr>
-                              <td style="background-color: #3B1A40; width: 25%; height: 6px; font-size: 1px; line-height: 1px; mso-line-height-rule: exactly;">&nbsp;</td>
+                              <td style="background-color: #27112C; width: 25%; height: 6px; font-size: 1px; line-height: 1px; mso-line-height-rule: exactly;">&nbsp;</td>
                               <td style="font-size: 1px; line-height: 1px;">&nbsp;</td>
                             </tr>
                           </table>
                         </td>
                       </tr>
 
-                      <!-- Latin America: 2 = 7% -->
+                      <!-- Latin America: 2 -->
                       <tr>
                         <td style="padding-top: 14px;">
                           <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
                             <tr>
-                              <td style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 13px; color: #444444;">Latin America</td>
-                              <td align="right" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 13px; color: #3B1A40; font-weight: 700;">2</td>
+                              <td style="font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 13px; color: #1D1D1F;">Latin America</td>
+                              <td align="right" style="font-family: Georgia, 'Times New Roman', serif; font-size: 18px; font-weight: bold; color: #27112C;">2</td>
                             </tr>
                           </table>
                         </td>
                       </tr>
                       <tr>
                         <td style="padding-top: 6px;">
-                          <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #F0F0F0;">
+                          <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #F4F5F7;">
                             <tr>
-                              <td style="background-color: #3B1A40; width: 7%; height: 6px; font-size: 1px; line-height: 1px; mso-line-height-rule: exactly;">&nbsp;</td>
+                              <td style="background-color: #27112C; width: 7%; height: 6px; font-size: 1px; line-height: 1px; mso-line-height-rule: exactly;">&nbsp;</td>
                               <td style="font-size: 1px; line-height: 1px;">&nbsp;</td>
                             </tr>
                           </table>
                         </td>
                       </tr>
 
-                      <!-- MEA: 2 = 7% -->
+                      <!-- MEA: 2 -->
                       <tr>
                         <td style="padding-top: 14px;">
                           <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
                             <tr>
-                              <td style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 13px; color: #444444;">MEA</td>
-                              <td align="right" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 13px; color: #3B1A40; font-weight: 700;">2</td>
+                              <td style="font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 13px; color: #1D1D1F;">MEA</td>
+                              <td align="right" style="font-family: Georgia, 'Times New Roman', serif; font-size: 18px; font-weight: bold; color: #27112C;">2</td>
                             </tr>
                           </table>
                         </td>
                       </tr>
                       <tr>
                         <td style="padding-top: 6px;">
-                          <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #F0F0F0;">
+                          <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #F4F5F7;">
                             <tr>
-                              <td style="background-color: #3B1A40; width: 7%; height: 6px; font-size: 1px; line-height: 1px; mso-line-height-rule: exactly;">&nbsp;</td>
+                              <td style="background-color: #27112C; width: 7%; height: 6px; font-size: 1px; line-height: 1px; mso-line-height-rule: exactly;">&nbsp;</td>
                               <td style="font-size: 1px; line-height: 1px;">&nbsp;</td>
                             </tr>
                           </table>
                         </td>
                       </tr>
                     </table>
+
                   </td>
                 </tr>
               </table>
             </td>
           </tr>
+        </table>
 
 
-          <!-- ============================================ -->
-          <!-- FOOTER                                       -->
-          <!-- ============================================ -->
+        <!-- ============================================ -->
+        <!-- SECTION 5: THE FOOTER                        -->
+        <!-- ============================================ -->
+        <table class="email-container" role="presentation" border="0" cellpadding="0" cellspacing="0" width="600" style="max-width: 600px;">
           <tr>
-            <td style="padding-top: 56px;">
-              <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #3B1A40;">
+            <td style="padding-top: 35px;">
+              <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #27112C;">
                 <tr>
-                  <td class="footer-pad" style="padding: 40px 40px 0 40px;">
+                  <td class="footer-pad" style="padding: 50px 30px 0 30px;">
+                    <!-- Contact prompt -->
                     <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
                       <tr>
-                        <td style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 11px; color: #C5B382; letter-spacing: 1px; padding-bottom: 24px;">
+                        <td style="font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 11px; color: #C8B07B; letter-spacing: 1px; padding-bottom: 24px;">
                           For questions, please reach out directly:
                         </td>
                       </tr>
                     </table>
 
-                    <!-- 2-Column Contact Cards -->
+                    <!-- Two-column business cards -->
                     <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
                       <tr>
                         <!-- Card 1: Mike Berry -->
-                        <td class="footer-card-left" width="50%" valign="top" style="padding-right: 16px; padding-bottom: 0;">
-                          <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                        <td class="mobile-stack mobile-stack-pad" width="50%" valign="top" style="padding-right: 10px;">
+                          <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #351C3B; border: 1px solid #C8B07B;">
                             <tr>
-                              <td style="padding-bottom: 6px;">
-                                <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 13px; font-weight: 700; color: #FFFFFF; letter-spacing: 1.5px; text-transform: uppercase;">MIKE BERRY</span>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td style="padding-bottom: 10px;">
-                                <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 11px; color: #C5B382;">Vice President | Infrastructure Coverage</span>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <a href="mailto:mike.berry@guggenheimpartners.com" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 11px; color: #C5B382; text-decoration: none;">mike.berry@guggenheimpartners.com</a>
+                              <td style="padding: 25px;">
+                                <!-- CSS Avatar -->
+                                <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+                                  <tr>
+                                    <td style="width: 40px; height: 40px; border-radius: 50%; background-color: #C8B07B; color: #27112C; text-align: center; line-height: 40px; font-weight: bold; font-size: 14px; font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif; padding-bottom: 0;">
+                                      MB
+                                    </td>
+                                  </tr>
+                                </table>
+                                <!-- Name -->
+                                <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                  <tr>
+                                    <td style="padding-top: 15px; padding-bottom: 4px;">
+                                      <span style="font-family: Georgia, 'Times New Roman', serif; font-size: 15px; font-weight: bold; color: #FFFFFF; letter-spacing: 1px;">MIKE BERRY</span>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td style="padding-bottom: 12px;">
+                                      <span style="font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 10px; color: #C8B07B; text-transform: uppercase; letter-spacing: 1px;">Vice President | Infrastructure Coverage</span>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      <a href="mailto:mike.berry@guggenheimpartners.com" style="font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 12px; color: #FFFFFF; text-decoration: none;">mike.berry@guggenheimpartners.com</a>
+                                    </td>
+                                  </tr>
+                                </table>
                               </td>
                             </tr>
                           </table>
                         </td>
 
                         <!-- Card 2: Jane Doe -->
-                        <td class="footer-card-right" width="50%" valign="top" style="padding-left: 16px;">
-                          <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                        <td class="mobile-stack" width="50%" valign="top" style="padding-left: 10px;">
+                          <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #351C3B; border: 1px solid #C8B07B;">
                             <tr>
-                              <td style="padding-bottom: 6px;">
-                                <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 13px; font-weight: 700; color: #FFFFFF; letter-spacing: 1.5px; text-transform: uppercase;">JANE DOE</span>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td style="padding-bottom: 10px;">
-                                <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 11px; color: #C5B382;">Managing Director | Infrastructure Advisory</span>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <a href="mailto:jane.doe@guggenheimpartners.com" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 11px; color: #C5B382; text-decoration: none;">jane.doe@guggenheimpartners.com</a>
+                              <td style="padding: 25px;">
+                                <!-- CSS Avatar -->
+                                <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+                                  <tr>
+                                    <td style="width: 40px; height: 40px; border-radius: 50%; background-color: #C8B07B; color: #27112C; text-align: center; line-height: 40px; font-weight: bold; font-size: 14px; font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif; padding-bottom: 0;">
+                                      JD
+                                    </td>
+                                  </tr>
+                                </table>
+                                <!-- Name -->
+                                <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                  <tr>
+                                    <td style="padding-top: 15px; padding-bottom: 4px;">
+                                      <span style="font-family: Georgia, 'Times New Roman', serif; font-size: 15px; font-weight: bold; color: #FFFFFF; letter-spacing: 1px;">JANE DOE</span>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td style="padding-bottom: 12px;">
+                                      <span style="font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 10px; color: #C8B07B; text-transform: uppercase; letter-spacing: 1px;">Managing Director | Infrastructure Advisory</span>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      <a href="mailto:jane.doe@guggenheimpartners.com" style="font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 12px; color: #FFFFFF; text-decoration: none;">jane.doe@guggenheimpartners.com</a>
+                                    </td>
+                                  </tr>
+                                </table>
                               </td>
                             </tr>
                           </table>
@@ -1004,26 +1098,26 @@
                   </td>
                 </tr>
 
-                <!-- Divider + Legal -->
+                <!-- Bottom Legal -->
                 <tr>
-                  <td class="footer-pad" style="padding: 32px 40px 12px 40px;">
+                  <td class="footer-pad" style="padding: 35px 30px 12px 30px;">
                     <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
                       <tr>
-                        <td style="border-bottom: 1px solid rgba(255,255,255,0.20); font-size: 1px; line-height: 1px;">&nbsp;</td>
+                        <td style="border-bottom: 1px solid rgba(255,255,255,0.15); font-size: 1px; line-height: 1px;">&nbsp;</td>
                       </tr>
                     </table>
                   </td>
                 </tr>
                 <tr>
-                  <td class="footer-pad" style="padding: 0 40px;">
+                  <td class="footer-pad" style="padding: 0 30px;">
                     <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
                       <tr>
-                        <td align="center" style="padding-bottom: 12px;">
-                          <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 10px; color: rgba(255,255,255,0.50); letter-spacing: 2px; text-transform: uppercase;">GUGGENHEIM SECURITIES, LLC</span>
+                        <td align="center" style="padding-bottom: 14px;">
+                          <span style="font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 9px; color: #86868B; letter-spacing: 3px; text-transform: uppercase;">GUGGENHEIM SECURITIES, LLC</span>
                         </td>
                       </tr>
                       <tr>
-                        <td align="center" style="padding-bottom: 32px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 9px; color: rgba(255,255,255,0.30); line-height: 1.5;">
+                        <td align="center" style="padding-bottom: 40px; font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 9px; color: rgba(255,255,255,0.30); line-height: 1.5;">
                           This communication is intended solely for informational purposes. It is not intended as an offer or solicitation for the purchase or sale of any financial instrument or as an official confirmation of any transaction.
                         </td>
                       </tr>
@@ -1033,9 +1127,7 @@
               </table>
             </td>
           </tr>
-
         </table>
-        <!-- /Main 600px container -->
 
       </td>
     </tr>
