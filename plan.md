@@ -42,18 +42,7 @@ Single-file HTML email newsletter (`guggenheim-infrastructure-ma-update.html`) f
 ### Size Hierarchy
 | Size | Element |
 |---|---|
-| 30px | Main title ("Infrastructure Sponsor M&A") — Georgia serif |
-| 24px | Deal target names — Georgia serif |
-| 22px | GUGGENHEIM brand wordmark — Georgia bold, 4px letter-spacing |
-| 20px | M&A Stats dashboard title — Georgia serif |
-| 18px | Contact card names, bar chart counts — Georgia serif |
-| 16px | Key Themes body text — Georgia serif |
-| 14px | Sector header names, deal descriptions, no-transaction messages — sans-serif |
-| 13px | Mechanics lines, stats subtitle, email addresses — sans-serif |
-| 12px | Subtitle date line, source links — sans-serif |
-| 11px | Key Themes label, chart section labels, pill tag text — sans-serif bold |
-| 10px | Geography tags, contact titles, PHOTO placeholder, footer header — sans-serif |
-| 9px | "INFRASTRUCTURE COVERAGE & ADVISORY" — sans-serif bold |
+| 10px | All text — uniform 10px across all elements |
 
 ---
 
