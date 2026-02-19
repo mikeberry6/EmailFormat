@@ -11,13 +11,13 @@ These rules are PERMANENT and must NOT be reverted or removed by any future edit
 
 ### Key Themes Box
 - MUST have `border-radius: 12px`
-- MUST have `box-shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06)`
+- MUST have `border-bottom: 2px solid #D1D5DB; border-right: 2px solid #D1D5DB` (Outlook-compatible depth effect replacing box-shadow)
 - MUST have `overflow: hidden` to clip the gold left-border accent within the rounded corners
 - Style reference: Crunchbase trending news cards (https://www.crunchbase.com)
 
 ### Sector/Subsector Cards (Power & ET, Digital, Midstream, etc.)
 - MUST have `border-radius: 12px`
-- MUST have `box-shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06)`
+- MUST have `border-bottom: 2px solid #D1D5DB; border-right: 2px solid #D1D5DB` (Outlook-compatible depth effect replacing box-shadow)
 - MUST have `overflow: hidden`
 - Style reference: Crunchbase trending news cards (https://www.crunchbase.com)
 
@@ -38,8 +38,15 @@ These rules are PERMANENT and must NOT be reverted or removed by any future edit
 - Source links: 8px, light grey (#A1A1A6), underlined
 
 ## Header
-- Gradient fill: `linear-gradient(180deg, #F5F2F7 0%, #FAFAFE 40%, #FFFFFF 100%)` with fallback `#F9F8FA`
-- Gold divider: 1px height
+- Solid background: `#F9F8FA` with `bgcolor` attribute for Outlook compatibility
+- Gold divider: 1px height with `bgcolor` attribute
+- All colored elements use both CSS `background-color` and HTML `bgcolor` attributes
+
+## Outlook Compatibility
+- All background colors use both CSS `background-color` and HTML `bgcolor` attributes
+- Card depth uses `border-bottom: 2px solid #D1D5DB; border-right: 2px solid #D1D5DB` instead of `box-shadow` (Outlook strips box-shadow)
+- `border-radius` kept for web/modern clients but degrades to square in Outlook (acceptable)
+- No CSS gradients (Outlook strips them)
 
 ## Footer
 - No legal disclaimer
