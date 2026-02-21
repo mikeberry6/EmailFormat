@@ -25,10 +25,12 @@ These rules are PERMANENT and must NOT be reverted or removed by any future edit
 
 ## Deal Card Format
 - Target name on left, subsector · region tag on right (same row)
-- Below target: `Acquirer: Name | Seller: Name` format with gold `|` separator
-- For mergers: `Merger: Party A & Party B`
-- For acquisitions with no named seller: `Acquirer: Name`
-- For pre-IPO/investments: `Acquirer: Name (Pre-IPO)`
+- Below target: Acquirer and Seller on **separate rows** (not one line)
+  - `Acquirer: Name` row at `padding-top: 4px`
+  - `Seller: Name` row at `padding-top: 2px`
+  - If no named seller, omit the Seller row entirely (no placeholder)
+- For mergers: `Merger: Party A & Party B` (single row, no Seller row)
+- For pre-IPO/investments: `Acquirer: Name (Pre-IPO)` (single row, no Seller row)
 
 ## Chart Titles
 - Sector chart: "Deal Count By Sector (YTD)"
@@ -57,12 +59,14 @@ These rules are PERMANENT and must NOT be reverted or removed by any future edit
 ## Footer
 - Unified section: preamble text + business card as one block
 - Background: `#F9F8FA` with `bgcolor` attribute (matches masthead)
-- Separated from main content by `border-top: 1px solid #E5E7EB`
+- Separated from main content by `border-top: 2px solid #D1D5DB` (matches card depth border weight/color)
 - No separate card border — card flows within the footer background
-- Photo placeholder stretches to full height of text content (not square)
-- Title and department on one line with middle dot separator
-- Contact: Mike Berry only (Vice President · Infrastructure Coverage)
+- Photo placeholder: 72px wide, transparent 1×1 GIF data URI, `rowspan="5"` spanning all text rows
+- Title and department on **separate rows** (not one line), both `10px, weight 400, #888888, uppercase, letter-spacing 0.5px`
+- Contact: Mike Berry only (Vice President / Infrastructure Coverage & Advisory)
+- Email/phone links: `12px, weight 400, color #1E3A5F, no text-decoration`
 - No legal disclaimer
+- Bottom spacing row: `bgcolor="#F9F8FA"`, `padding: 0 0 16px 0`
 
 ## Page Background
 - Outer canvas / body background: `#FFFFFF` (white, not grey)
