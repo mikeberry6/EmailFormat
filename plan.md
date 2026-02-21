@@ -1,4 +1,4 @@
-# Guggenheim Infrastructure M&A — Weekly Newsletter Template
+# Guggenheim Infrastructure M&A — Weekly Newsletter Formatting Spec
 
 ## Overview
 
@@ -8,83 +8,160 @@ Single-file HTML email newsletter (`guggenheim-infrastructure-ma-update.html`) f
 
 ## I. Architecture
 
-- **Pure HTML email** — nested `<table>` structures, inline styles only, no `<style>` blocks (except MSO conditionals)
-- **No images** — all visual elements are CSS/text-based (photo placeholders, bar charts, accent lines)
-- **Single column** — 600px max-width inner card on #F4F5F7 canvas
-- **Outlook-safe accents** — all colored lines/rules use `<table><tr><td>` with `background-color`, NOT CSS borders on `<div>` elements or standalone `<div>` height hacks
-- **Git branch**: `claude/redesign-ma-newsletter-QBhg6`
+- **Pure HTML email** — nested `<table>` structures, inline styles only
+- **No external assets** — no images, no Google Fonts, no external stylesheets
+- **No `<style>` blocks** — except a single `<!--[if mso]>` conditional setting `border-collapse: collapse` and `font-family: Arial, Helvetica, sans-serif` on `<td>`
+- **Single column** — 600px `max-width` inner card on `#FFFFFF` white canvas
+- **Outlook-safe accents** — all colored lines/rules use `<table><tr><td>` with `background-color` + `bgcolor`, NOT CSS borders on `<div>` or standalone `<div>` height hacks
+- **Card depth** — `border-bottom: 2px solid #D1D5DB; border-right: 2px solid #D1D5DB` (replaces box-shadow for Outlook)
 
 ---
 
-## II. Brand & Color System
+## II. Complete Color Token Table
 
 | Token | Hex | Usage |
 |---|---|---|
-| Brand (deep eggplant) | `#442142` | Top/bottom stripes, sector left accents, deal title color, pill tags, bar chart fills, deal value highlights |
-| Olive-gold | `#B4A87D` | Key Themes left border, gold accent rule, arrow/pipe accents, source links, email links |
-| Body text | `#585858` | All sans-serif body copy, metadata, mechanics lines |
-| Light canvas | `#F4F5F7` | Outer background, geography tag backgrounds |
-| Card white | `#FFFFFF` | Inner content card background |
-| Border grey | `#E5E7EB` | All structural borders (containers, cards, separators, bar tracks) |
-| Header bg | `#F8F9FA` | Sector header backgrounds |
-| Subtle grey | `#F4F5F7` | Bar chart row separators |
-| Muted pill | `#6B7280` | 0-deal sector pill backgrounds |
-| Footer text | `#A1A1A6` | Legal disclaimer text |
+| Brand (deep eggplant) | `#442142` | Top stripe, sector left accents, deal target name color, deal count text (non-zero), chart bar fills, chart count text, brand name, main title, contact name, KEY THEMES header accent — NOT used for Key Themes label (that's `#B4A87D`) |
+| Olive-gold | `#B4A87D` | Key Themes left border, gold accent rule, edition bullet separator, KEY THEMES label text |
+| Body text | `#585858` | Deal descriptions, "no transactions" italic text, footer preamble, chart labels |
+| Warm off-white | `#FDFCFB` | Deal card body `bgcolor` (all deal content cells and separator cells) |
+| Light canvas | `#F9F8FA` | Masthead `bgcolor`, footer `bgcolor`, bottom spacing row |
+| Sector header bg | `#F8F9FA` | Sector header `bgcolor` |
+| Card white | `#FFFFFF` | Outer canvas `bgcolor`, inner content card `bgcolor` |
+| Chart track | `#F0F1F3` | Bar chart track background (the grey behind the filled bar) |
+| Chart row separator | `#F4F5F7` | `border-bottom: 1px solid #F4F5F7` between chart rows |
+| Structural border | `#E5E7EB` | Inner content card border, sector card `border: 1px solid`, Key Themes box `border: 1px solid`, sector header bottom border, chart title bottom border, deal separators |
+| Card depth | `#D1D5DB` | `border-bottom: 2px solid; border-right: 2px solid` on Key Themes box, sector cards — also footer top border |
+| Subtitle text | `#AAAAAA` | Subtitle ("INFRASTRUCTURE COVERAGE & ADVISORY"), edition line |
+| Muted metadata | `#888888` | Key Themes body italic text, footer title/department text |
+| Tag/zero-deal grey | `#9CA3AF` | Subsector/region tags, 0-deal count text |
+| Source link | `#A1A1A6` | Source link text (underlined) |
+| Footer link (navy) | `#1E3A5F` | Email and phone link color in footer |
 
 ---
 
-## III. Typography
+## III. Typography Matrix
 
-### Fonts
-- **Serif (display/editorial):** `Georgia, 'Times New Roman', serif` — used for GUGGENHEIM brand, main title, deal target names, contact names, bar chart counts, stats title
-- **Sans-serif (data/meta):** `-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif` — used for subtitle, Key Themes label, body text, mechanics lines, descriptions, sector headers, pills, source links, contact titles/emails
+**Font family (all elements):** `Arial, Helvetica, sans-serif`
 
-### Size Hierarchy
-| Size | Element |
-|---|---|
-| 10px | All text — uniform 10px across all elements |
+| Element | Size | Weight | Color | Extras |
+|---|---|---|---|---|
+| GUGGENHEIM brand | 18px | 700 | `#442142` | `letter-spacing: 6px; text-transform: uppercase; line-height: 1` |
+| Subtitle | 9px | 400 | `#AAAAAA` | `letter-spacing: 2px; text-transform: uppercase` |
+| Main title | 16px | 700 | `#442142` | `line-height: 1.3` |
+| Edition line | 9px | 400 | `#AAAAAA` | `letter-spacing: 1.5px; text-transform: uppercase` — gold `&#8226;` bullet in `#B4A87D` |
+| KEY THEMES label | 14px | 700 | `#B4A87D` | `text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px` |
+| Key Themes body | 12px | 300 | `#888888` | `font-style: italic; line-height: 1.6` |
+| Sector header name | 14px | 700 | `#442142` | `text-transform: uppercase; letter-spacing: 0.5px` |
+| Deal count (non-zero) | 12px | 700 | `#442142` | `letter-spacing: 0.5px; white-space: nowrap; text-align: right` |
+| Deal count (zero) | 12px | 700 | `#9CA3AF` | Same layout as non-zero |
+| Deal target name | 14px | 700 | `#442142` | `line-height: 1.2; vertical-align: middle` + `valign="middle"` |
+| Subsector/region tag | 12px | 300 | `#9CA3AF` | `white-space: nowrap; vertical-align: middle; padding-left: 10px` + `valign="middle"` |
+| Acquirer/Seller line | 12px | 300 | `#9CA3AF` | Acquirer at `padding-top: 4px`, Seller at `padding-top: 2px` |
+| Deal description | 12px | 300 | `#585858` | `line-height: 1.6; padding-top: 16px` |
+| Source link | 10px | 400 | `#A1A1A6` | `text-decoration: underline; padding-top: 18px` |
+| No transactions msg | 12px | 300 | `#585858` | `font-style: italic` |
+| Chart title | 14px | 700 | `#442142` | `text-transform: uppercase; letter-spacing: 1px; padding-bottom: 10px; border-bottom: 1px solid #E5E7EB` |
+| Chart label | 12px | 300 | `#585858` | Left-aligned in 30% column |
+| Chart count | 12px | 400 | `#442142` | Right-aligned in 15% column |
+| Footer preamble | 12px | 300 | `#585858` | `line-height: 1.6; padding-bottom: 10px` |
+| Contact name | 14px | 700 | `#442142` | `line-height: 1.2` |
+| Contact title/dept | 10px | 400 | `#888888` | `text-transform: uppercase; letter-spacing: 0.5px; padding-top: 4px` |
+| Contact email/phone | 12px | 400 | `#1E3A5F` | `text-decoration: none; padding-top: 4px` |
+| Spacer cells | 0px or 1px | — | — | `font-size: 1px; line-height: 1px; mso-line-height-rule: exactly` with `&nbsp;` content — do NOT modify |
 
 ---
 
-## IV. Section Structure
+## IV. Section-by-Section Spec
 
-### 1. Masthead
-- 4px `#442142` top stripe (table-based)
-- Brand block: GUGGENHEIM (22px Georgia bold, 4px letter-spacing, uppercase) + subtitle (9px sans-serif)
-- 50px × 3px gold accent rule (table-based, `#B4A87D`)
-- Title: 30px Georgia serif, `#442142`
-- Subtitle: 12px sans-serif, "Weekly Briefing | February 7–13, 2026" (gold pipe separator)
-- 2px `#442142` bottom accent stripe (table-based)
+### 1. Preheader (Hidden)
 
-### 2. Key Themes
-- Table-based left border: 3px `#B4A87D` cell + 24px left-padded content cell
-- "KEY THEMES" label: 11px sans-serif bold, uppercase, 1px letter-spacing
-- Body: 16px Georgia serif, `#442142`, 1.6 line-height
-
-### 3. Deal Activity (Sector Groups)
-Each sector is a **self-contained container**:
+```html
+<div style="display: none; font-size: 0; line-height: 0; max-height: 0; overflow: hidden; mso-hide: all;">
+  Weekly Briefing &#8211; Infrastructure Sponsor M&amp;A &#8211; [N] deals totaling $[X]B+ across [sectors] &#8211; [date range]
+</div>
 ```
+
+### 2. Outer Canvas
+
+```html
+<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#FFFFFF" style="background-color: #FFFFFF;">
+  <tr>
+    <td align="center" style="padding: 40px 10px;">
+```
+
+### 3. Inner Content Card
+
+```html
+<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="600" bgcolor="#FFFFFF" style="max-width: 600px; width: 100%; background-color: #FFFFFF; border: 1px solid #E5E7EB; overflow: hidden;">
+```
+
+### 4. Masthead
+
+**Top stripe + gold divider (single `<td>`):**
+```html
 <tr>
-  <td style="padding: [10px|24px] 40px 0 40px;">
-    <table style="border: 1px solid #E5E7EB; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
-      <!-- Sector Header row -->
-      <!-- Deal rows -->
+  <td style="height: 0; padding: 0; border-top: 4px solid #442142; border-bottom: 1px solid #B4A87D; font-size: 0; line-height: 0; mso-line-height-rule: exactly;"></td>
+</tr>
+```
+
+**Masthead content:** `bgcolor="#F9F8FA"`, padding `0 40px`, containing a `<table>` with these rows:
+- **Brand name:** `padding-top: 21px` — 18px, weight 700, `#442142`, letter-spacing 6px, uppercase, line-height 1
+- **Subtitle:** `padding-top: 5px` — 9px, weight 400, `#AAAAAA`, letter-spacing 2px, uppercase
+- **Gold accent rule:** `padding-top: 14px` — inner table `width="40"`, `<td width="40">` with `border-bottom: 2px solid #B4A87D`, height 0
+- **Title:** `padding-top: 12px` — 16px, weight 700, `#442142`, line-height 1.3
+- **Edition:** `padding-top: 6px; padding-bottom: 18px` — 9px, weight 400, `#AAAAAA`, letter-spacing 1.5px, uppercase — gold bullet `<span style="color: #B4A87D;">&#8226;</span>`
+
+**Bottom rule:**
+```html
+<tr>
+  <td style="height: 0; padding: 0; border-bottom: 1px solid #E5E7EB; font-size: 0; line-height: 0; mso-line-height-rule: exactly;"></td>
+</tr>
+```
+
+### 5. Key Themes
+
+**Outer padding:** `24px 40px`
+
+**Box:** `border: 1px solid #E5E7EB; border-radius: 12px; border-bottom: 2px solid #D1D5DB; border-right: 2px solid #D1D5DB; overflow: hidden`
+
+**Inner cell:** `padding: 20px 24px; border-left: 3px solid #B4A87D`
+
+Contains two `<div>` elements:
+1. Label: 14px, weight 700, `#B4A87D`, uppercase, letter-spacing 1px, `margin-bottom: 12px`
+2. Body: 12px, weight 300, `#888888`, italic, line-height 1.6
+
+### 6. Sector Group Container
+
+**Outer padding:**
+- First sector (Power & ET): `padding: 10px 40px 0 40px`
+- All subsequent sectors: `padding: 24px 40px 0 40px`
+
+**Container table:** `border: 1px solid #E5E7EB; border-radius: 12px; border-bottom: 2px solid #D1D5DB; border-right: 2px solid #D1D5DB; overflow: hidden`
+
+#### Sector Header
+
+```html
+<tr>
+  <td bgcolor="#F8F9FA" style="background-color: #F8F9FA; border-bottom: 1px solid #E5E7EB;">
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-left: 4px solid #442142;">
+      <tr>
+        <td style="padding: 10px 20px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: 700; color: #442142; text-transform: uppercase; letter-spacing: 0.5px;">
+          [SECTOR NAME]
+        </td>
+        <td width="1%" style="padding: 10px 20px; white-space: nowrap; text-align: right; vertical-align: middle; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 700; color: [#442142 or #9CA3AF]; letter-spacing: 0.5px;" valign="middle">[N] Deal[s]</td>
+      </tr>
     </table>
   </td>
 </tr>
 ```
 
-**First sector** uses `padding: 10px 40px 0 40px` (closer to Key Themes). **Subsequent sectors** use `padding: 24px 40px 0 40px`.
+- Non-zero deals: deal count color `#442142`
+- Zero deals: deal count color `#9CA3AF`
 
-#### Sector Header (inside container)
-- `<td>` with `background-color: #F8F9FA; border-bottom: 1px solid #E5E7EB`
-- Inner table with `border-left: 4px solid #442142`
-- Left cell: sector name (14px sans-serif, font-weight 800, uppercase, `#442142`)
-- Right cell: pill tag (11px sans-serif bold, white on `#442142`, border-radius 100px)
-- 0-deal sectors use `#6B7280` pill bg instead of `#442142`
+#### Sector Names (canonical, must match between headers and charts)
 
-#### Sector Names (must match between headers and bar charts)
-| Header | Bar Chart Label |
+| Sector Header | Chart Label |
 |---|---|
 | Power & ET | Power & ET |
 | Digital | Digital |
@@ -94,77 +171,358 @@ Each sector is a **self-contained container**:
 | Social | Social |
 | Utilities | Utilities |
 
-#### Deal Cards (inside container)
-- Padding: `24px 24px 0 24px` (last deal in sector: `24px 24px 28px 24px`)
-- **Target name:** 24px Georgia serif, `#442142`, line-height 1.2 — on its own line
-- **Geography tag:** Own `<div>` below title (margin-top 6px), `<span>` with 10px sans-serif, `#585858` text, `#F4F5F7` bg, 4px 8px padding, 4px border-radius, white-space nowrap
-- **Mechanics line:** 13px sans-serif, font-weight 600, `#585858`, margin-top 10px. Gold arrow (`&#8594;` or `&#8212;`) colored `#B4A87D`
-- **Description:** 14px sans-serif, `#585858`, line-height 1.6, margin-top 12px. Deal values bolded in `#442142`
-- **Source link:** 12px sans-serif, `#B4A87D`, bold, no text-decoration, margin-top 14px
+#### Deal Card
 
-#### 0-Deal Sectors
-- Same container structure
-- No `border-bottom` on header `<td>` (since there are no deals below, just use default)
-- "No transactions reported this week" — 14px sans-serif italic, `#585858`, padding `20px 24px 24px 24px`
+**Padding:**
+- Non-last deal in sector: `24px 24px 0 24px`
+- Last deal in sector: `24px 24px 28px 24px`
 
-### 4. M&A Stats (Bar Charts)
-- Dashboard title: 20px Georgia serif + 13px subtitle ("58 Deals · YTD 2026")
-- Two sections: "By Sector" and "By Region" — 11px sans-serif bold uppercase labels
-- 3-column table: label (30%), bar (55%), count (15%)
-- Bar: nested table with `#E5E7EB` bg track, `#442142` filled `<td>` with percentage width, 8px height, 4px border-radius
-- Count: 18px Georgia serif, `#442142`
-- Rows separated by `border-bottom: 1px solid #F4F5F7`
-- Last row in each section has extra bottom padding (28px) before next section
-- **Bars sorted descending by count**
+**Background:** `bgcolor="#FDFCFB" style="background-color: #FDFCFB;"`
 
-### 5. Footer
-- "REACH OUT DIRECTLY:" label: 10px sans-serif bold, uppercase, 1.5px letter-spacing
-- Contact cards: `#FAFAFA` bg, `1px solid #E5E7EB` border, 8px border-radius
-  - Photo: table-based `<td width="50" height="50">` with bg-color circle placeholder
-  - Text: inner `<table>` with `<td>` rows for name (18px Georgia), title (10px sans-serif uppercase), email (13px `#B4A87D` bold)
-  - Use `padding-top` on `<td>` rows instead of `margin-top` on divs
-  - Use `valign="top"` attributes alongside CSS `vertical-align`
-- Legal footer: table-based separator, 10px sans-serif, `#A1A1A6`, centered
+**Inner table structure (4-5 rows):**
+
+Row 1 — Target + tag (two-column):
+```html
+<tr>
+  <td style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: 700; color: #442142; line-height: 1.2; vertical-align: middle;" valign="middle">
+    [Target Name]
+  </td>
+  <td width="1%" style="white-space: nowrap; vertical-align: middle; padding-left: 10px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 300; color: #9CA3AF;" valign="middle">[Subsector] &#183; [Region]</td>
+</tr>
+```
+
+Row 2 — Acquirer (colspan="2"):
+```html
+<tr>
+  <td colspan="2" style="padding-top: 4px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 300; color: #9CA3AF;">
+    Acquirer: [Name]
+  </td>
+</tr>
+```
+
+Row 3 — Seller (colspan="2", optional — omit if no named seller):
+```html
+<tr>
+  <td colspan="2" style="padding-top: 2px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 300; color: #9CA3AF;">
+    Seller: [Name]
+  </td>
+</tr>
+```
+
+**Acquirer/Seller format variants:**
+- Standard acquisition: Acquirer row + Seller row
+- No named seller: Acquirer row only, omit Seller row
+- Merger: `Merger: Party A & Party B` (single row at `padding-top: 4px`, no Seller row)
+- Pre-IPO: `Acquirer: Name (Pre-IPO)` (single row, no Seller row)
+
+Row 4 — Description (colspan="2"):
+```html
+<tr>
+  <td colspan="2" style="padding-top: 16px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 300; color: #585858; line-height: 1.6;">
+    [Description text]
+  </td>
+</tr>
+```
+
+Row 5 — Source link (colspan="2"):
+```html
+<tr>
+  <td colspan="2" style="padding-top: 18px;">
+    <a href="[URL]" style="font-family: Arial, Helvetica, sans-serif; font-size: 10px; font-weight: 400; color: #A1A1A6; text-decoration: underline;">Source</a>
+  </td>
+</tr>
+```
+
+#### Deal Separator (between deals within a sector)
+
+```html
+<tr>
+  <td bgcolor="#FDFCFB" style="padding: 0 24px; background-color: #FDFCFB;">
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr><td style="border-bottom: 1px solid #E5E7EB; height: 24px; font-size: 1px; line-height: 1px;">&nbsp;</td></tr>
+    </table>
+  </td>
+</tr>
+```
+
+#### 0-Deal Sector (no transactions)
+
+Same container and header structure, then:
+```html
+<tr>
+  <td bgcolor="#FDFCFB" style="padding: 20px 24px 24px 24px; background-color: #FDFCFB; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 300; color: #585858; font-style: italic;">
+    No transactions reported this week
+  </td>
+</tr>
+```
+
+### 7. M&A Stats (Bar Charts)
+
+**Outer padding:** `40px 40px 30px 40px` (note: bottom is 30px, asymmetric)
+
+Two sub-tables: "Deal Count By Sector (YTD)" and "Deal Count By Region (YTD)"
+
+#### Chart Title Row
+
+```html
+<tr>
+  <td colspan="3" style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: #442142; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; padding-bottom: 10px; border-bottom: 1px solid #E5E7EB;">
+    [Chart Title]
+  </td>
+</tr>
+```
+
+#### Chart Data Row (standard)
+
+3-column layout: label (30%), bar (55%), count (15%)
+
+```html
+<tr>
+  <td width="30%" style="padding: 10px 0; border-bottom: 1px solid #F4F5F7; font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #585858; font-weight: 300; vertical-align: middle;">
+    [Label]
+  </td>
+  <td width="55%" style="padding: 10px 8px; border-bottom: 1px solid #F4F5F7; vertical-align: middle;">
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#F0F1F3" style="background-color: #F0F1F3;">
+      <tr>
+        <td bgcolor="#442142" style="background-color: #442142; width: [N]%; height: 14px; font-size: 1px; line-height: 1px; mso-line-height-rule: exactly;">&nbsp;</td>
+        <td style="font-size: 1px; line-height: 1px;">&nbsp;</td>
+      </tr>
+    </table>
+  </td>
+  <td width="15%" align="right" style="padding: 10px 0; border-bottom: 1px solid #F4F5F7; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 400; color: #442142; vertical-align: middle;">
+    [Count]
+  </td>
+</tr>
+```
+
+**Bar width calculation:** `width: Math.round(count / maxCount * 100)%`
+- When a bar is 100% (the max), omit the empty `<td>` after the filled one — the filled `<td>` has `width: 100%` alone.
+
+#### Last Row in Each Chart Section
+
+Gets `padding-bottom: 28px` on all three `<td>` cells (overriding the standard `padding: 10px 0`). Also **no `border-bottom`** on the very last row of the last chart section.
+
+**Rows sorted descending by count within each chart.**
+
+### 8. Footer
+
+**Top border:** `border-top: 2px solid #D1D5DB`
+
+**Background:** `bgcolor="#F9F8FA" style="background-color: #F9F8FA;"`
+
+**Outer padding:** `20px 40px`
+
+**Preamble text (own table):**
+```html
+<td style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 300; color: #585858; line-height: 1.6; padding-bottom: 10px;">
+  For additional context on any of the above deals, please reach out.
+</td>
+```
+
+**Business card (table with 5 rows):**
+
+| Row | Content | Style |
+|---|---|---|
+| Photo (col 1, rowspan="5") | 72px transparent 1×1 GIF data URI | `width: 72px; valign: top; text-align: center` |
+| Name (col 2) | Mike Berry | `padding-left: 16px; 14px, weight 700, #442142, line-height 1.2` |
+| Title (col 2) | Vice President | `padding-top: 4px; padding-left: 16px; 10px, weight 400, #888888, uppercase, letter-spacing 0.5px` |
+| Department (col 2) | Infrastructure Coverage & Advisory | Same style as title row |
+| Email (col 2) | `<a href="mailto:...">` | `padding-top: 4px; padding-left: 16px; 12px, weight 400, #1E3A5F, no text-decoration` |
+| Phone (col 2) | `<a href="tel:...">` | Same style as email row |
+
+**Bottom spacing:**
+```html
+<tr>
+  <td bgcolor="#F9F8FA" style="background-color: #F9F8FA; padding: 0 0 16px 0; font-size: 1px; line-height: 1px;">&nbsp;</td>
+</tr>
+```
 
 ---
 
-## V. Weekly Update Checklist
+## V. Repeatable HTML Templates
 
-When updating for a new week:
+### Deal Card Template (copy-paste ready)
 
-1. **Preheader text** (line ~18): Update deal count, total value, sector list, date range
-2. **Subtitle date** (line ~54): Update "February 7–13, 2026" to new week
-3. **Key Themes** (line ~76): Rewrite editorial summary for new week's deals
-4. **Sector groups**: Add/remove/update deal cards within each sector container
-   - Update pill tag counts (e.g., "4 DEALS" → "3 DEALS")
-   - Ensure last deal in each sector has bottom padding `28px` instead of `0`
-   - Geography tags go on their own line (not inline with title)
-5. **0-deal sectors**: Add/remove "No transactions" message as needed
-6. **Bar charts**: Update widths (percentage of max), counts, and sort order (descending)
-7. **Contact cards**: Update if team changes
+```html
+<!-- Deal: [TARGET NAME] -->
+<tr>
+  <td bgcolor="#FDFCFB" style="padding: 24px 24px [0 or 28px] 24px; background-color: #FDFCFB;">
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+        <td style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: 700; color: #442142; line-height: 1.2; vertical-align: middle;" valign="middle">
+          [Target Name]
+        </td>
+        <td width="1%" style="white-space: nowrap; vertical-align: middle; padding-left: 10px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 300; color: #9CA3AF;" valign="middle">[Subsector] &#183; [Region]</td>
+      </tr>
+      <tr>
+        <td colspan="2" style="padding-top: 4px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 300; color: #9CA3AF;">
+          Acquirer: [Name]
+        </td>
+      </tr>
+      <!-- Include Seller row only if seller is named -->
+      <tr>
+        <td colspan="2" style="padding-top: 2px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 300; color: #9CA3AF;">
+          Seller: [Name]
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" style="padding-top: 16px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 300; color: #585858; line-height: 1.6;">
+          [Description]
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" style="padding-top: 18px;">
+          <a href="[URL]" style="font-family: Arial, Helvetica, sans-serif; font-size: 10px; font-weight: 400; color: #A1A1A6; text-decoration: underline;">Source</a>
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
+```
+
+**Padding rule:** Use `0` for bottom padding on non-last deals, `28px` on the last deal in a sector.
+
+### Deal Separator Template
+
+```html
+<!-- Separator -->
+<tr>
+  <td bgcolor="#FDFCFB" style="padding: 0 24px; background-color: #FDFCFB;">
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr><td style="border-bottom: 1px solid #E5E7EB; height: 24px; font-size: 1px; line-height: 1px;">&nbsp;</td></tr>
+    </table>
+  </td>
+</tr>
+```
+
+Insert between consecutive deal cards. Do NOT insert before the first deal or after the last deal.
+
+### Sector Container Template (with deals)
+
+```html
+<tr>
+  <td style="padding: [10px or 24px] 40px 0 40px;">
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="border: 1px solid #E5E7EB; border-radius: 12px; border-bottom: 2px solid #D1D5DB; border-right: 2px solid #D1D5DB; overflow: hidden;">
+      <!-- Sector Header -->
+      <tr>
+        <td bgcolor="#F8F9FA" style="background-color: #F8F9FA; border-bottom: 1px solid #E5E7EB;">
+          <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-left: 4px solid #442142;">
+            <tr>
+              <td style="padding: 10px 20px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: 700; color: #442142; text-transform: uppercase; letter-spacing: 0.5px;">
+                [SECTOR NAME]
+              </td>
+              <td width="1%" style="padding: 10px 20px; white-space: nowrap; text-align: right; vertical-align: middle; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 700; color: #442142; letter-spacing: 0.5px;" valign="middle">[N] Deal[s]</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <!-- Deal cards and separators go here -->
+    </table>
+  </td>
+</tr>
+```
+
+**Padding rule:** First sector uses `10px`, all others use `24px`.
+
+### 0-Deal Sector Template
+
+```html
+<tr>
+  <td style="padding: 24px 40px 0 40px;">
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="border: 1px solid #E5E7EB; border-radius: 12px; border-bottom: 2px solid #D1D5DB; border-right: 2px solid #D1D5DB; overflow: hidden;">
+      <tr>
+        <td bgcolor="#F8F9FA" style="background-color: #F8F9FA; border-bottom: 1px solid #E5E7EB;">
+          <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-left: 4px solid #442142;">
+            <tr>
+              <td style="padding: 10px 20px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: 700; color: #442142; text-transform: uppercase; letter-spacing: 0.5px;">
+                [SECTOR NAME]
+              </td>
+              <td width="1%" style="padding: 10px 20px; white-space: nowrap; text-align: right; vertical-align: middle; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 700; color: #9CA3AF; letter-spacing: 0.5px;" valign="middle">0 Deals</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td bgcolor="#FDFCFB" style="padding: 20px 24px 24px 24px; background-color: #FDFCFB; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 300; color: #585858; font-style: italic;">
+          No transactions reported this week
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
+```
+
+### Chart Data Row Template
+
+```html
+<tr>
+  <td width="30%" style="padding: 10px 0; border-bottom: 1px solid #F4F5F7; font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #585858; font-weight: 300; vertical-align: middle;">
+    [Label]
+  </td>
+  <td width="55%" style="padding: 10px 8px; border-bottom: 1px solid #F4F5F7; vertical-align: middle;">
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#F0F1F3" style="background-color: #F0F1F3;">
+      <tr>
+        <td bgcolor="#442142" style="background-color: #442142; width: [N]%; height: 14px; font-size: 1px; line-height: 1px; mso-line-height-rule: exactly;">&nbsp;</td>
+        <td style="font-size: 1px; line-height: 1px;">&nbsp;</td>
+      </tr>
+    </table>
+  </td>
+  <td width="15%" align="right" style="padding: 10px 0; border-bottom: 1px solid #F4F5F7; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 400; color: #442142; vertical-align: middle;">
+    [Count]
+  </td>
+</tr>
+```
+
+For 100%-width bars (the max count), omit the empty trailing `<td>` — just one `<td>` at `width: 100%`.
 
 ---
 
-## VI. Key Email Compatibility Rules
+## VI. Conditional Logic Reference
 
-- All accent lines/rules must be `<table><tr><td style="background-color:...; height:Npx">` — never CSS borders on `<div>` or `<div>` height hacks
-- Use `mso-line-height-rule: exactly` on structural spacer cells
+| Condition | Rule |
+|---|---|
+| First sector vs. subsequent | `padding: 10px 40px 0 40px` vs. `24px 40px 0 40px` |
+| Last deal in sector vs. non-last | Bottom padding `28px` vs. `0` |
+| Non-zero deal count vs. zero | Count color `#442142` vs. `#9CA3AF` |
+| Deal has named seller | Include Seller row at `padding-top: 2px` |
+| Deal has no named seller | Omit Seller row entirely |
+| Merger deal | Use `Merger: Party A & Party B` format (one row, no Seller row) |
+| Pre-IPO deal | Use `Acquirer: Name (Pre-IPO)` format (one row, no Seller row) |
+| 0-deal sector | "No transactions reported this week" italic message, no deal cards |
+| Bar at max count (100%) | Single `<td>` at `width: 100%`, no trailing empty `<td>` |
+| Bar below max count | Two `<td>` cells: filled at `width: [N]%` + empty remainder |
+| Last chart row in section | Add `padding-bottom: 28px` to all three `<td>` cells; omit `border-bottom` |
+| Singular vs. plural | "1 Deal" vs. "N Deals" |
+
+---
+
+## VII. Weekly Update Checklist
+
+1. **Preheader text:** Update deal count, total value, sector list, and date range
+2. **Edition date:** Update "February 7–13, 2026" to new week's date range (use `&#8211;` en-dash)
+3. **Key Themes:** Rewrite editorial summary for new week's activity
+4. **Deal cards per sector:**
+   - Add new deal cards using the Deal Card Template
+   - Add Separator Template between consecutive deals
+   - Remove stale deals
+   - Last deal in each sector gets bottom padding `28px`; all others `0`
+5. **Deal count text:** Update "N Deals" / "N Deal" / "0 Deals" on each sector header
+6. **0-deal sectors:** Add/remove "No transactions" row as needed
+7. **Bar charts:** Update percentage widths (relative to max count), numerical counts, and sort order (descending by count within each chart)
+8. **Region chart:** Add/remove region rows as data changes
+
+---
+
+## VIII. Email Compatibility Rules
+
+- All accent lines/rules: `<table><tr><td style="background-color:...; height:Npx">` — never CSS borders on `<div>`
+- Use `mso-line-height-rule: exactly` on spacer cells
 - Include `font-size: 1px; line-height: 1px;` on spacer cells
 - Use `&nbsp;` content in spacer cells (not empty)
 - No `display: inline-block` — use table cells instead
 - No `margin-top` for layout — use `padding-top` on `<td>` rows
-- Include both `valign="top"` attribute and `vertical-align: top` style
-- `border-radius` and `overflow: hidden` are progressive enhancement (ignored by Outlook)
-- `box-shadow` is progressive enhancement (ignored by Outlook)
-
----
-
-## VII. Design Principles
-
-- **No per-deal dividers** — only the sector container border separates groups
-- **Sector containers** provide visual grouping (border + shadow + rounded corners)
-- **Typographic contrast:** Georgia serif for editorial/display, system sans-serif for data/meta
-- **No images** — everything is pure text/CSS for maximum email client compatibility
-- **font-weight: 800** only on sector headers; avoid heavy weights elsewhere for elegance
-- **Gold (`#B4A87D`)** reserved for accents: rules, arrows, pipes, links, Key Themes border
-- **Brand (`#442142`)** for structural identity: stripes, sector accents, pills, titles, highlights
+- Include both `valign="top"` attribute AND `vertical-align: top` style (or `middle`/`middle`)
+- All background colors: set BOTH `bgcolor` attribute and `style="background-color:..."` on the same element
+- `border-radius` and `overflow: hidden` are progressive enhancement (ignored by Outlook — acceptable)
+- No `box-shadow`, no CSS gradients, no `display` on `<span>`, no `background-color` on `<span>`
+- Tags/badges: plain text only (iOS minimum font-size + Outlook 125% text-size-adjust breaks small boxed text)
