@@ -43,7 +43,7 @@ These rules are PERMANENT and must NOT be reverted or removed by any future edit
 
 ## Font Sizes (Current - after two +1px proportionate bumps)
 - GUGGENHEIM brand: 18px, weight 700, color #442142, letter-spacing 6px
-- Main title ("Infrastructure Sponsor M&A"): 16px, weight 700
+- Main title ("Infrastructure Sponsor M&A Activity"): 16px, weight 700
 - Sector headers, deal target names, KEY THEMES header, chart titles: 14px
 - Body text, deal descriptions, acquirer/seller line, chart labels, contact name, email: 12px
 - Source links, business card title/department: 10px

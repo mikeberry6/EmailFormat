@@ -15,6 +15,28 @@ Single-file HTML email newsletter (`guggenheim-infrastructure-ma-update.html`) f
 - **Outlook-safe accents** — all colored lines/rules use `<table><tr><td>` with `background-color` + `bgcolor`, NOT CSS borders on `<div>` or standalone `<div>` height hacks
 - **Card depth** — `border-bottom: 2px solid #D1D5DB; border-right: 2px solid #D1D5DB` (replaces box-shadow for Outlook)
 
+### Document Skeleton (do not modify)
+
+```html
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Infrastructure Sponsor M&amp;A Activity</title>
+  <!--[if mso]>
+  <style type="text/css">
+    table { border-collapse: collapse; }
+    td { font-family: Arial, Helvetica, sans-serif; }
+  </style>
+  <![endif]-->
+</head>
+<body style="margin: 0; padding: 0; background-color: #FFFFFF; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;">
+```
+
+- `<body>` attributes: `margin: 0; padding: 0` to reset, `-webkit-text-size-adjust: 100%` prevents iOS from enlarging text, `-ms-text-size-adjust: 100%` for Windows Phone
+- `<title>` must read "Infrastructure Sponsor M&amp;A Activity" (used as tab/window title and accessibility label)
+
 ---
 
 ## II. Complete Color Token Table
@@ -108,8 +130,8 @@ Single-file HTML email newsletter (`guggenheim-infrastructure-ma-update.html`) f
 **Masthead content:** `bgcolor="#F9F8FA"`, padding `0 40px`, containing a `<table>` with these rows:
 - **Brand name:** `padding-top: 21px` — 18px, weight 700, `#442142`, letter-spacing 6px, uppercase, line-height 1
 - **Subtitle:** `padding-top: 5px` — 9px, weight 400, `#AAAAAA`, letter-spacing 2px, uppercase
-- **Gold accent rule:** `padding-top: 14px` — inner table `width="40"`, `<td width="40">` with `border-bottom: 2px solid #B4A87D`, height 0
-- **Title:** `padding-top: 12px` — 16px, weight 700, `#442142`, line-height 1.3
+- **Gold accent rule:** `padding-top: 14px; font-size: 0; line-height: 0` on container `<td>` — inner table `width="40"`, `<td width="40">` with `border-bottom: 2px solid #B4A87D; height: 0; padding: 0; font-size: 0; line-height: 0; mso-line-height-rule: exactly`
+- **Title:** `padding-top: 12px` — 16px, weight 700, `#442142`, line-height 1.3 — text: "Infrastructure Sponsor M&A Activity"
 - **Edition:** `padding-top: 6px; padding-bottom: 18px` — 9px, weight 400, `#AAAAAA`, letter-spacing 1.5px, uppercase — gold bullet `<span style="color: #B4A87D;">&#8226;</span>`
 
 **Bottom rule:**
@@ -159,17 +181,19 @@ Contains two `<div>` elements:
 - Non-zero deals: deal count color `#442142`
 - Zero deals: deal count color `#9CA3AF`
 
-#### Sector Names (canonical, must match between headers and charts)
+#### Sector Names and Display Order (fixed — do not reorder)
 
-| Sector Header | Chart Label |
-|---|---|
-| Power & ET | Power & ET |
-| Digital | Digital |
-| Midstream | Midstream |
-| Transportation | Transportation |
-| Waste & ES | Waste & ES |
-| Social | Social |
-| Utilities | Utilities |
+Sectors always appear in this fixed order in the deal activity section. In the bar charts, rows are sorted by count descending (not this order). Use `&amp;` for ampersands in HTML.
+
+| # | Sector Header | Chart Label | HTML Entity |
+|---|---|---|---|
+| 1 | Power & ET | Power & ET | `Power &amp; ET` |
+| 2 | Digital | Digital | `Digital` |
+| 3 | Midstream | Midstream | `Midstream` |
+| 4 | Transportation | Transportation | `Transportation` |
+| 5 | Waste & ES | Waste & ES | `Waste &amp; ES` |
+| 6 | Social | Social | `Social` |
+| 7 | Utilities | Utilities | `Utilities` |
 
 #### Deal Card
 
@@ -260,6 +284,8 @@ Same container and header structure, then:
 
 **Outer padding:** `40px 40px 30px 40px` (note: bottom is 30px, asymmetric)
 
+Both charts are sibling `<table>` elements inside a single `<td style="padding: 40px 40px 30px 40px;">`. There is no explicit separator between them — the sector chart's last row has extra `padding-bottom: 28px` which creates the visual gap before the region chart title.
+
 Two sub-tables: "Deal Count By Sector (YTD)" and "Deal Count By Region (YTD)"
 
 #### Chart Title Row
@@ -298,39 +324,72 @@ Two sub-tables: "Deal Count By Sector (YTD)" and "Deal Count By Region (YTD)"
 **Bar width calculation:** `width: Math.round(count / maxCount * 100)%`
 - When a bar is 100% (the max), omit the empty `<td>` after the filled one — the filled `<td>` has `width: 100%` alone.
 
-#### Last Row in Each Chart Section
+#### Last Row Behavior
 
-Gets `padding-bottom: 28px` on all three `<td>` cells (overriding the standard `padding: 10px 0`). Also **no `border-bottom`** on the very last row of the last chart section.
+- **Sector chart (first chart) — last row:** Add `padding-bottom: 28px` to all three `<td>` cells (overriding the standard `padding: 10px 0`). Remove `border-bottom`. This extra padding creates the visual gap before the region chart title below.
+- **Region chart (last chart) — last row:** Remove `border-bottom` from all three `<td>` cells. Do NOT add extra `padding-bottom` — use the standard `padding: 10px 0` only.
 
 **Rows sorted descending by count within each chart.**
 
+#### Region Chart Labels (current set — add/remove as data changes)
+
+| Label | Full Region |
+|---|---|
+| Europe | Europe |
+| NorthAm | North America |
+| APAC | Asia-Pacific |
+| LatAm | Latin America |
+| MEA | Middle East & Africa |
+
 ### 8. Footer
 
-**Top border:** `border-top: 2px solid #D1D5DB`
+**Nesting structure (important — three layers):**
 
-**Background:** `bgcolor="#F9F8FA" style="background-color: #F9F8FA;"`
+```
+<tr>                                               ← row in inner content card
+  <td style="border-top: 2px solid #D1D5DB;">     ← outer cell: border ONLY, no bgcolor
+    <table bgcolor="#F9F8FA">                      ← inner table: bgcolor here
+      <tr>
+        <td style="padding: 20px 40px;">           ← content cell
+          <table>preamble text</table>             ← preamble in own table
+          <table>business card</table>             ← card in own table
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>                                               ← separate row in inner content card
+  <td bgcolor="#F9F8FA">bottom spacing</td>
+</tr>
+```
 
-**Outer padding:** `20px 40px`
+- The `border-top: 2px solid #D1D5DB` is on the outer `<td>` (no bgcolor on this element)
+- The `bgcolor="#F9F8FA" style="background-color: #F9F8FA;"` is on the inner `<table>`
+- Both preamble and business card are separate `<table>` siblings inside the same `<td>`
 
 **Preamble text (own table):**
 ```html
-<td style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 300; color: #585858; line-height: 1.6; padding-bottom: 10px;">
-  For additional context on any of the above deals, please reach out.
-</td>
+<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 300; color: #585858; line-height: 1.6; padding-bottom: 10px;">
+      For additional context on any of the above deals, please reach out.
+    </td>
+  </tr>
+</table>
 ```
 
-**Business card (table with 5 rows):**
+**Business card (own table, 5 rows):**
 
 | Row | Content | Style |
 |---|---|---|
-| Photo (col 1, rowspan="5") | 72px transparent 1×1 GIF data URI | `width: 72px; valign: top; text-align: center` |
+| Photo (col 1, rowspan="5") | `<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="72" alt="Photo" style="display: block; width: 72px; border: 0;" />` | `<td width="72" rowspan="5" valign="top" style="vertical-align: top; width: 72px; text-align: center;" align="center">` |
 | Name (col 2) | Mike Berry | `padding-left: 16px; 14px, weight 700, #442142, line-height 1.2` |
 | Title (col 2) | Vice President | `padding-top: 4px; padding-left: 16px; 10px, weight 400, #888888, uppercase, letter-spacing 0.5px` |
-| Department (col 2) | Infrastructure Coverage & Advisory | Same style as title row |
-| Email (col 2) | `<a href="mailto:...">` | `padding-top: 4px; padding-left: 16px; 12px, weight 400, #1E3A5F, no text-decoration` |
-| Phone (col 2) | `<a href="tel:...">` | Same style as email row |
+| Department (col 2) | Infrastructure Coverage &amp; Advisory | `padding-top: 4px; padding-left: 16px; 10px, weight 400, #888888, uppercase, letter-spacing 0.5px` |
+| Email (col 2) | `<a href="mailto:michael.berry@guggenheimpartners.com">michael.berry@guggenheimpartners.com</a>` | `padding-top: 4px; padding-left: 16px; 12px, weight 400, #1E3A5F, no text-decoration` |
+| Phone (col 2) | `<a href="tel:+17186838458">+1 (718) 683-8458</a>` | `padding-top: 4px; padding-left: 16px; 12px, weight 400, #1E3A5F, no text-decoration` |
 
-**Bottom spacing:**
+**Bottom spacing (separate `<tr>` in the inner content card — outside the footer's inner table):**
 ```html
 <tr>
   <td bgcolor="#F9F8FA" style="background-color: #F9F8FA; padding: 0 0 16px 0; font-size: 1px; line-height: 1px;">&nbsp;</td>
@@ -491,7 +550,8 @@ For 100%-width bars (the max count), omit the empty trailing `<td>` — just one
 | 0-deal sector | "No transactions reported this week" italic message, no deal cards |
 | Bar at max count (100%) | Single `<td>` at `width: 100%`, no trailing empty `<td>` |
 | Bar below max count | Two `<td>` cells: filled at `width: [N]%` + empty remainder |
-| Last chart row in section | Add `padding-bottom: 28px` to all three `<td>` cells; omit `border-bottom` |
+| Last row of sector chart | Add `padding-bottom: 28px` to all three `<td>` cells; remove `border-bottom` — creates gap before region chart |
+| Last row of region chart | Remove `border-bottom` from all three `<td>` cells; do NOT add extra `padding-bottom` |
 | Singular vs. plural | "1 Deal" vs. "N Deals" |
 
 ---
@@ -513,7 +573,20 @@ For 100%-width bars (the max count), omit the empty trailing `<td>` — just one
 
 ---
 
-## VIII. Email Compatibility Rules
+## VIII. HTML Entities Reference
+
+| Entity | Renders As | Usage |
+|---|---|---|
+| `&#8211;` | – (en-dash) | Edition date range ("February 7–13"), preheader separators |
+| `&#183;` | · (middle dot) | Subsector/region tags ("Generation · Peru") |
+| `&#8226;` | • (bullet) | Edition line gold separator |
+| `&#8217;` | ' (right single quote) | Possessives and contractions in deal descriptions |
+| `&amp;` | & | Ampersands in sector names, company names, firm descriptions |
+| `&nbsp;` | (non-breaking space) | Spacer cell content (prevents cell collapse) |
+
+---
+
+## IX. Email Compatibility Rules
 
 - All accent lines/rules: `<table><tr><td style="background-color:...; height:Npx">` — never CSS borders on `<div>`
 - Use `mso-line-height-rule: exactly` on spacer cells
