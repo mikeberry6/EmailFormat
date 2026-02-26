@@ -24,18 +24,30 @@ These rules are PERMANENT and must NOT be reverted or removed by any future edit
 - Rationale: iOS enforces 13px minimum font-size and Outlook iOS injects `-webkit-text-size-adjust: 125%`, so small text in colored boxes renders disproportionately large on mobile. Plain text scales proportionally with surrounding content.
 
 ## Deal Card Format
-- Target name on left, deal type · subsector · region tag on right (same row, **single line**)
-  - Tag format: `DealType &#183; Subsector &#183; Region` (e.g. "Buyout · Fiber/Broadband · UK")
-  - NO separate "Acquisition" / "Investment" prefix — use only the specific type (Buyout, Minority Stake, Growth Equity, etc.)
-  - NO parentheses around the deal type
-  - Style: `font-weight: 300; color: #9CA3AF; font-size: 12px` — single `<tr>` in the tag table (not two rows)
-- Below target: Acquirer/Investor and Seller on **separate rows** (not one line)
-  - For buyouts/acquisitions: `Acquirer: Name` — the entity acquiring the target
-  - For investments (growth equity, follow-on, preferred equity, co-investment): `Investor: Name` — the entity deploying capital (NOT the recipient/developer)
-  - `Seller: Name` row at `padding-top: 2px` — only for acquisitions with a named seller
-  - If no named seller, omit the Seller row entirely (no placeholder)
-  - Row padding: first label at `padding-top: 4px`, second label at `padding-top: 2px`
-- For mergers: `Merger: Party A & Party B` (single row, no Seller row)
+- **Single-column layout** — all content stacked vertically (no two-column row)
+- **Row 1 — Target name** (full-width header)
+  - Style: `font-size: 14px; font-weight: 700; color: #442142; line-height: 1.2`
+- **Row 2 — Party + tag line** directly below target name
+  - Format: `Party (DealType) &#183; Subsector &#183; Region`
+  - Examples: "DESRI (Preferred Equity) · BESS · US", "nexfibre (Buyout) · Fiber/Broadband · UK"
+  - Party = Acquirer for buyouts/acquisitions, Investor for investments (the entity deploying capital)
+  - Use only the specific deal type (Buyout, Minority Stake, Growth Equity, Preferred Equity, Follow-On, Co-Investment, Bolt-On, etc.) — NOT generic "Acquisition" / "Investment"
+  - If acquirer name includes a portfolio company in parentheses, use slash separator to avoid double parens: "Basalt Infrastructure / OnSite Partners (Bolt-On)"
+  - Style: `padding-top: 4px; font-size: 12px; font-weight: 300; color: #9CA3AF; line-height: 1.2`
+- **Row 3 — Seller** (optional, only for acquisitions with a named seller)
+  - Format: `Seller: Name`
+  - Style: `padding-top: 2px; font-size: 12px; font-weight: 300; color: #9CA3AF`
+  - If no named seller, omit this row entirely (no placeholder)
+- **Row 4 — Description** at `padding-top: 16px`
+- **Row 5 — Source link** at `padding-top: 18px`
+- For mergers: `Party A & Party B (Merger) &#183; Subsector &#183; Region` (no Seller row)
+
+## Number Abbreviations
+- Use **"mm"** for millions: `$100mm`, `NZ$525mm`, `3.4mm premises`
+- Use **"bn"** for billions: `A$11.7bn`, `£2bn`
+- **No space** between number and abbreviation
+- Apply to both monetary amounts and non-monetary counts (standard IB convention)
+- Do NOT modify abbreviations inside URLs (e.g. `100-million` in an `href` stays as-is)
 
 ## Sector & Deal Ordering
 - Sector cards ordered by **deal count descending** (most active sector first)
@@ -56,7 +68,7 @@ These rules are PERMANENT and must NOT be reverted or removed by any future edit
 - GUGGENHEIM brand: 18px, weight 700, color #442142, letter-spacing 6px
 - Main title ("Infrastructure Sponsor M&A Activity"): 16px, weight 700
 - Sector headers, deal target names, KEY THEMES header, chart titles: 14px
-- Body text, deal descriptions, acquirer/seller line, chart labels, contact name, email: 12px
+- Body text, deal descriptions, party tag line, seller line, chart labels, contact name, email: 12px
 - Source links, business card title/department: 10px
 - Subtitle ("INFRASTRUCTURE COVERAGE & ADVISORY"), edition line: 9px
 - Spacers: 0px and 1px — do NOT modify these
