@@ -34,12 +34,8 @@ These rules are PERMANENT and must NOT be reverted or removed by any future edit
   - Use only the specific deal type (Buyout, Minority Stake, Growth Equity, Preferred Equity, Follow-On, Co-Investment, Bolt-On, etc.) — NOT generic "Acquisition" / "Investment"
   - If acquirer name includes a portfolio company in parentheses, use slash separator to avoid double parens: "Basalt Infrastructure / OnSite Partners (Bolt-On)"
   - Style: `padding-top: 4px; font-size: 12px; font-weight: 300; color: #9CA3AF; line-height: 1.2`
-- **Row 3 — Seller** (optional, only for acquisitions with a named seller)
-  - Format: `Seller: Name`
-  - Style: `padding-top: 2px; font-size: 12px; font-weight: 300; color: #9CA3AF`
-  - If no named seller, omit this row entirely (no placeholder)
-- **Row 4 — Description** at `padding-top: 16px`
-- **Row 5 — Source link** at `padding-top: 18px`
+- **Row 3 — Description** at `padding-top: 16px`
+- **Row 4 — Source link** at `padding-top: 18px`
 - For mergers: `Party A & Party B (Merger) &#183; Subsector &#183; Region` (no Seller row)
 
 ## Number Abbreviations
@@ -68,7 +64,7 @@ These rules are PERMANENT and must NOT be reverted or removed by any future edit
 - GUGGENHEIM brand: 18px, weight 700, color #442142, letter-spacing 6px
 - Main title ("Infrastructure Sponsor M&A Activity"): 16px, weight 700
 - Sector headers, deal target names, KEY THEMES header, chart titles: 14px
-- Body text, deal descriptions, party tag line, seller line, chart labels, contact name, email: 12px
+- Body text, deal descriptions, party tag line, chart labels, contact name, email: 12px
 - Source links, business card title/department: 10px
 - Subtitle ("INFRASTRUCTURE COVERAGE & ADVISORY"), edition line: 9px
 - Spacers: 0px and 1px — do NOT modify these
