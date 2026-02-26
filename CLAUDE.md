@@ -29,12 +29,13 @@ These rules are PERMANENT and must NOT be reverted or removed by any future edit
   - NO separate "Acquisition" / "Investment" prefix — use only the specific type (Buyout, Minority Stake, Growth Equity, etc.)
   - NO parentheses around the deal type
   - Style: `font-weight: 300; color: #9CA3AF; font-size: 12px` — single `<tr>` in the tag table (not two rows)
-- Below target: Acquirer and Seller on **separate rows** (not one line)
-  - `Acquirer: Name` row at `padding-top: 4px`
-  - `Seller: Name` row at `padding-top: 2px`
+- Below target: Acquirer/Investor and Seller on **separate rows** (not one line)
+  - For buyouts/acquisitions: `Acquirer: Name` — the entity acquiring the target
+  - For investments (growth equity, follow-on, preferred equity, co-investment): `Investor: Name` — the entity deploying capital (NOT the recipient/developer)
+  - `Seller: Name` row at `padding-top: 2px` — only for acquisitions with a named seller
   - If no named seller, omit the Seller row entirely (no placeholder)
+  - Row padding: first label at `padding-top: 4px`, second label at `padding-top: 2px`
 - For mergers: `Merger: Party A & Party B` (single row, no Seller row)
-- For pre-IPO/investments: `Acquirer: Name (Pre-IPO)` (single row, no Seller row)
 
 ## Sector & Deal Ordering
 - Sector cards ordered by **deal count descending** (most active sector first)
