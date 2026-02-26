@@ -20,17 +20,27 @@ These rules are PERMANENT and must NOT be reverted or removed by any future edit
 - Rendered as **plain inline text** on `<td>` elements (NOT colored pill boxes)
 - Deal counts (e.g. "4 Deals"): `font-weight: 700; color: #442142` in sector header
 - Zero-deal counts (e.g. "0 Deals"): `font-weight: 700; color: #9CA3AF` (grey)
-- Subsector/region tags (e.g. "Generation · Peru"): `font-weight: 300; color: #9CA3AF` with `&#183;` middle dot separator
+- Deal type + subsector/region tags (e.g. "Buyout · Generation · Peru"): `font-weight: 300; color: #9CA3AF` with `&#183;` middle dot separator, single line
 - Rationale: iOS enforces 13px minimum font-size and Outlook iOS injects `-webkit-text-size-adjust: 125%`, so small text in colored boxes renders disproportionately large on mobile. Plain text scales proportionally with surrounding content.
 
 ## Deal Card Format
-- Target name on left, subsector · region tag on right (same row)
+- Target name on left, deal type · subsector · region tag on right (same row, **single line**)
+  - Tag format: `DealType &#183; Subsector &#183; Region` (e.g. "Buyout · Fiber/Broadband · UK")
+  - NO separate "Acquisition" / "Investment" prefix — use only the specific type (Buyout, Minority Stake, Growth Equity, etc.)
+  - NO parentheses around the deal type
+  - Style: `font-weight: 300; color: #9CA3AF; font-size: 12px` — single `<tr>` in the tag table (not two rows)
 - Below target: Acquirer and Seller on **separate rows** (not one line)
   - `Acquirer: Name` row at `padding-top: 4px`
   - `Seller: Name` row at `padding-top: 2px`
   - If no named seller, omit the Seller row entirely (no placeholder)
 - For mergers: `Merger: Party A & Party B` (single row, no Seller row)
 - For pre-IPO/investments: `Acquirer: Name (Pre-IPO)` (single row, no Seller row)
+
+## Sector & Deal Ordering
+- Sector cards ordered by **deal count descending** (most active sector first)
+- Ties in deal count: maintain alphabetical or editorial preference
+- Deals within a sector ordered by **disclosed transaction size descending**, then undisclosed deals after
+- Zero-deal sectors appear last (Midstream, Social, Utilities, etc.)
 
 ## Chart Titles
 - Sector chart: "Deal Count By Sector (YTD)"
