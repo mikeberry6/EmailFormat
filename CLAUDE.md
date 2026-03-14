@@ -9,6 +9,7 @@ These rules are PERMANENT and must NOT be reverted or removed by any future edit
 - MUST have `border-bottom: 2px solid #D1D5DB; border-right: 2px solid #D1D5DB` (Outlook-compatible depth effect replacing box-shadow)
 - MUST have `overflow: hidden` to clip the gold left-border accent within the rounded corners
 - Style reference: Crunchbase trending news cards (https://www.crunchbase.com)
+- Infrastructure fund names MUST be **bold** (`<b>` tag) in theme text (e.g., `<b>EQT Infrastructure</b>`)
 
 ### Sector/Subsector Cards (Power & ET, Digital, Midstream, etc.)
 - MUST have `border-radius: 12px`
