@@ -49,12 +49,26 @@ These rules are PERMANENT and must NOT be reverted or removed by any future edit
 ## Sector & Deal Ordering
 - Sector cards ordered by **deal count descending** (most active sector first)
 - Ties in deal count: maintain alphabetical or editorial preference
-- Deals within a sector ordered by **disclosed transaction size descending**, then undisclosed deals after
+- Deals within a sector ordered by **implied transaction size descending** (all deals interleaved, not disclosed-first/undisclosed-after)
 - Zero-deal sectors appear last (Midstream, Social, Utilities, etc.)
 
-## Chart Titles
-- Sector chart: "Deal Count By Sector (YTD)"
-- Region chart: "Deal Count By Region (YTD)"
+### Size Estimation for Undisclosed Deals
+When deal value is not disclosed, rank by implied size using these signals (in priority order):
+1. **Bulge bracket advisors** (BofA, Morgan Stanley, Goldman Sachs, etc.) — signals large-cap transaction
+2. **Asset scale** — GW of generation capacity, miles of pipeline/fiber, number of locations/premises
+3. **Revenue / EBITDA proxies** — if revenue is disclosed (e.g. "~$600mm revenue"), apply typical infrastructure multiples to estimate EV
+4. **Sponsor profile & fund size** — Blackstone, Apollo, EQT deploying from flagship funds implies meaningful check sizes
+5. **Deal type hierarchy** — Platform Acquisitions > Majority Stakes > Minority Stakes > Single Asset Acquisitions > Bolt-Ons > JVs/Partnerships
+6. **Operational vs. development stage** — operational assets rank above comparable-scale development projects (development carries construction/permitting discount)
+
+## Bar Charts (YTD Stats)
+- Sector chart title: "Deal Count By Sector (YTD)"
+- Region chart title: "Deal Count By Region (YTD)"
+- Chart number values: `font-size: 12px; font-weight: 700; color: #442142` (bold, not 400)
+- Chart label names: `font-size: 12px; font-weight: 300; color: #585858`
+- Bar fill: `bgcolor="#442142"` with matching `background-color`
+- Bar background track: `bgcolor="#F0F1F3"` with matching `background-color`
+- Bar widths are percentages relative to the highest-count item (which gets `width: 100%`)
 
 ## Font Family
 - ALL text uses `Arial, Helvetica, sans-serif`
@@ -100,3 +114,35 @@ These rules are PERMANENT and must NOT be reverted or removed by any future edit
 - Tags/badges are plain text, not colored boxes (Outlook strips `background-color` on `<span>`, and iOS minimum font-size + Outlook 125% text-size-adjust makes small boxed text disproportionately large)
 - Properties that survive Outlook paste: `color`, `font-size`, `font-weight`, `font-family` (web-safe), `border`, `padding` on `<td>`, `text-align`, `bgcolor` on `<td>`
 - Properties that do NOT survive: `border-radius`, `box-shadow`, `display` on spans, `background-color` on spans, CSS gradients
+
+## Weekly Update Workflow
+
+### Deal Block Structure
+Each deal card follows this HTML pattern (use as template when adding new deals):
+- **Non-last deal** in a sector: `padding: 24px 24px 0 24px` on the `<td>`, followed by a separator `<tr>`
+- **Last deal** in a sector: `padding: 24px 24px 28px 24px` (extra 28px bottom padding), NO separator after
+- When reordering deals, ensure the last deal always gets the `28px` bottom padding variant and all others get `0` bottom + separator
+
+### Separator Block Template
+```html
+<!-- Separator -->
+<tr>
+  <td bgcolor="#FDFCFB" style="padding: 0 24px; background-color: #FDFCFB;">
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr><td style="border-bottom: 1px solid #E5E7EB; height: 24px; font-size: 1px; line-height: 1px;">&nbsp;</td></tr>
+    </table>
+  </td>
+</tr>
+```
+
+### Checklist for Each Weekly Edition
+1. Update masthead edition date range
+2. Update preheader text with deal count summary
+3. Update "Previous Editions" HTML comment with prior week's summary
+4. Add/remove deal cards within each sector (copy existing deal block as template)
+5. Update sector header deal counts (e.g. "9 Deals", "4 Deals", "0 Deals")
+6. Reorder sector cards by deal count descending
+7. Reorder deals within each sector by implied transaction size descending
+8. Update YTD bar chart numbers and bar widths (recalculate percentages relative to highest count)
+9. Update week navigation links at bottom of file
+10. Verify last deal in each sector has `28px` bottom padding and no trailing separator
