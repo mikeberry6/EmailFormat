@@ -10,6 +10,7 @@ These rules are PERMANENT and must NOT be reverted or removed by any future edit
 - MUST have `overflow: hidden` to clip the gold left-border accent within the rounded corners
 - Style reference: Crunchbase trending news cards (https://www.crunchbase.com)
 - Infrastructure fund names MUST be **bold** via inline style in theme text (e.g., `<span style="font-weight: 700;">EQT Infrastructure</span>`). Do NOT use `<b>` tags — the parent `<td>` has `font-weight: 300` which overrides `<b>` in email clients.
+- Fund names in Key Themes MUST use **short-form** — drop generic suffixes like "Management", "Capital", and "IM". Examples: **Ares** (not Ares Management), **I Squared** (not I Squared Capital), **CBRE** (not CBRE IM), **Brookfield** (not Brookfield Asset Management). Keep words integral to the brand (e.g., "Global Infrastructure Partners" stays as-is).
 
 ### Sector/Subsector Cards (Power & ET, Digital, Midstream, etc.)
 - MUST have `border-radius: 12px`
