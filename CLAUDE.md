@@ -26,7 +26,11 @@ These rules are PERMANENT and must NOT be reverted or removed by any future edit
 
 ## Deal Card Format
 - **Single-column layout** — all content stacked vertically (no two-column row)
-- **Row 1 — Target name** (full-width header)
+- **Row 1 — Deal header** (full-width)
+  - Format: `Target | Infrastructure Fund`
+  - The **infrastructure fund** (the financial sponsor) MUST appear to the **right** of the `|`
+  - For bolt-on deals, the fund (not the portfolio company) goes to the right: "Revolv | KKR" not "Revolv | Zenōbē"
+  - For divestitures, the selling fund goes to the right: "Bayonne Energy Center | Morgan Stanley Infrastructure Partners"
   - Style: `font-size: 14px; font-weight: 700; color: #442142; line-height: 1.2`
 - **Row 2 — Party + tag line** directly below target name
   - Format: `Party (DealType) &#183; Subsector &#183; Region`
@@ -34,8 +38,11 @@ These rules are PERMANENT and must NOT be reverted or removed by any future edit
   - Party = Acquirer for buyouts/acquisitions, Investor for investments (the entity deploying capital)
   - Use only the specific deal type (Buyout, Minority Stake, Growth Equity, Preferred Equity, Follow-On, Co-Investment, Bolt-On, etc.) — NOT generic "Acquisition" / "Investment"
   - If acquirer name includes a portfolio company in parentheses, use slash separator to avoid double parens: "Basalt Infrastructure / OnSite Partners (Bolt-On)"
+  - **Bolt-On rule**: When a portfolio company acquires a company/asset, the deal type is always **Bolt-On**, not Buyout or Asset Acquisition
   - Style: `padding-top: 4px; font-size: 12px; font-weight: 300; color: #9CA3AF; line-height: 1.2`
 - **Row 3 — Description** at `padding-top: 16px`
+  - If the infrastructure fund is not a widely recognized name, briefly note its affiliation in the description (e.g., "Mirova (Natixis IM)", "APG Asset Management, the Dutch pension investor")
+  - Exclude fundraising transactions (equity raises, fund closings) — only include direct M&A and investment activity
 - **Row 4 — Source link** at `padding-top: 18px`
 - For mergers: `Party A & Party B (Merger) &#183; Subsector &#183; Region` (no Seller row)
 
@@ -146,3 +153,12 @@ Each deal card follows this HTML pattern (use as template when adding new deals)
 8. Update YTD bar chart numbers and bar widths (recalculate percentages relative to highest count)
 9. Update week navigation links at bottom of file
 10. Verify last deal in each sector has `28px` bottom padding and no trailing separator
+
+### Source & Deal Verification
+- Every source link MUST point to a **specific article or press release** about the deal — never a homepage (e.g., `cubehighwaystrust.com` or `pv-magazine-australia.com/` are NOT acceptable)
+- Verify the sponsor/fund attribution is real — confirm the infrastructure fund actually has a stake in or connection to the target company (do not rely on AI-generated deal descriptions without verification)
+- **Exclude fundraising transactions** (equity raises for a fund/platform vehicle, fund closings, LP commitments) — only include direct M&A, investments, and divestitures
+- Deal header format is `Target | Infrastructure Fund` — the **fund** (not a portfolio company) must be to the right of the pipe
+- For **bolt-on** deals: if a portfolio company acquires a company, the deal type is **Bolt-On** (not Buyout or Asset Acquisition). The party line uses `Fund / PortCo (Bolt-On)` format
+- If the fund is not widely known, add a brief affiliation note in the description (e.g., "Mirova (Natixis IM)", "APG Asset Management, the Dutch pension investor")
+- Key Themes should reflect the actual week's activity — one theme on overall volume/tone, one on a specific observable trend from the deal set
