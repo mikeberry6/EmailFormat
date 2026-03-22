@@ -153,6 +153,8 @@ Contains two `<div>` elements:
 1. Label: 14px, weight 700, `#B4A87D`, uppercase, letter-spacing 1px, `margin-bottom: 12px`
 2. Body: 12px, weight 300, `#888888`, italic, line-height 1.6
 
+**Firm name style in Key Themes:** Use short-form names — drop generic suffixes like "Management", "Capital", and "IM". Examples: **Ares** (not Ares Management), **I Squared** (not I Squared Capital), **CBRE** (not CBRE IM), **Brookfield** (not Brookfield Asset Management). Keep names that are integral to the brand (e.g., "Global Infrastructure Partners" stays as-is since "Partners" is the brand).
+
 ### 6. Sector Group Container
 
 **Outer padding:**
