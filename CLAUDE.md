@@ -12,7 +12,7 @@ These rules are PERMANENT and must NOT be reverted or removed by any future edit
 - Infrastructure fund names MUST be **bold** via inline style in theme text (e.g., `<span style="font-weight: 700;">EQT Infrastructure</span>`). Do NOT use `<b>` tags — the parent `<td>` has `font-weight: 300` which overrides `<b>` in email clients.
 - Fund names in Key Themes MUST use **short-form** — drop generic suffixes like "Management", "Capital", and "IM". Examples: **Ares** (not Ares Management), **I Squared** (not I Squared Capital), **CBRE** (not CBRE IM), **Brookfield** (not Brookfield Asset Management). Keep words integral to the brand (e.g., "Global Infrastructure Partners" stays as-is).
 
-### Sector/Subsector Cards (Power & ET, Digital, Midstream, etc.)
+### Sector/Subsector Cards (Power & ET, Digital, Midstream, Social Infra, etc.)
 - MUST have `border-radius: 12px`
 - MUST have `border-bottom: 2px solid #D1D5DB; border-right: 2px solid #D1D5DB` (Outlook-compatible depth effect replacing box-shadow)
 - MUST have `overflow: hidden`
@@ -58,7 +58,10 @@ These rules are PERMANENT and must NOT be reverted or removed by any future edit
 - Sector cards ordered by **deal count descending** (most active sector first)
 - Ties in deal count: maintain alphabetical or editorial preference
 - Deals within a sector ordered by **implied transaction size descending** (all deals interleaved, not disclosed-first/undisclosed-after)
-- Zero-deal sectors appear last (Midstream, Social, Utilities, etc.)
+- Zero-deal sectors appear last (Midstream, Social Infra, Utilities, etc.)
+
+### Sector Definitions
+- **Social Infra** — Combined sector encompassing both social infrastructure (education, healthcare, government facilities) and waste & environmental services. Replaces the former separate "Social" and "Waste & ES" sectors starting with the Mar 21–27, 2026 edition.
 
 ### Size Estimation for Undisclosed Deals
 When deal value is not disclosed, rank by implied size using these signals (in priority order):
