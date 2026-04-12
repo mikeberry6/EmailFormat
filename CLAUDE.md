@@ -32,6 +32,7 @@ These rules are PERMANENT and must NOT be reverted or removed by any future edit
   - The **infrastructure fund** (the financial sponsor) MUST appear to the **right** of the `|`
   - For bolt-on deals, the fund (not the portfolio company) goes to the right: "Revolv | KKR" not "Revolv | Zenōbē"
   - For divestitures, the selling fund goes to the right: "Bayonne Energy Center | Morgan Stanley Infrastructure Partners"
+  - Fund names in deal headers MUST use **short-form** — drop "Infrastructure", "Infrastructure Partners", "Capital Partners", and similar suffixes. Examples: **Quinbrook** (not Quinbrook Infrastructure Partners), **EQT** (not EQT Infrastructure), **DWS** (not DWS Infrastructure), **ECP** (not Energy Capital Partners). Keep names that are integral to the brand (e.g., "Global Infrastructure Partners" stays as-is).
   - Style: `font-size: 14px; font-weight: 700; color: #442142; line-height: 1.2`
 - **Row 2 — Party + tag line** directly below target name
   - Format: `Party (DealType) &#183; Subsector &#183; Region`
